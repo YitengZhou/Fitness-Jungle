@@ -55,6 +55,15 @@ For the second part, the developer can monitor user statistics. A search can be 
 
 The health statistics such as daily steps can be displayed in a form of vertical bar chart where the bars are denoted by the hours of the day (e.g. 00:00, 01:00), similarly the weekly graph can be display in the same fasion where the bars denote each day of the week (e.g. Mon, Tue), making it easier for the developer to get some health feedback to the user. 
 
+| User Story ID |                                                                        User Story                                                                        |         Backlog Items        |      Sub-system     | priority |
+|:-------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------:|:-------------------:|:--------:|
+|       1       |                  As a developer, I want to be able to view user’s profile so that I can have a better understanding of my user’s usage.                  |       User Information       | Desktop Application |          |
+|       2       |              As a developer, I want to be able to get statistics about the specific user, so I can tailor specific health feedback to them.              |        User statistics       | Desktop Application |          |
+|       3       |          As a developer, I want to be able to have a visual representation of my user usage, so that I can have a better understanding visually.         |       Visual Statistics      | Desktop Application |          |
+|       4       |           As a developer, I want to be able to upload, view and edit the pet and skin database, so that capture user interest with new content.          | Manage pet and skin database | Desktop Application |          |
+|       5       | As a developer, I want to be able to view all the changes made on the desktop application, so that I can revert to previous state if a bug was produced. |        Logging System        | Desktop Application |          |
+|       6       |                                                                            ...                                                                           |                              |                     |          |
+
 
 ### Web Application
 
