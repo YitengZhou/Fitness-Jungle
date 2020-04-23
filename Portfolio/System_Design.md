@@ -14,7 +14,7 @@ The Web application allows for the registration of new user, information such as
 
 ![System Architecture](Images/System_Architecture.png)
 
-![Relationship Diagram](Images/Relationship_Diagram.png)
+![Relationship Diagram](Images/Relationship_Diagram.png | height = 500px)
 
 ## Object-Oriented design of key sub-systems
 
