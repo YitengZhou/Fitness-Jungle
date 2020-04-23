@@ -24,7 +24,7 @@ The main function of M5Stack in this project is to display user’s health stati
 
 #### UML diagram
 
-![UML for M5Stack App](Images/M5Stack_UML.png)
+![UML for M5Stack App](Images/M5Stack_UML.png=400x)
 
 ### Desktop Application
 
