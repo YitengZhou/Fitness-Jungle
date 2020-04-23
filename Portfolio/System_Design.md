@@ -43,6 +43,8 @@ The first feature is to display user information and virtual pet information. Th
 
 The second feature is to track user steps and record health activities. The user’s steps/per minute and paths are obtained by counters and sensors built into the device. These obtained data are uploaded to the server and processed by the developer as a health report and then can be viewed in the first function. 
 
+![Backlog for M5Stack App](Images/Backlog_M5Stack.png)
+
 ### Desktop Application
 
 The desktop application is designed for developer/ administrator to manage certain features of the VitualPet system. There are two main parts of the desktop application: 
