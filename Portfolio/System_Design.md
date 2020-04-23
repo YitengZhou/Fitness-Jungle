@@ -68,13 +68,6 @@ The health statistics such as daily steps can be displayed in a form of vertical
 
 ![Wireframe 2 for Desktop App](Images/Wireframes/Desktop/2_Stat.png)
 
-The desktop application is designed for developer/ administrator to manage certain features of the VitualPet system. There are two main parts of the desktop application: 
-
-For the first part, the developer can add new pets or skins as well as make change on existing pets or skins such as adding new types of pet or skin. 
-
-For the second part, the developer can monitor user statistics. A search can be performed by username to access the specific user profile page, where basis information as well as health statistics such as such as the daily steps and weekly steps taken by a user are displayed.  
-
-The health statistics such as daily steps can be displayed in a form of vertical bar chart where the bars are denoted by the hours of the day (e.g. 00:00, 01:00), similarly the weekly graph can be display in the same fasion where the bars denote each day of the week (e.g. Mon, Tue), making it easier for the developer to get some health feedback to the user. 
 
 ### Web Application
 
