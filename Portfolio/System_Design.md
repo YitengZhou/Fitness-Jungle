@@ -43,7 +43,16 @@ The first feature is to display user information and virtual pet information. Th
 
 The second feature is to track user steps and record health activities. The user’s steps/per minute and paths are obtained by counters and sensors built into the device. These obtained data are uploaded to the server and processed by the developer as a health report and then can be viewed in the first function. 
 
-![Backlog for M5Stack App](Images/Backlog_M5Stack.png)
+| User Story ID |                                                                             User Story                                                                            |  Backlog Items | Sub-system | priority |
+|:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------:|:----------:|:--------:|
+|       1       | As a user who wants to make his body healthier, I want to view my walking and running activity so that I can lead a well-balanced life between fitness and health |  Health report |   M5Stack  |          |
+|       2       |                        As a lover of fitness, I want to track my steps and calories so that I can plan sport and exercise more efficiently.                       |   Track steps  |   M5Stack  |          |
+|       3       |                           As a user who wants to make his life more interesting, I want to enjoy interacting with my virtual pet so that                          |   Virtual pet  |   M5Stack  |          |
+|       4       |                          As a user, I want to be able to log into my account on the M5Stack so that and I can count steps for my sports.                          |   Log system   |   M5Stack  |          |
+|       5       |   As a loT user, I want to visualize my health reports and lovely digital pet on my device, so that I can check my fitness data and pets at any time to review.   | Display system |   M5Stack  |          |
+|       6       |   As a user whose friends also use same device, I want to rank and challenge with my friends, so that I can interact with my friends and do fitness more active.  |  Friend system |   M5Stack  |          |
+|       7       |                       As a user, I want to check map and track walking or running movement so that I can record traces of my movement on map                      |   Map system   |   M5Stack  |          |
+|       8       |                                                                                ...                                                                                |                |            |          |
 
 ### Desktop Application
 
