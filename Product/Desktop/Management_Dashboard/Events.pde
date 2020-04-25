@@ -6,7 +6,7 @@ void clientConnected() {
 }
 
 void messageReceived(String topic, byte[] payload) {
-  println("new message from: " + topic + " - " + new String(payload));
+  println("new message: " + topic + " - " + new String(payload));
 }
 
 void connectionLost() {

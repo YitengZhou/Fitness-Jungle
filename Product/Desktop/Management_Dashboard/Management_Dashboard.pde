@@ -6,7 +6,7 @@ ControlP5 cp5;
 MQTTClient client;
 
 void setup() {
-  cp5 = new ControlP5(this);
+    cp5 = new ControlP5(this);
     size(900, 700);
     // connect to the broker
     client = new MQTTClient(this);
