@@ -23,7 +23,7 @@ async function startServer() {
         db = new sql.Database(dbFile);        
     } else {
         db = new sql.Database(dbFile);
-        // await createDb();
+        await createDb();
     }
 
     // if (!fs.existsSync(rootDir) || !fs.existsSync(rootDir + "/index.html")) {
@@ -45,4 +45,22 @@ function addDbToReq(req, res, next) {
 
 async function createDb() {
     console.log("Creating DB..");
+    let promise = new Promise((res, rej) => {
+        db.serialize(()=> {
+            createSql(res);
+        });
+    });
+    await promise;
+}
+
+function createSql(res) {
+    db.run(`create table User (id, username, password, name_first, name_last, email, image_path)`); //TODO autoincrement id
+    db.run(`create table Animal (id, name, image_path)`);
+    db.run(`create table Pet (id, name, image_path)`, function(err) {
+        if (err) {
+            return console.error(err.message); //TODO exit program
+        }    
+        console.log("DB created successfully.");         
+        return res();
+    });   
 }
