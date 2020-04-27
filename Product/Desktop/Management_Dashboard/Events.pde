@@ -12,3 +12,9 @@ void messageReceived(String topic, byte[] payload) {
 void connectionLost() {
     println("connection lost");
 }
+
+void mousePressed() {
+  //used to re-render display picture
+  //view.set_filename("pet.png");
+  redraw();
+}
