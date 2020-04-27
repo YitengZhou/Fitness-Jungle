@@ -1,21 +1,26 @@
-
-
 void updateDashboardData() {
   view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
   view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
   view.build_userinfo_label();
   view.build_statsinfo_label();
+  view.set_filename("pet.png");
+ 
 }
  
 public class Dashboard_view {
-// Some nasty functions here which need refactoring TODO
-          
+    
+    PImage img; 
+    String img_filename;
     int text_x_size = 225;
     int text_y_size = 150;  
     int label_spacing = 35;
     int userinfo_x_pos = 350;
     int userinfo_y_pos = 100;
     int textbox_spacing = 50;
+    int display_photo_x_size = 200;
+    int display_photo_y_size = 200;
+    int display_photo_spacing = 75;
+    
     
 void build_userinfo_label() {
   
@@ -65,5 +70,16 @@ void build_statisticsinformation(String steps, String activitylevel, String week
                      +"Activity Level: " + activitylevel + "\n"
                      +"Weekly Step: " + weeklystep + "\n"
                      +"Average Step Daily: " + averagestepdaily + "\n");      
+      }
+      
+void set_filename(String filename) {
+        img_filename = filename; 
+}
+      
+void build_profilephoto() {
+        img = loadImage(img_filename);
+        img.resize(200, 200);
+        image(img, userinfo_x_pos - display_photo_spacing - display_photo_x_size, userinfo_y_pos - 50);
+ 
       }
 }

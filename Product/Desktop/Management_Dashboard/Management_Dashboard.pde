@@ -20,4 +20,5 @@ void setup() {
 
 void draw() {
     background(0);
+    view.build_profilephoto();
 }
