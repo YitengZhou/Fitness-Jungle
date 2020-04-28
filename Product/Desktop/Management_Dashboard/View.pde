@@ -4,6 +4,10 @@ void updateDashboardData() {
   view.build_userinfo_label();
   view.build_statsinfo_label();
   view.set_filename("pet.png");
+  view.build_dailychart(new float[] {100, 150, 200, 250, 300, 350, 300, 120}, 
+                        new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
+  view.build_weeklychart(new float[] {100, 150, 200, 250, 300, 350, 400}, 
+                        new String[] {"Mon","Tue","Wed", "Thur","Fri", "Sat", "Sun"});
  
 }
  
@@ -81,5 +85,31 @@ void build_profilephoto() {
         img.resize(200, 200);
         image(img, userinfo_x_pos - display_photo_spacing - display_photo_x_size, userinfo_y_pos - 50);
  
+      }
+      
+void build_dailychart(float[] data, String[] label) {
+        barChart.setData(data);
+           
+        // Axis scaling
+        barChart.setMinValue(barChart.getMinValue());
+        barChart.setMaxValue(barChart.getMaxValue());
+           
+        barChart.showValueAxis(true);
+        barChart.setBarLabels(label);
+        barChart.showCategoryAxis(true);
+        
+      }
+      
+void build_weeklychart(float[] data, String[] label) {
+        barChart1.setData(data);
+           
+        // Axis scaling
+        barChart1.setMinValue(barChart1.getMinValue());
+        barChart1.setMaxValue(barChart1.getMaxValue());
+           
+        barChart1.showValueAxis(true);
+        barChart1.setBarLabels(label);
+        barChart1.showCategoryAxis(true);
+        
       }
 }
