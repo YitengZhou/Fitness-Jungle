@@ -3,6 +3,8 @@ void updateDashboardData() {
   view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
   view.build_userinfo_label();
   view.build_statsinfo_label();
+  view.build_dailychart_label();
+  view.build_weeklychart_label();
   view.set_filename("pet.png");
   view.build_dailychart(new float[] {100, 150, 200, 250, 300, 350, 300, 120}, 
                         new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
@@ -40,6 +42,24 @@ void build_statsinfo_label() {
         cp5.addTextlabel("statsinfo_label")
             .setText("Statistics")
             .setPosition(userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos - label_spacing)
+            .setColorValue(0xffffff00)
+            .setFont(createFont("Georgia",25));
+}
+
+void build_dailychart_label() {
+  
+        cp5.addTextlabel("dailychart_label")
+            .setText("Bar Chart (hourly)")
+            .setPosition(140, 350)
+            .setColorValue(0xffffff00)
+            .setFont(createFont("Georgia",25));
+}
+
+void build_weeklychart_label() {
+  
+        cp5.addTextlabel("weeklychart_label")
+            .setText("Bar Chart (weekly)")
+            .setPosition(560, 350)
             .setColorValue(0xffffff00)
             .setFont(createFont("Georgia",25));
 }
