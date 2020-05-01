@@ -7,6 +7,10 @@ void clientConnected() {
 
 void messageReceived(String topic, byte[] payload) {
   println("new message: " + topic + " - " + new String(payload));
+  try {
+    JSONObject json = parseJSONObject(new String(payload));
+    
+  }
 }
 
 void connectionLost() {
