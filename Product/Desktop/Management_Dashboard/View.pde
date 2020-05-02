@@ -1,17 +1,14 @@
 void updateDashboardData() {
 
-
         int text_x_size = 225;
         int text_y_size = 150;  
         int label_spacing = 35;
         int userinfo_x_pos = 350;
         int userinfo_y_pos = 100;
+        int textbox_spacing = 50;
 
         view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
         view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
-        view.build_statsinfo_label();
-        view.build_dailychart_label();
-        view.build_weeklychart_label();
         view.build_labels("userinfo_label" ,"User Infomation", userinfo_x_pos, userinfo_y_pos - label_spacing, 25);
         view.build_labels("statsinfo_label" ,"Statistics", userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos - label_spacing, 25);
         view.build_labels("dailychart_label" ,"Bar Chart (hourly)", 140, 350, 25);
@@ -39,8 +36,8 @@ public class Dashboard_view {
     int display_photo_spacing = 75;
 
 
-void build_labels(String text_label, String label_name, int x_pos, int y_pos, int font_size) {
-        cp5.addTextlabel(text_label)
+void build_labels(String label, String label_name, int x_pos, int y_pos, int font_size) {
+        cp5.addTextlabel(label)
             .setText(label_name)
             .setPosition(x_pos, y_pos)
             .setColorValue(0xffffff00)
@@ -91,28 +88,28 @@ void build_profilephoto() {
       }
       
 void build_dailychart(float[] data, String[] label) {
-        barChart.setData(data);
+        dailychart.setData(data);
            
         // Axis scaling
-        barChart.setMinValue(barChart.getMinValue());
-        barChart.setMaxValue(barChart.getMaxValue());
+        dailychart.setMinValue(dailychart.getMinValue());
+        dailychart.setMaxValue(dailychart.getMaxValue());
            
-        barChart.showValueAxis(true);
-        barChart.setBarLabels(label);
-        barChart.showCategoryAxis(true);
+        dailychart.showValueAxis(true);
+        dailychart.setBarLabels(label);
+        dailychart.showCategoryAxis(true);
         
       }
       
 void build_weeklychart(float[] data, String[] label) {
-        barChart1.setData(data);
+        weeklychart.setData(data);
            
         // Axis scaling
-        barChart1.setMinValue(barChart1.getMinValue());
-        barChart1.setMaxValue(barChart1.getMaxValue());
+        weeklychart.setMinValue(weeklychart.getMinValue());
+        weeklychart.setMaxValue(weeklychart.getMaxValue());
            
-        barChart1.showValueAxis(true);
-        barChart1.setBarLabels(label);
-        barChart1.showCategoryAxis(true);
+        weeklychart.showValueAxis(true);
+        weeklychart.setBarLabels(label);
+        weeklychart.showCategoryAxis(true);
         
       }
 }

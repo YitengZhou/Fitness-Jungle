@@ -5,8 +5,7 @@ import org.gicentre.utils.stat.*;
 
 ControlP5 cp5;
 MQTTClient client;
-BarChart barChart;
-BarChart barChart1;
+BarChart dailychart, weeklychart;
 Database db = new Database();
 UserInfo user_api = new UserInfo();
 
@@ -14,8 +13,8 @@ Dashboard_view view = new Dashboard_view();
 
 void setup() {
     cp5 = new ControlP5(this);
-    barChart = new BarChart(this);
-    barChart1 = new BarChart(this);
+    dailychart = new BarChart(this);
+    weeklychart = new BarChart(this);
     size(900, 700);
     // connect to the broker
     client = new MQTTClient(this);
@@ -28,6 +27,6 @@ void setup() {
 void draw() {
     background(0);
     view.build_profilephoto();
-    barChart.draw(75,400,350,200);
-    barChart1.draw(500,400,350,200);
+    dailychart.draw(75,400,350,200);
+    weeklychart.draw(500,400,350,200);
 }
