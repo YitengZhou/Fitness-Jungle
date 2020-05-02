@@ -44,6 +44,17 @@ public class UserInfo {
     JSONObject getUserinfo(String user_id) {
         JSONObject returnObj = new JSONObject();
         JSONArray users = new JSONArray();
+        users = db.users.getJSONArray("users");
+        if (users != null) {
+            for (int i = 0; i < users.size(); i++) {
+                JSONObject user = users.getJSONObject(i);
+                if (user != null) {
+                    if(user_id.equals(user.getString("user_id"))) {
+                        returnObj = user;
+                    }
+                }
+            }
+        }
         
         return returnObj;
     }
