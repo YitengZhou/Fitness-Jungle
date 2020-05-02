@@ -9,7 +9,8 @@ void updateDashboardData() {
         int userinfo_y_pos = 100;
         int textbox_spacing = 50;
 
-        view.build_list("user", null);
+
+        view.build_list("user", user_api.getListOfUsers());
         view.set_filename("pet.png");
         view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
         view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
@@ -113,9 +114,9 @@ public class Dashboard_view {
                 +"Average Step Daily: " + averagestepdaily + "\n");      
         }
 
-        void build_list(String list_name, JSONObject users) {
+        void build_list(String list_name, JSONObject[] users) {
                 ScrollableList list = cp5.addScrollableList(list_name)
-                .setPosition(0, 0)
+                .setPosition(800, 0)
                 .setSize(100, 100);
                 list.setBackgroundColor(color(190));
                 list.setItemHeight(20);
@@ -123,10 +124,18 @@ public class Dashboard_view {
                 list.setColorBackground(color(60));
                 list.setColorActive(color(255, 128));
                 list.clear();
-                list.open(); 
+                
                 
                 //for loop to add all users
-              
+
+                for (JSONObject user: users) {
+                        int i = 0;
+                        if (user != null) {
+                                list.addItem(user.getString("user_name"), i);
+                                i = i + 1;
+                        }
+                }
+                
                 
         }
 }

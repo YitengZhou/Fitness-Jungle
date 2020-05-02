@@ -59,5 +59,20 @@ public class UserInfo {
         return returnObj;
     }
 
-
+    //API CALL 3
+    JSONObject[] getListOfUsers() {
+        JSONObject obj = loadJSONObject("test.json");
+        JSONArray values = obj.getJSONArray("users"); 
+        JSONObject[] returnJSONArray = new JSONObject[0];
+        for (int i = 0; i < values.size(); i++) {
+                JSONObject username = values.getJSONObject(i);            
+                if(username != null) {
+                        String name = username.getString("user_name");
+                        println(name);
+                        returnJSONArray = (JSONObject []) append(returnJSONArray, username);
+                }
+          }
+        return returnJSONArray;
+    }
+   
 }
