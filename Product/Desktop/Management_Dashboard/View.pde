@@ -1,15 +1,26 @@
 void updateDashboardData() {
-  view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
-  view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
-  view.build_userinfo_label();
-  view.build_statsinfo_label();
-  view.build_dailychart_label();
-  view.build_weeklychart_label();
-  view.set_filename("pet.png");
-  view.build_dailychart(new float[] {100, 150, 200, 250, 300, 350, 300, 120}, 
-                        new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
-  view.build_weeklychart(new float[] {100, 150, 200, 250, 300, 350, 400}, 
-                        new String[] {"Mon","Tue","Wed", "Thur","Fri", "Sat", "Sun"});
+
+
+        int text_x_size = 225;
+        int text_y_size = 150;  
+        int label_spacing = 35;
+        int userinfo_x_pos = 350;
+        int userinfo_y_pos = 100;
+
+        view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
+        view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
+        view.build_statsinfo_label();
+        view.build_dailychart_label();
+        view.build_weeklychart_label();
+        view.build_labels("userinfo_label" ,"User Infomation", userinfo_x_pos, userinfo_y_pos - label_spacing, 25);
+        view.build_labels("statsinfo_label" ,"Statistics", userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos - label_spacing, 25);
+        view.build_labels("dailychart_label" ,"Bar Chart (hourly)", 140, 350, 25);
+        view.build_labels("weeklychart_label" ,"Bar Chart (weekly)", 560, 350, 25);
+        view.set_filename("pet.png");
+        view.build_dailychart(new float[] {100, 150, 200, 250, 300, 350, 300, 120}, 
+                                new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
+        view.build_weeklychart(new float[] {100, 150, 200, 250, 300, 350, 400}, 
+                                new String[] {"Mon","Tue","Wed", "Thur","Fri", "Sat", "Sun"});
  
 }
  
@@ -26,42 +37,14 @@ public class Dashboard_view {
     int display_photo_x_size = 200;
     int display_photo_y_size = 200;
     int display_photo_spacing = 75;
-    
-    
-void build_userinfo_label() {
-  
-        cp5.addTextlabel("userinfo_label")
-            .setText("User Infomation")
-            .setPosition(userinfo_x_pos, userinfo_y_pos - label_spacing)
-            .setColorValue(0xffffff00)
-            .setFont(createFont("Georgia",25));
-}
 
-void build_statsinfo_label() {
-  
-        cp5.addTextlabel("statsinfo_label")
-            .setText("Statistics")
-            .setPosition(userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos - label_spacing)
-            .setColorValue(0xffffff00)
-            .setFont(createFont("Georgia",25));
-}
 
-void build_dailychart_label() {
-  
-        cp5.addTextlabel("dailychart_label")
-            .setText("Bar Chart (hourly)")
-            .setPosition(140, 350)
+void build_labels(String text_label, String label_name, int x_pos, int y_pos, int font_size) {
+        cp5.addTextlabel(text_label)
+            .setText(label_name)
+            .setPosition(x_pos, y_pos)
             .setColorValue(0xffffff00)
-            .setFont(createFont("Georgia",25));
-}
-
-void build_weeklychart_label() {
-  
-        cp5.addTextlabel("weeklychart_label")
-            .setText("Bar Chart (weekly)")
-            .setPosition(560, 350)
-            .setColorValue(0xffffff00)
-            .setFont(createFont("Georgia",25));
+            .setFont(createFont("Georgia", font_size));
 }
    
 void build_userinfomation(String username, String firstname, String lastname, String petname, String petlevel, String skin) {

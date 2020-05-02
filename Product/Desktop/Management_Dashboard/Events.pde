@@ -5,17 +5,20 @@ void clientConnected() {
     client.subscribe(MQTT_topic);
 }
 
-void messageReceived(String topic, byte[] payload) {
-  println("new message: " + topic + " - " + new String(payload));
-  try {
-    JSONObject json = parseJSONObject(new String(payload));
-    
-  }
-}
-
 void connectionLost() {
     println("connection lost");
 }
+
+void messageReceived(String topic, byte[] payload) {
+    try {
+      JSONObject json = parseJSONObject(new String(payload));
+      
+    }catch (RuntimeException e) {
+      println(" Runtime exception error");
+  }
+}
+
+
 
 void mousePressed() {
   //used to re-render display picture

@@ -7,6 +7,8 @@ ControlP5 cp5;
 MQTTClient client;
 BarChart barChart;
 BarChart barChart1;
+Database db = new Database();
+UserInfo user_api = new UserInfo();
 
 Dashboard_view view = new Dashboard_view();
 
