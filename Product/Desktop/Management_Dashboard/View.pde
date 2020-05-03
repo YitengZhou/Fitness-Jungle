@@ -9,6 +9,8 @@ void updateDashboardData() {
         int userinfo_y_pos = 100;
         int textbox_spacing = 50;
 
+        surface.setTitle("Fitness Jungle Dashboard");
+
 
         view.build_list("user", user_api.getListOfUsers());
         view.set_filename("pet.png");
