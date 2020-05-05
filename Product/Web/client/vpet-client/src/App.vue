@@ -1,18 +1,21 @@
 <template>
-<el-container class="bg-white">
-  <el-header>
-    <el-menu :default-active="activeIndex" router="true" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="/">Profile</el-menu-item>
-      <el-menu-item index="/document">Pet</el-menu-item>
-      <el-menu-item index="/createJob">Friends</el-menu-item>
-      <el-menu-item index="/jobList">Map</el-menu-item>
-    </el-menu>
-  </el-header>
-  <el-main>
-    <router-view/>
-  </el-main>
-  <el-footer></el-footer>
-</el-container>
+  <div class="body">
+    <el-container>
+      <el-header>
+        <el-menu :default-active="activeIndex" router="true" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="/">Profile</el-menu-item>
+          <el-menu-item index="/pet">Pet</el-menu-item>
+          <el-menu-item index="/friends">Friends</el-menu-item>
+          <el-menu-item index="/map">Map</el-menu-item>
+          <el-menu-item index="/login">Log in</el-menu-item>
+          <el-menu-item index="/register">Register</el-menu-item>
+        </el-menu>
+      </el-header>
+      <el-main>
+        <router-view/>
+      </el-main>
+    </el-container>
+  </div>
 </template>
 
 <script>
@@ -31,6 +34,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.footer {
+  background-color: dimgray;
+  min-height: 100px;
+}
+
 </style>
