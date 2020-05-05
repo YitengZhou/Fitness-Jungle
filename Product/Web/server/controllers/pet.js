@@ -1,5 +1,5 @@
 const getAllTypes = (req, res) => {      
-   req.db.all("select * from Animal", (err, rows) => {
+   req.db.all("select * from PetType", (err, rows) => {
       if (err) {
          res.status(400).json("Unable to retrieve data at the moment");
       };

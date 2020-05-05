@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const sql = require("sqlite3");
 const config = require("./config");
+const mqtt = require("./mqtt");
 const clientDir = path.join(__dirname, "../client");
 const rootDir = path.join(clientDir, "build");
 const app = express();
@@ -30,6 +31,7 @@ async function startServer() {
     //     console.error("Root directory or index.html is not found");
     //     process.exit(1);
     // }
+    // mqtt.connect();
     app.listen(config.port, config.host, () => { console.log("Server running at", config.domainName); });
 }
 
@@ -55,8 +57,8 @@ async function createDb() {
 
 function createSql(res) {
     db.run(`create table User (id INTEGER PRIMARY KEY, username, password, name_first, name_last, email, image_path)`); //PRIMARY KEY autoincrements
-    db.run(`create table Animal (id INTEGER PRIMARY KEY, name, image_path)`);
-    db.run(`create table Pet (id INTEGER PRIMARY KEY, name, image_path)`, function(err) {
+    db.run(`create table PetType (id INTEGER PRIMARY KEY, name, image_path)`);
+    db.run(`create table Pet (id INTEGER PRIMARY KEY, name, image_path, pettype_id)`, function(err) {
         if (err) {
             return console.error(err.message); //TODO exit program
         }    
