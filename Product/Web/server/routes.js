@@ -8,7 +8,7 @@ module.exports = function (app, express, path, rootDir) {
    app.get(apiURI + userControllerURI + "/getAllUsers", userController.getAllUsers);
    app.post(apiURI + userControllerURI + "/getUser", userController.getUser);
    app.post(apiURI + userControllerURI + "/addUser", userController.addUser);
-   
+   app.put(apiURI + userControllerURI + "/updateUser", userController.updateUser);
    app.get(apiURI + petControllerURI + "/getAllTypes", petController.getAllTypes);
    app.get(apiURI + petControllerURI + "/getAllPets", petController.getAllPets);
    app.use(express.static(rootDir));
