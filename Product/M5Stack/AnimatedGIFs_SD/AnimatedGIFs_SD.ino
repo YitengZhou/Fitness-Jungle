@@ -1,6 +1,6 @@
 // please read credits at the bottom of file
 
-//#include <SD.h>
+//#include <SD.h>z
 #ifndef min
 #define min(a, b) (((a) <= (b)) ? (a) : (b))
 #endif
@@ -349,6 +349,3 @@ void loop() {
       decrease refreshRate in setup() to 90 or lower to get good an accurate GIF frame rate
     - Set the chip select pin for your board.  On Teensy 3.5/3.6, the onboard microSD CS pin is "BUILTIN_SDCARD"
 */
-
-
-
