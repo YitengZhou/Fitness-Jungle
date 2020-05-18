@@ -12,7 +12,7 @@ void updateDashboardData() {
         surface.setTitle("Fitness Jungle Dashboard");
 
 
-        view.build_list("user", user_api.getListOfUsers());
+        //view.build_list("user", user_api.getListOfUsers());
         view.set_filename("pet.png");
         view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
         view.build_statisticsinformation("12,345", "high", "54,321", "9,876");

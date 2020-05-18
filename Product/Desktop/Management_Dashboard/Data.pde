@@ -1,3 +1,16 @@
+
+static abstract class Response {
+    static final String[] LIST = {
+        Response.GETUSERLIST,
+        Response.GETUSERDETAILED,
+        Response.GETUSERSTEPSINTERVAL
+    };
+    static final String GETUSERLIST = "/getUserList";
+    static final String GETUSERDETAILED = "/getUserDetailed";
+    static final String GETUSERSTEPSINTERVAL = "/getUserStepsInterval";
+}
+
+
 public class Database {
     JSONObject listofUsers = new JSONObject(); 
     JSONObject users = new JSONObject();
@@ -66,14 +79,14 @@ public class UserInfo {
     }
 
     //API CALL 3
-    JSONObject[] getListOfUsers() {
-        JSONObject obj = loadJSONObject("test.json");
-        JSONArray values = obj.getJSONArray("users"); 
+    JSONObject[] getListOfUsers(JSONObject users) {
+        //JSONObject obj = loadJSONObject("test.json");
+        JSONArray values = users.getJSONArray("users"); 
         JSONObject[] returnJSONArray = new JSONObject[0];
         for (int i = 0; i < values.size(); i++) {
                 JSONObject username = values.getJSONObject(i);            
                 if(username != null) {
-                        String name = username.getString("user_name");
+                        String name = username.getString("firstName");
                         println(name);
                         returnJSONArray = (JSONObject []) append(returnJSONArray, username);
                 }
