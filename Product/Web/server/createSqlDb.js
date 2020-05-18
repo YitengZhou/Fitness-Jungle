@@ -21,7 +21,7 @@ function create(db) {
          , nameLast
          , imagePath
          , m5DeviceNo
-         , totalStepCount
+         , totalStepCount NOT NULL DEFAULT 0
          , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
       )`
@@ -130,24 +130,6 @@ function create(db) {
             REFERENCES UserPet (id)
       )`
    );
-
-   // db.run(
-   //    `CREATE TABLE UserPetIntervalStep (
-   //       id INTEGER PRIMARY KEY
-   //       , userPetId
-   //       , count
-   //       , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
-   //       , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
-   //       , FOREIGN KEY (userPetId)
-   //          REFERENCES UserPet (id)
-   //    )`, function(err) {
-   //       if (err) {
-   //           console.error(err.message);
-   //           process.exit(1);
-   //       }    
-   //       console.log("DB created successfully.");         
-   //       return res();
-   //   });
 }
 
 module.exports = {

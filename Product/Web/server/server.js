@@ -51,17 +51,3 @@ async function createDb() {
     });
     await promise;
 }
-
-/*
-function createSql(res) {
-    db.run(`create table User (id INTEGER PRIMARY KEY, username, password, name_first, name_last, email, image_path)`); //PRIMARY KEY autoincrements
-    db.run(`create table PetType (id INTEGER PRIMARY KEY, name, image_path)`);
-    db.run(`create table Pet (id INTEGER PRIMARY KEY, name, image_path, pettype_id)`, function(err) {
-        if (err) {
-            return console.error(err.message); //TODO exit program
-        }    
-        console.log("DB created successfully.");         
-        return res();
-    });   
-}
-*/
