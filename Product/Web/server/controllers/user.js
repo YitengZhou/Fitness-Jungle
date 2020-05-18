@@ -64,6 +64,24 @@ const getUser = (req, res) => {
    );
 };
 
+const updateUser = (req, res) => {
+   let body = req.body;
+   let toUpdate = body.toUpdate;
+   req.db.run(
+      `UPDATE User SET nameFirst = '${toUpdate.firstName}', nameLast = '${toUpdate.lastName}', imagePath = '${toUpdate.imageUrl}', m5DeviceNo = '${toUpdate.deviceNo}'
+      WHERE id = ${body.userId}`
+      , (err, result) => {
+      if (err) {
+         console.log(err);
+         res.status(500);
+      };
+      res.status(200).json({
+         "resultCode": 0,
+         "resultMessage": "OK"
+      });
+   });
+};
+
 // const getAllUsers = (req, res) => {      
 //    req.db.all("SELECT * FROM User", (err, rows) => {
 //       if (err) {
@@ -110,6 +128,7 @@ module.exports = {
    register
    , login
    , getUser
+   , updateUser
    // getAllUsers
    // , addUser
    // , getUser
