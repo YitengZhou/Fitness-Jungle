@@ -127,7 +127,7 @@ public class Dashboard_view {
                 list.setColorActive(color(255, 128));
                 list.clear();
                 
-                
+          
                 //for loop to add all users
 
                 for (JSONObject user: users) {
@@ -135,9 +135,7 @@ public class Dashboard_view {
                         if (user != null) {
                                 list.addItem(user.getString("user_name"), i);
                                 i = i + 1;
-                        }
-                }
-                
-                
-        }
-}
+                            }
+                    }        
+            }
+    }

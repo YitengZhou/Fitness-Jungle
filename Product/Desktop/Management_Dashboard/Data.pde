@@ -1,8 +1,10 @@
-public class Database { 
+public class Database {
+    JSONObject listofUsers = new JSONObject(); 
     JSONObject users = new JSONObject();
     JSONObject pets = new JSONObject();
 }
 
+//copy any JSON object on disk into working memory
 void refreshData() {
     File dir;
     File[] files;
@@ -24,9 +26,14 @@ void refreshData() {
             }
         }
     }
-
 }
 
+public class listofUsers {
+
+    void saveListtoDB(JSONObject list) {
+        
+    }
+}
 
 
 public class UserInfo {
@@ -54,8 +61,7 @@ public class UserInfo {
                     }
                 }
             }
-        }
-        
+        }    
         return returnObj;
     }
 

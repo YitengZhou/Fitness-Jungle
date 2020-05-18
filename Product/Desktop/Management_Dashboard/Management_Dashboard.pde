@@ -8,8 +8,9 @@ MQTTClient client;
 BarChart dailychart, weeklychart;
 Database db = new Database();
 UserInfo user_api = new UserInfo();
-
 Dashboard_view view = new Dashboard_view();
+
+String client_id = str(random(3));
 
 void setup() {
     cp5 = new ControlP5(this);
@@ -19,7 +20,7 @@ void setup() {
     // connect to the broker
     client = new MQTTClient(this);
     // connect to the broker and use a random string for clientid
-    client.connect("mqtt://try:try@broker.hivemq.com", "processing_desktop" + str(random(3)));
+    client.connect("mqtt://try:try@broker.hivemq.com", "processing_desktop" + client_id);
     delay(100);
     updateDashboardData();
 }
