@@ -4,6 +4,9 @@ const path = require("path");
 const fs = require("fs");
 const sql = require("sqlite3");
 const config = require("./config");
+const mqtt = require("./mqtt");
+const createSqlDb = require("./createSqlDb");
+const insertSqlDb = require("./insertSqlDb");
 const clientDir = path.join(__dirname, "../client");
 const rootDir = path.join(clientDir, "build");
 const app = express();
@@ -23,13 +26,8 @@ async function startServer() {
         db = new sql.Database(dbFile);        
     } else {
         db = new sql.Database(dbFile);
-        // await createDb();
+        await createDb();
     }
-
-    // if (!fs.existsSync(rootDir) || !fs.existsSync(rootDir + "/index.html")) {
-    //     console.error("Root directory or index.html is not found");
-    //     process.exit(1);
-    // }
     app.listen(config.port, config.host, () => { console.log("Server running at", config.domainName); });
 }
 
@@ -45,4 +43,11 @@ function addDbToReq(req, res, next) {
 
 async function createDb() {
     console.log("Creating DB..");
+    let promise = new Promise((res, rej) => {
+        db.serialize(()=> {
+            createSqlDb.create(db);
+            insertSqlDb.insert(res, db);
+        });
+    });
+    await promise;
 }

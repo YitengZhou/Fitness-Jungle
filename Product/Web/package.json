@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "mqtt": "^4.0.0",
     "sqlite3": "^4.1.1"
   }
 }
