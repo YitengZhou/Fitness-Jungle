@@ -6,17 +6,39 @@ const register = (req, res) => {
       , (err, result) => {
       if (err) {
          console.log(err);
-         res.status(500).json({
-            "resultCode": 2,
-            "resultMessage": "Internal error"
-         });
+         res.status(500);
       };
       res.status(200).json({
          "resultCode": 0,
-         "resultMessage": "OK" // possible values: [0: "OK", 1: "Email already taken", 2: "Internal error"]
+         "resultMessage": "OK" // possible values: [0: "OK", 1: "Email already taken"]
       });
    });
 };
+
+const login = (req, res) => {
+   let body = req.body;
+   req.db.all(
+      `SELECT * FROM User WHERE email = '${body.email}'`, (err, rows) => {
+         if (err) {
+            console.log(err);
+            res.status(500);
+         };
+         
+         let resJson = {};
+         if (Array.isArray(rows) && rows.length && rows[0].password.localeCompare(body.password) == 0) {
+            let row = rows[0];
+            resJson = {
+               "userId": row.id,
+               "firstName": row.nameFirst,
+               "lastName": row.nameLast,
+               "imageUrl": row.imagePath
+            };
+         }
+         res.status(200).json(resJson);
+      }
+   );
+};
+
 
 // const getAllUsers = (req, res) => {      
 //    req.db.all("SELECT * FROM User", (err, rows) => {
@@ -62,6 +84,7 @@ const register = (req, res) => {
 
 module.exports = {
    register
+   , login
    // getAllUsers
    // , addUser
    // , getUser

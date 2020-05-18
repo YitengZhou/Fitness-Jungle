@@ -5,6 +5,7 @@ const petController = require("./controllers/pet");
 module.exports = function (app, express, path, rootDir) 
 {
    app.post(apiURI + "/register", userController.register);
+   app.post(apiURI + "/login", userController.login);
    // app.get(apiURI + "/getAllUsers", userController.getAllUsers);
    // app.post(apiURI + "/getUser", userController.getUser);
    // app.post(apiURI + "/addUser", userController.addUser);
