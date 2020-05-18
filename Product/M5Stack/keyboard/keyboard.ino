@@ -8,7 +8,7 @@ M5OnScreenKeyboard m5osk;
 void setup() {
   M5.begin();
   Wire.begin();
- 
+  
   m5osk.useFACES = true;       // FACES unit support.
   m5osk.useCardKB = true;      // CardKB unit support.
   m5osk.useJoyStick = true;    // JoyStick unit support.
@@ -53,7 +53,14 @@ JoyStick.setRotate(0);   // 0~3 rotation setting.
 /* // use non-latin-chars (tentative)
   m5osk.useOver0x80Chars = true;
 //*/
-
+    M5.Lcd.print("\n\n\n");
+    M5.Lcd.setTextFont(2);
+    M5.Lcd.print("                FITNESS   JUNGLE");
+    M5.Lcd.print("\n\n\n");
+    M5.Lcd.setTextFont(1);
+    M5.Lcd.print("             username:___________________");
+    M5.Lcd.print("\n\n\n\n\n");
+    M5.Lcd.print("             password:___________________");
   m5osk.setup();
 //m5osk.setup("Hello World."); // You can also set default text
 }
@@ -63,7 +70,7 @@ void loop() {
     // You can write your code here.
     delay(1);
   }
-
+  
   // Get input string.
   String text = m5osk.getString();
   m5osk.close();
