@@ -7,7 +7,8 @@ ControlP5 cp5;
 MQTTClient client;
 BarChart dailychart, weeklychart;
 Database db = new Database();
-UserInfo user_api = new UserInfo();
+List list_api = new List();
+User user_api = new User();
 
 Dashboard_view view = new Dashboard_view();
 

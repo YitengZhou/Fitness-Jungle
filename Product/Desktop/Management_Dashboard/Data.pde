@@ -47,20 +47,11 @@ void refreshData() {
       } 
     }
   }
+  
+  
+public class List {
 
-
-public class UserInfo {
     //API CALL 1
-    void saveInfotoDB(JSONObject user) {
-        if (user == null) {
-            return;
-        }else {
-            saveJSONObject(user, "userInfo/" + user.getString("user_id") + ".json");
-        }
-
-    }
-
-    //API CALL 2
     void saveListtoDB(JSONObject list) {
         if (list == null) {
             return;
@@ -69,7 +60,36 @@ public class UserInfo {
         }
     }
 
-    //API CALL 3
+    //API CALL 2
+    JSONObject[] getListOfUsers(JSONObject obj) {
+        //JSONObject obj = loadJSONObject("test.json");
+        JSONArray values = obj.getJSONArray("users"); 
+        JSONObject[] returnJSONArray = new JSONObject[0];
+        for (int i = 0; i < values.size(); i++) {
+                JSONObject username = values.getJSONObject(i);            
+                if(username != null) {                      
+                        returnJSONArray = (JSONObject []) append(returnJSONArray, username);
+                }
+          }
+        return returnJSONArray;
+    }    
+
+
+}  
+
+
+public class User {
+    //API CALL 1
+    void saveInfotoDB(JSONObject user) {
+        if (user == null) {
+            return;
+        }else {
+            saveJSONObject(user, "userInfo/" + user.getString("user_id") + ".json");
+        }
+    }
+
+
+    //API CALL 2
     JSONObject getUserinfo(String user_id) {
         JSONObject returnObj = new JSONObject();
         JSONArray users = new JSONArray();
@@ -85,20 +105,6 @@ public class UserInfo {
             }
         }    
         return returnObj;
-    }
-
-    //API CALL 4
-    JSONObject[] getListOfUsers(JSONObject obj) {
-        //JSONObject obj = loadJSONObject("test.json");
-        JSONArray values = obj.getJSONArray("users"); 
-        JSONObject[] returnJSONArray = new JSONObject[0];
-        for (int i = 0; i < values.size(); i++) {
-                JSONObject username = values.getJSONObject(i);            
-                if(username != null) {                      
-                        returnJSONArray = (JSONObject []) append(returnJSONArray, username);
-                }
-          }
-        return returnJSONArray;
     }
    
 }

@@ -3,8 +3,8 @@ PImage img;
 void refreshDashboardData() {
     // We just rebuild the view rather than updating existing
     
-    cp5.remove("user");
-    view.build_list("user", user_api.getListOfUsers(db.listofUsers));
+    cp5.remove("List of User");
+    view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));
     
     println("sucess");
    
@@ -21,7 +21,7 @@ void updateDashboardData() {
 
         surface.setTitle("Fitness Jungle Dashboard");
               
-        view.build_list("user", user_api.getListOfUsers(db.listofUsers));
+        view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));
         view.set_filename("pet.png");
         view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
         view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
@@ -138,7 +138,6 @@ public class Dashboard_view {
                 list.close();
                
                 //for loop to add all users
-
                 for (JSONObject user: users) {
                         int i = 0;
                         if (user != null) {

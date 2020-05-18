@@ -44,15 +44,13 @@ void messageReceived(String topic, byte[] payload) {
   }
 }
 
-void controlEvent(ControlEvent theEvent) {
-    // expand order if clicked via API call
-    //if (theEvent.getController().getValueLabel().getText().contains("O") == true) {
-        // call the api and get the JSON packet
-        //expanded_order = api.getOrdersByStatus(theEvent.getController().getName())[(int) theEvent.getController().getValue()].getString("order_id");
-        //view.build_expanded_order(expanded_order);
-    //}
-    println(theEvent.getController().getLabel());
+
+void dropdown(int index) {
+  String selected = null;
+  selected = cp5.get(ScrollableList.class, "List of User").getItem(n).get("value");
+  println(selected);
 }
+
 
 //void mousePressed() {
   //used to re-render display picture
