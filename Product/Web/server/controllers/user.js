@@ -39,6 +39,30 @@ const login = (req, res) => {
    );
 };
 
+const getUser = (req, res) => {
+   let body = req.body;
+   req.db.all(
+      `SELECT * FROM User WHERE id = '${body.userId}'`, (err, rows) => {
+         if (err) {
+            console.log(err);
+            res.status(500);
+         };
+         
+         let resJson = {};
+         if (Array.isArray(rows) && rows.length) {
+            let row = rows[0];
+            resJson = {               
+               "firstName": row.nameFirst,
+               "lastName": row.nameLast,
+               "imageUrl": row.imagePath,
+               "deviceNo": row.m5DeviceNo,
+               "totalStepCount": row.totalStepCount
+            };
+         }
+         res.status(200).json(resJson);
+      }
+   );
+};
 
 // const getAllUsers = (req, res) => {      
 //    req.db.all("SELECT * FROM User", (err, rows) => {
@@ -85,6 +109,7 @@ const login = (req, res) => {
 module.exports = {
    register
    , login
+   , getUser
    // getAllUsers
    // , addUser
    // , getUser
