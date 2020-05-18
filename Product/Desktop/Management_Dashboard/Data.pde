@@ -1,10 +1,12 @@
 
 static abstract class Response {
     static final String[] LIST = {
+        Response.LOGIN,
         Response.GETUSERLIST,
         Response.GETUSERDETAILED,
         Response.GETUSERSTEPSINTERVAL
     };
+    static final String LOGIN = "/login";
     static final String GETUSERLIST = "/getUserList";
     static final String GETUSERDETAILED = "/getUserDetailed";
     static final String GETUSERSTEPSINTERVAL = "/getUserStepsInterval";

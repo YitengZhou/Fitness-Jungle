@@ -5,6 +5,7 @@ void clientConnected() {
     println("client connected to broker");
     client.subscribe(MQTT_response);
     //to get initial list of registered users
+    client.publish(MQTT_request, "Desktop client connected");
     client.publish(MQTT_request, loadJSONObject("Request/getUserListReq.json").toString());
 }
 
@@ -17,18 +18,23 @@ void messageReceived(String topic, byte[] payload) {
       JSONObject json = parseJSONObject(new String(payload)); 
       JSONObject response = json.getJSONObject("response");
       String response_type = response.getString("header");
-      println(response_type);
+      println("Received message from " + topic); 
+      println("Response type " + response_type);
       switch (response_type) {
+        case (Response.LOGIN):
+          println("Got login response");
+          break;
         case (Response.GETUSERLIST):
-          JSONObject body = response.getJSONObject("body");
+          //JSONObject body = response.getJSONObject("body");
           //println(body.toString());
-          user_api.getListOfUsers(body);
+          //user_api.getListOfUsers(body);
+          println("Got list of users response");
           break;
         case (Response.GETUSERDETAILED):
-          println("Got detailed user");
+          println("Got detailed user response");
           break;
         case (Response.GETUSERSTEPSINTERVAL):
-          println("Got user steps interval");
+          println("Got user steps interval response");
           break;
       }
       
