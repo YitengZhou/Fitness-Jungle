@@ -88,7 +88,7 @@ function create(db) {
          id INTEGER PRIMARY KEY
          , baseTypeId
          , name
-         , levelRequired
+         , levelRequired NOT NULL DEFAULT 1
          , imagePath
          , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
@@ -105,9 +105,9 @@ function create(db) {
          , userId
          , petTypeId
          , name
-         , totalStepCount
-         , level
-         , active
+         , totalStepCount DEFAULT 0
+         , level DEFAULT 1
+         , active DEFAULT false
          , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , FOREIGN KEY (userId)

@@ -1,5 +1,5 @@
-const petLevels = [1, 2, 3, 4, 5];
-const levelSteps = [100, 200, 300, 400, 500];
+const petLevels = [1, 2, 3, 4, 5, 6];
+const levelSteps = [0, 100, 200, 300, 400, 500];
 const friendStatuses = ["requested1", "requested2", "denied1", "denied2", "accepted1", "accepted2"];
 
 function insert(res, db) {

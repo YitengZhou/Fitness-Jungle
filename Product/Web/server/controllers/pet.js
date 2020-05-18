@@ -1,7 +1,7 @@
 const getPetTypes = (req, res) => {
    let body = req.body;
    req.db.all(
-      `SELECT bpt.name AS name, pt.name AS skin, pt.imagePath FROM BasePetType As bpt
+      `SELECT pt.id, bpt.name AS name, pt.name AS skin, pt.imagePath FROM BasePetType As bpt
       INNER JOIN PetType AS pt ON bpt.id = pt.baseTypeId
       WHERE levelRequired = 1`
       , (err, rows) => {
@@ -16,7 +16,8 @@ const getPetTypes = (req, res) => {
          if (Array.isArray(rows) && rows.length) {
             for (let row of rows) {
                resJson.petTypes.push({
-                  "name": row.name,
+                  "id": row.id,
+                  "type": row.name,
                   "skin": row.skin,
                   "imageUrl": row.imagePath
                });
@@ -27,22 +28,23 @@ const getPetTypes = (req, res) => {
    );
 };
 
-// const createUserPet = (req, res) => {
-//    let body = req.body;
-//    req.db.run(
-//       `INSERT INTO User (email, password, nameFirst, nameLast)
-//       VALUES ('${body.email}', '${body.password}', '${body.firstName}', '${body.lastName}')`
-//       , (err, result) => {
-//       if (err) {
-//          console.log(err);
-//          res.status(500);
-//       };
-//       res.status(200).json({
-//          "resultCode": 0,
-//          "resultMessage": "OK" // possible values: [0: "OK", 1: "Email already taken"]
-//       });
-//    });
-// };
+const createUserPet = (req, res) => {
+   let body = req.body;
+   req.db.run(
+      `INSERT INTO UserPet (userId, petTypeId, name, active)
+      VALUES (${body.userId}, ${body.typeId}, '${body.name}', true)`
+      , (err, result) => {
+      if (err) {
+         console.log(err);
+         res.status(500);
+      };
+      
+      res.status(200).json({
+         "resultCode": 0,
+         "resultMessage": "OK"
+      });
+   });
+};
 
 
 // const getAllPets = (req, res) => {      
@@ -56,5 +58,6 @@ const getPetTypes = (req, res) => {
 
 module.exports = {
    getPetTypes
+   , createUserPet
    // , getAllPets
 };
