@@ -6,6 +6,7 @@ const sql = require("sqlite3");
 const config = require("./config");
 const mqtt = require("./mqtt");
 const createSqlDb = require("./createSqlDb");
+const insertSqlDb = require("./insertSqlDb");
 const clientDir = path.join(__dirname, "../client");
 const rootDir = path.join(clientDir, "build");
 const app = express();
@@ -44,7 +45,8 @@ async function createDb() {
     console.log("Creating DB..");
     let promise = new Promise((res, rej) => {
         db.serialize(()=> {
-            createSqlDb.create(res, db);
+            createSqlDb.create(db);
+            insertSqlDb.insert(res, db);
         });
     });
     await promise;

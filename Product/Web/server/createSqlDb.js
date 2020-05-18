@@ -1,4 +1,4 @@
-function create(res, db) { 
+function create(db) { 
    //PRIMARY KEY autoincrements if not given value
    db.run(
       `CREATE TABLE Admin (
@@ -7,8 +7,8 @@ function create(res, db) {
          , password
          , nameFirst
          , nameLast
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
       )`
    );
 
@@ -22,8 +22,8 @@ function create(res, db) {
          , imagePath
          , m5DeviceNo
          , totalStepCount
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
       )`
    );
 
@@ -31,8 +31,8 @@ function create(res, db) {
       `CREATE TABLE BasePetType (
          id INTEGER PRIMARY KEY 
          , name
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
       )`
    );
 
@@ -40,8 +40,8 @@ function create(res, db) {
       `CREATE TABLE PetLevel (
          level INTEGER PRIMARY KEY 
          , stepCount
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
       )`
    );
 
@@ -49,8 +49,8 @@ function create(res, db) {
       `CREATE TABLE FriendStatus (
          id INTEGER PRIMARY KEY 
          , name
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
       )`
    );
 
@@ -59,8 +59,8 @@ function create(res, db) {
          user1Id INTEGER NOT NULL
          , user2Id INTEGER NOT NULL
          , statusId
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , PRIMARY KEY(user1Id, user2Id)
          , FOREIGN KEY (user1Id)
             REFERENCES User (id)
@@ -76,8 +76,8 @@ function create(res, db) {
          id INTEGER PRIMARY KEY
          , userId
          , count
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , FOREIGN KEY (userId)
             REFERENCES User (id)
       )`
@@ -90,8 +90,8 @@ function create(res, db) {
          , name
          , levelRequired
          , imagePath
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , FOREIGN KEY (baseTypeId)
             REFERENCES BasePetType (id)
          , FOREIGN KEY (levelRequired)
@@ -108,8 +108,8 @@ function create(res, db) {
          , totalStepCount
          , level
          , active
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , FOREIGN KEY (userId)
             REFERENCES User (id)
          , FOREIGN KEY (petTypeId)
@@ -124,18 +124,30 @@ function create(res, db) {
          id INTEGER PRIMARY KEY
          , userPetId
          , count
-         , createdAt
-         , updatedAt
+         , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+         , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
          , FOREIGN KEY (userPetId)
             REFERENCES UserPet (id)
-      )`, function(err) {
-         if (err) {
-             console.error(err.message);
-             process.exit(1);
-         }    
-         console.log("DB created successfully.");         
-         return res();
-     });
+      )`
+   );
+
+   // db.run(
+   //    `CREATE TABLE UserPetIntervalStep (
+   //       id INTEGER PRIMARY KEY
+   //       , userPetId
+   //       , count
+   //       , createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+   //       , updatedAt INTEGER(4) NOT NULL DEFAULT (strftime('%s','now'))
+   //       , FOREIGN KEY (userPetId)
+   //          REFERENCES UserPet (id)
+   //    )`, function(err) {
+   //       if (err) {
+   //           console.error(err.message);
+   //           process.exit(1);
+   //       }    
+   //       console.log("DB created successfully.");         
+   //       return res();
+   //   });
 }
 
 module.exports = {
