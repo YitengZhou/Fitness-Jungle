@@ -1,9 +1,15 @@
 PImage img;
 
+void refreshDashboardData() {
+    // We just rebuild the view rather than updating existing
+    //cp5.remove();
+   
+    updateDashboardData();
+}
+
 void updateDashboardData() {
 
         int text_x_size = 225;
-        int text_y_size = 150;  
         int label_spacing = 35;
         int userinfo_x_pos = 350;
         int userinfo_y_pos = 100;
@@ -12,7 +18,7 @@ void updateDashboardData() {
         surface.setTitle("Fitness Jungle Dashboard");
 
 
-        //view.build_list("user", user_api.getListOfUsers());
+        view.build_list("user", user_api.getListOfUsers(db.listofUsers));
         view.set_filename("pet.png");
         view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
         view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
@@ -126,16 +132,19 @@ public class Dashboard_view {
                 list.setColorBackground(color(60));
                 list.setColorActive(color(255, 128));
                 list.clear();
-                
-          
+                list.close();
+               
                 //for loop to add all users
 
                 for (JSONObject user: users) {
                         int i = 0;
                         if (user != null) {
-                                list.addItem(user.getString("user_name"), i);
+                                list.addItem(user.getString("firstName"), i);
                                 i = i + 1;
-                            }
-                    }        
-            }
-    }
+                     
+                        }
+                }
+                
+                
+        }
+}

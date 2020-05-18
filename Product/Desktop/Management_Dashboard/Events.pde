@@ -25,10 +25,11 @@ void messageReceived(String topic, byte[] payload) {
           println("Got login response");
           break;
         case (Response.GETUSERLIST):
-          //JSONObject body = response.getJSONObject("body");
-          //println(body.toString());
-          //user_api.getListOfUsers(body);
-          println("Got list of users response");
+          JSONObject body = response.getJSONObject("body");
+          user_api.saveListtoDB(body);
+          refreshData();
+          refreshDashboardData();
+          println("JSONObject of list of users saved to db");
           break;
         case (Response.GETUSERDETAILED):
           println("Got detailed user response");
@@ -37,10 +38,7 @@ void messageReceived(String topic, byte[] payload) {
           println("Got user steps interval response");
           break;
       }
-      
-
-
-      
+        
     }catch (RuntimeException e) {
       println(" Runtime exception error");
   }

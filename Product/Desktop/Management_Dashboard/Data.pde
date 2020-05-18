@@ -19,36 +19,34 @@ public class Database {
     JSONObject pets = new JSONObject();
 }
 
+void loadDummyData() {   
+    JSONObject json;
+    json = loadJSONObject("test.json");
+    if(json != null) {
+        db.listofUsers = json;
+        println("loaded dummy");
+        println(db.listofUsers.toString());
+    }  
+  
+}
+
 //copy any JSON object on disk into working memory
 void refreshData() {
-    File dir;
-    File[] files;
-    dir = new File(dataPath(""));
-    files = dir.listFiles();
+    String del = "/data";
+    String current = dataPath("").replace(del,"");
+    File[] files = listFiles(new File(current));
     JSONObject json;
     for (int i = 0; i < files.length; i++) {
-        String path = files[i].getAbsolutePath();
-        if (path.toLowerCase().equals("users.json")) {
-            json = loadJSONObject(path);
-            if (json != null) {
-                db.users = json;
-            }
+      File f = files[i];
+      String path = f.getAbsolutePath();
+      if (path.toLowerCase().equals("list.json")) {
+        json = loadJSONObject(path);
+        if (json != null) {
+          db.listofUsers = json;
         }
-        if(path.toLowerCase().equals("pets.json")) {
-            json = loadJSONObject(path);
-            if(json != null) {
-                db.pets = json;
-            }
-        }
+      } 
     }
-}
-
-public class listofUsers {
-
-    void saveListtoDB(JSONObject list) {
-        
-    }
-}
+  }
 
 
 public class UserInfo {
@@ -63,6 +61,15 @@ public class UserInfo {
     }
 
     //API CALL 2
+    void saveListtoDB(JSONObject list) {
+        if (list == null) {
+            return;
+        }else{
+            saveJSONObject(list, "list.json");
+        }
+    }
+
+    //API CALL 3
     JSONObject getUserinfo(String user_id) {
         JSONObject returnObj = new JSONObject();
         JSONArray users = new JSONArray();
@@ -80,10 +87,10 @@ public class UserInfo {
         return returnObj;
     }
 
-    //API CALL 3
-    JSONObject[] getListOfUsers(JSONObject users) {
+    //API CALL 4
+    JSONObject[] getListOfUsers(JSONObject obj) {
         //JSONObject obj = loadJSONObject("test.json");
-        JSONArray values = users.getJSONArray("users"); 
+        JSONArray values = obj.getJSONArray("users"); 
         JSONObject[] returnJSONArray = new JSONObject[0];
         for (int i = 0; i < values.size(); i++) {
                 JSONObject username = values.getJSONObject(i);            
