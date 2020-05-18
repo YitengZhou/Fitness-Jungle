@@ -11,5 +11,7 @@ module.exports = function (app, express, path, rootDir)
    app.post(apiURI + "/getPetTypes", petController.getPetTypes);
    app.post(apiURI + "/createUserPet", petController.createUserPet);
    app.post(apiURI + "/getUserPets", petController.getUserPets);
+   app.put(apiURI + "/updateUserPet", petController.updateUserPet);
+   app.put(apiURI + "/setActivePet", petController.setActivePet);
    app.use(express.static(rootDir));
 };

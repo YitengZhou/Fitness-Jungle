@@ -49,7 +49,7 @@ const createUserPet = (req, res) => {
 const getUserPets = (req, res) => {
    let body = req.body;
    req.db.all(
-      `SELECT up.id AS petId, up.name, up.level, bpt.name AS type, pt.name AS skin, pt.imagePath AS imageUrl, up.totalStepCount AS stepCount, up.active
+      `SELECT up.id AS petId, up.name, up.level, bpt.name AS type, pt.id AS skinId, pt.name AS skinName, pt.imagePath AS imageUrl, up.totalStepCount AS stepCount, up.active
       FROM UserPet As up
       INNER JOIN PetType AS pt ON up.petTypeId = pt.id
       INNER JOIN BasePetType AS bpt ON pt.baseTypeId = bpt.id
@@ -85,8 +85,56 @@ const getUserPets = (req, res) => {
    );
 };
 
+const updateUserPet = (req, res) => {
+   let body = req.body;
+   let toUpdate = body.toUpdate;
+   req.db.run(
+      `UPDATE UserPet SET name = '${toUpdate.name}', petTypeId = '${toUpdate.skinId}'
+      WHERE userId = ${body.userId} AND id = ${body.petId}`
+      , (err, result) => {
+      if (err) {
+         console.log(err);
+         res.status(500);
+      };
+      res.status(200).json({
+         "resultCode": 0,
+         "resultMessage": "OK"
+      });
+   });
+};
+
+const setActivePet = (req, res) => {
+   let body = req.body;
+   req.db.run(
+      `UPDATE UserPet SET active = false
+      WHERE userId = ${body.userId}`
+      , (err, result) => {
+      if (err) {
+         console.log(err);
+         res.status(500);
+      };
+
+      req.db.run(
+         `UPDATE UserPet SET active = true
+         WHERE userId = ${body.userId} AND id = ${body.petId}`
+         , (err, result) => {
+         if (err) {
+            console.log(err);
+            res.status(500);
+         };
+
+         res.status(200).json({
+            "resultCode": 0,
+            "resultMessage": "OK"
+         });
+      });
+   });
+};
+
 module.exports = {
    getPetTypes
    , createUserPet
    , getUserPets
+   , updateUserPet
+   , setActivePet
 };
