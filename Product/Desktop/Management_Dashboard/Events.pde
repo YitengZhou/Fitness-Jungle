@@ -29,7 +29,7 @@ void messageReceived(String topic, byte[] payload) {
           user_api.saveListtoDB(body);
           refreshData();
           refreshDashboardData();
-          println("JSONObject of list of users saved to db");
+          //println("JSONObject of list of users saved to db");
           break;
         case (Response.GETUSERDETAILED):
           println("Got detailed user response");

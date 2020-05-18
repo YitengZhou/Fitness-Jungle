@@ -25,7 +25,6 @@ void loadDummyData() {
     if(json != null) {
         db.listofUsers = json;
         println("loaded dummy");
-        println(db.listofUsers.toString());
     }  
   
 }
@@ -38,10 +37,11 @@ void refreshData() {
     JSONObject json;
     for (int i = 0; i < files.length; i++) {
       File f = files[i];
-      String path = f.getAbsolutePath();
-      if (path.toLowerCase().equals("list.json")) {
+      String path = f.getAbsolutePath();     
+      if (path.toLowerCase().endsWith("list.json")) {
         json = loadJSONObject(path);
         if (json != null) {
+          println("found file");
           db.listofUsers = json;
         }
       } 
@@ -94,9 +94,7 @@ public class UserInfo {
         JSONObject[] returnJSONArray = new JSONObject[0];
         for (int i = 0; i < values.size(); i++) {
                 JSONObject username = values.getJSONObject(i);            
-                if(username != null) {
-                        String name = username.getString("firstName");
-                        println(name);
+                if(username != null) {                      
                         returnJSONArray = (JSONObject []) append(returnJSONArray, username);
                 }
           }

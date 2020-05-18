@@ -2,9 +2,13 @@ PImage img;
 
 void refreshDashboardData() {
     // We just rebuild the view rather than updating existing
-    //cp5.remove();
+    
+    cp5.remove("user");
+    view.build_list("user", user_api.getListOfUsers(db.listofUsers));
+    
+    println("sucess");
    
-    updateDashboardData();
+    //updateDashboardData();
 }
 
 void updateDashboardData() {
@@ -16,8 +20,7 @@ void updateDashboardData() {
         int textbox_spacing = 50;
 
         surface.setTitle("Fitness Jungle Dashboard");
-
-
+              
         view.build_list("user", user_api.getListOfUsers(db.listofUsers));
         view.set_filename("pet.png");
         view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
