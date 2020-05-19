@@ -125,12 +125,13 @@ public class User {
         JSONArray pets = new JSONArray();
 
         //extracting infomation form JSONObject
-        userinfo.setInt("userId", user.getInt("userId"));
+        userinfo.setInt("userId", user.getInt("userId"));    
         userinfo.setString("email", user.getString("email"));
         userinfo.setString("firstName", user.getString("firstName"));
         userinfo.setString("lastName", user.getString("lastName"));
         userinfo.setString("imageUrl", user.getString("imageUrl"));
         userinfo.setString("deviceNo", user.getString("deviceNo"));
+        userinfo.setInt("totalStepCount", user.getInt("totalStepCount"));
 
         pets = user.getJSONArray("pets");
 
@@ -144,6 +145,9 @@ public class User {
                 }
             }
         }
+
+        println(userinfo.toString());
+
         saveInfotoDB(userinfo);
     }
    

@@ -7,6 +7,7 @@ void clientConnected() {
     //to get initial list of registered users
     client.publish(MQTT_request, "Desktop client connected");
     client.publish(MQTT_request, loadJSONObject("Request/getUserListReq.json").toString());
+    client.publish(MQTT_request, loadJSONObject("Request/getDetailedUserReq.json").toString());
 }
 
 void connectionLost() {
@@ -28,14 +29,17 @@ void messageReceived(String topic, byte[] payload) {
         case (Response.GETUSERLIST):
           list_api.saveListtoDB(body);
           refreshData();
-          refreshDashboardData();
+          refreshListData();
           println("JSONObject of list of users saved to db");
           break;
         case (Response.GETUSERDETAILED):
           println("Got detailed user response");
           user_api.getUserInfo(body);
+          println("saved to db");
           refreshData();
-          refreshDashboardData();
+          println("refreshed data");
+          refreshTextboxData();
+          println("refreshed textboxdata");
           break;
         case (Response.GETUSERSTEPSINTERVAL):
           println("Got user steps interval response");
