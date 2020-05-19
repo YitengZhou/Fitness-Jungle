@@ -149,6 +149,69 @@ const getUserList = (db) => {
    });
 };
 
+const getUserInfo = (request, db) => {  
+   return new Promise((res, rej) => {
+      db.all(
+         `SELECT * FROM User WHERE id = ${request.userId}`, (err, rows) => {
+            if (err) {
+               rej(err);            
+            };
+            
+            let resJson = {};
+            if (Array.isArray(rows) && rows.length) {
+               let row = rows[0];           
+               resJson = {
+                  "userId": row.id,
+                  "email": row.email,             
+                  "firstName": row.nameFirst,
+                  "lastName": row.nameLast,
+                  "imageUrl": row.imagePath,
+                  "deviceNo": row.m5DeviceNo,
+                  "totalStepCount": row.totalStepCount                   
+               };               
+            }
+            res(resJson);
+         }
+      );
+   });
+};
+
+const getUserPets = (request, db) => {  
+   return new Promise((res, rej) => {
+      db.all(
+         `SELECT up.id AS id, up.name, up.level, bpt.name AS type, pt.name AS skin, pt.imagePath AS imageUrl, up.totalStepCount AS stepCount, up.active
+         FROM UserPet As up
+         INNER JOIN PetType AS pt ON up.petTypeId = pt.id
+         INNER JOIN BasePetType AS bpt ON pt.baseTypeId = bpt.id
+         WHERE up.userId = ${request.userId}`
+         , (err, rows) => {
+            if (err) {
+               rej(err);            
+            };
+            
+            db.all(
+               `SELECT level, stepCount FROM PetLevel`, (err2, levelRows) => {
+                  if (err2) {
+                     rej(err2);
+                  };
+                  let levelObj = {};
+                  for (let row of levelRows) {
+                     levelObj[row.level] = row.stepCount;
+                  }
+   
+                  if (Array.isArray(rows) && rows.length) {
+                     for (let row of rows) {
+                        row.stepsToNextLevel = levelObj[row.level+1];
+                     }
+                  }
+                  res(rows);                  
+               }
+            );
+         }
+      );
+   });
+};
+
 module.exports = function (db) 
 {
    let client = mqtt.connect('mqtt://broker.mqttdashboard.com');;
@@ -232,7 +295,8 @@ module.exports = function (db)
                   responseJson.response.status.message = "Specified API endpoint does not exists";
                   client.publish(topic, JSON.stringify(responseJson));
             }
-         } else if (topic == channelDesktop) {            
+         } else if (topic == channelDesktop) {  
+            let request;          
             switch(reqObj.request.header) {
                case "/getUserList":
                   getUserList(db)
@@ -250,17 +314,38 @@ module.exports = function (db)
                      client.publish(topic, JSON.stringify(responseJson));
                   });
                   break;
+               case "/getUserDetailed":
+                  request = {
+                     userId: reqObj.request.body.userId
+                  };
+                  getUserInfo(request, db)
+                  .then(function(user) {
+                     responseJson.response.body = user;
+                     return getUserPets(request, db);
+                  })
+                  .then(function(pets) {                     
+                     responseJson.response.body.pets = pets;
+                     responseJson.response.status.code = 200;
+                     responseJson.response.status.message = "OK";
+                  })
+                  .catch(function(err){
+                     console.log(err);
+                     responseJson.response.status.code = 500;
+                     responseJson.response.status.message = "Internal error";
+                  })
+                  .finally(function() {
+                     client.publish(topic, JSON.stringify(responseJson));
+                  });
+                  break;
                default:
                   responseJson.response.status.code = 500;
                   responseJson.response.status.message = "Specified API endpoint does not exists";
                   client.publish(topic, JSON.stringify(responseJson));
             }
          }
-
       } 
       catch (err) {
          console.log(err);
       }
-   
    });
 };
