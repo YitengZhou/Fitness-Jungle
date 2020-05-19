@@ -123,6 +123,32 @@ function insertPetSteps(request, db) {
    });
 }
 
+const getUserList = (db) => {  
+   return new Promise((res, rej) => {
+      db.all(
+         `SELECT * FROM User`, (err, rows) => {
+            if (err) {
+               rej(err);            
+            };
+            
+            let resJson = [];
+            if (Array.isArray(rows) && rows.length) {
+               for (let row of rows) {
+                  resJson.push({
+                     "userId": row.id,
+                     "email": row.email,             
+                     "firstName": row.nameFirst,
+                     "lastName": row.nameLast,                     
+                  });
+               }
+
+            }
+            res(resJson);
+         }
+      );
+   });
+};
+
 module.exports = function (db) 
 {
    let client = mqtt.connect('mqtt://broker.mqttdashboard.com');;
@@ -206,7 +232,31 @@ module.exports = function (db)
                   responseJson.response.status.message = "Specified API endpoint does not exists";
                   client.publish(topic, JSON.stringify(responseJson));
             }
+         } else if (topic == channelDesktop) {            
+            switch(reqObj.request.header) {
+               case "/getUserList":
+                  getUserList(db)
+                  .then(function(rows) {
+                     responseJson.response.body.users = rows;
+                     responseJson.response.status.code = 200;
+                     responseJson.response.status.message = "OK";  
+                  })
+                  .catch(function(err){
+                     console.log(err);
+                     responseJson.response.status.code = 500;
+                     responseJson.response.status.message = "Internal error";
+                  })
+                  .finally(function() {
+                     client.publish(topic, JSON.stringify(responseJson));
+                  });
+                  break;
+               default:
+                  responseJson.response.status.code = 500;
+                  responseJson.response.status.message = "Specified API endpoint does not exists";
+                  client.publish(topic, JSON.stringify(responseJson));
+            }
          }
+
       } 
       catch (err) {
          console.log(err);
