@@ -10,11 +10,5 @@
     "lastName": "Guy",
     "userId": 2,
     "email": "someguy@email.com"
-  },
-  {
-    "firstName": "other",
-    "lastName": "Guy",
-    "userId": 3,
-    "email": "someguy@email.com"
   }
 ]}
