@@ -1,13 +1,12 @@
-String MQTT_request = "DESKTOP: MQTT_request";
-String MQTT_response = "DESKTOP: MQTT_response";
+String MQTT_topic = "DESKTOP: MQTT";
 
 void clientConnected() {
     println("client connected to broker");
-    client.subscribe(MQTT_response);
+    client.subscribe(MQTT_topic);
     //to get initial list of registered users
-    client.publish(MQTT_request, "Desktop client connected");
-    client.publish(MQTT_request, loadJSONObject("Request/getUserListReq.json").toString());
-    client.publish(MQTT_request, loadJSONObject("Request/getDetailedUserReq.json").toString());
+    //client.publish(MQTT_topic, "Desktop client connected");
+    client.publish(MQTT_topic, loadJSONObject("Request/getUserListReq.json").toString());
+    client.publish(MQTT_topic, loadJSONObject("Request/getDetailedUserReq.json").toString());
 }
 
 void connectionLost() {
@@ -16,36 +15,36 @@ void connectionLost() {
 
 void messageReceived(String topic, byte[] payload) {
     try {
-      JSONObject json = parseJSONObject(new String(payload)); 
-      JSONObject response = json.getJSONObject("response");
-      JSONObject body = response.getJSONObject("body");
-      String response_type = response.getString("header");
-      println("Received message from " + topic); 
-      println("Response type " + response_type);
-      switch (response_type) {
-        case (Response.LOGIN):
-          println("Got login response");
-          break;
-        case (Response.GETUSERLIST):
-          list_api.saveListtoDB(body);
-          refreshData();
-          refreshListData();
-          println("JSONObject of list of users saved to db");
-          break;
-        case (Response.GETUSERDETAILED):
-          println("Got detailed user response");
-          user_api.getUserInfo(body);
-          println("saved to db");
-          refreshData();
-          println("refreshed data");
-          refreshTextboxData();
-          println("refreshed textboxdata");
-          break;
-        case (Response.GETUSERSTEPSINTERVAL):
-          println("Got user steps interval response");
-          break;
+      JSONObject json = parseJSONObject(new String(payload));
+      if(json.getString("to").equals("desktop_1")) {
+        JSONObject response = json.getJSONObject("response");
+        JSONObject body = response.getJSONObject("body");
+        String response_type = response.getString("header");
+        println("Received message from " + topic); 
+        println("Response type " + response_type);
+        switch (response_type) {
+          case (Response.LOGIN):
+            println("Got login response");
+            break;
+          case (Response.GETUSERLIST):
+            list_api.saveListtoDB(body);
+            refreshData();
+            refreshListData();
+            break;
+          case (Response.GETUSERDETAILED):
+            user_api.getUserInfo(body);
+            refreshData();
+            refreshTextboxData();
+            break;
+          case (Response.GETUSERSTEPSINTERVAL):
+            println("Got user steps interval response");
+            break;
+        }
       }
-        
+      else{
+        println("requests");
+      }
+          
     }catch (RuntimeException e) {
       println(" Runtime exception error");
   }
