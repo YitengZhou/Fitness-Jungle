@@ -17,6 +17,7 @@ void messageReceived(String topic, byte[] payload) {
     try {
       JSONObject json = parseJSONObject(new String(payload)); 
       JSONObject response = json.getJSONObject("response");
+      JSONObject body = response.getJSONObject("body");
       String response_type = response.getString("header");
       println("Received message from " + topic); 
       println("Response type " + response_type);
@@ -25,7 +26,7 @@ void messageReceived(String topic, byte[] payload) {
           println("Got login response");
           break;
         case (Response.GETUSERLIST):
-          JSONObject body = response.getJSONObject("body");
+         
           list_api.saveListtoDB(body);
           refreshData();
           refreshDashboardData();
@@ -33,6 +34,10 @@ void messageReceived(String topic, byte[] payload) {
           break;
         case (Response.GETUSERDETAILED):
           println("Got detailed user response");
+          //println(body.toString());
+          //println(body.getString("firstName"));
+          user_api.getUserInfo(body);
+          println("sucess called function");
           break;
         case (Response.GETUSERSTEPSINTERVAL):
           println("Got user steps interval response");

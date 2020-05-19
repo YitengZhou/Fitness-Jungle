@@ -84,13 +84,14 @@ public class User {
         if (user == null) {
             return;
         }else {
-            saveJSONObject(user, "userInfo/" + user.getString("user_id") + ".json");
+            saveJSONObject(user, "user.json");
+            println("saved userinfo to DB");
         }
     }
 
 
     //API CALL 2
-    JSONObject getUserinfo(String user_id) {
+    JSONObject getUserinfo1(String user_id) {
         JSONObject returnObj = new JSONObject();
         JSONArray users = new JSONArray();
         users = db.users.getJSONArray("users");
@@ -105,6 +106,34 @@ public class User {
             }
         }    
         return returnObj;
+    }
+
+    //API CALL 3
+    void getUserInfo(JSONObject user) {
+        JSONObject userinfo = new JSONObject();
+        JSONArray pets = new JSONArray();
+
+        //extracting infomation form JSONObject
+        userinfo.setInt("userId", user.getInt("userId"));
+        userinfo.setString("email", user.getString("email"));
+        userinfo.setString("firstName", user.getString("firstName"));
+        userinfo.setString("lastName", user.getString("lastName"));
+        userinfo.setString("imageUrl", user.getString("imageUrl"));
+        userinfo.setString("deviceNo", user.getString("deviceNo"));
+
+        pets = user.getJSONArray("pets");
+
+        if(pets != null) {
+            println("JSONARRAY NOT NULL");
+            for(int i = 0; i < pets.size(); i++) {
+                JSONObject pet = pets.getJSONObject(i);
+                if(pet != null && pet.getBoolean("active")) {
+                    userinfo.setString("petName", pet.getString("name"));
+                    userinfo.setInt("petLevel", pet.getInt("level"));
+                }
+            }
+        }
+        saveInfotoDB(userinfo);
     }
    
 }
