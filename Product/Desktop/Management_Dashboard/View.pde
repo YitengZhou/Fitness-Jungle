@@ -4,9 +4,9 @@ void refreshDashboardData() {
     // We just rebuild the view rather than updating existing
     
     cp5.remove("List of User");
+    cp5.remove("userinfo");
     view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));
-    
-    println("sucess");
+    view.build_textArea(db.users);
    
     //updateDashboardData();
 }
@@ -24,7 +24,8 @@ void updateDashboardData() {
         surface.setTitle("Fitness Jungle Dashboard");              
         view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));
         view.set_filename("pet.png");
-        view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
+        //view.build_userinfomation("bebe1230", "beibei", "liu", "pet pet", "100", "idk" );
+        view.build_textArea(db.users);
         view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
         view.build_labels("userinfo_label" ,"User Infomation", userinfo_x_pos, userinfo_y_pos - label_spacing, 25);
         view.build_labels("statsinfo_label" ,"Statistics", userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos - label_spacing, 25);
@@ -94,7 +95,24 @@ public class Dashboard_view {
 
         // Textbox for Userinfo and general statistics
 
-        void build_userinfomation(String username, String firstname, String lastname, String petname, String petlevel, String skin) {
+        void build_textArea(JSONObject obj) {
+                cp5.addTextarea("userinfo")
+                .setPosition(userinfo_x_pos, userinfo_y_pos)
+                .setSize(text_x_size, text_y_size)
+                .setFont(createFont("arial",17))
+                .setLineHeight(20)
+                .setColor(color(180))
+                .setColorBackground(color(255,100))
+                .setColorForeground(color(255,100))
+                .setText("User Name: " + obj.getString("email") + "\n"
+                +"First Name: " + obj.getString("firstName") + "\n"
+                +"Last Name: " + obj.getString("lastName") + "\n"
+                +"Pet Name: " + obj.getString("petName") + "\n"
+                +"Pet Level: " + obj.getInt("petLevel") + "\n"
+                +"Skin: " + obj.getString("petSkin") + "\n"); 
+        }
+
+        /*void build_userinfomation(String username, String firstname, String lastname, String petname, String petlevel, String skin) {
                 cp5.addTextarea("userinfo")
                 .setPosition(userinfo_x_pos, userinfo_y_pos)
                 .setSize(text_x_size, text_y_size)
@@ -109,7 +127,7 @@ public class Dashboard_view {
                 +"Pet Name: " + petname + "\n"
                 +"Pet Level: " + petlevel + "\n"
                 +"Skin: " + skin + "\n"); 
-        }
+        }*/
 
         void build_statisticsinformation(String steps, String activitylevel, String weeklystep, String averagestepdaily) {
                 cp5.addTextarea("statsinfo")

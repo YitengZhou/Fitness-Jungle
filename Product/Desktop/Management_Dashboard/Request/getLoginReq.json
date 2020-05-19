@@ -1,0 +1,11 @@
+{
+    "from": "desktop_1",
+    "to": "server",
+    "request": {
+       "header": "/login",
+       "body": {
+          "username": "admin",
+          "password": "12345"
+       }
+    }
+ }

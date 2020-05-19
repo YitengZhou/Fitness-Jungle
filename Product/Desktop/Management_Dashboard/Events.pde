@@ -26,7 +26,6 @@ void messageReceived(String topic, byte[] payload) {
           println("Got login response");
           break;
         case (Response.GETUSERLIST):
-         
           list_api.saveListtoDB(body);
           refreshData();
           refreshDashboardData();
@@ -34,10 +33,9 @@ void messageReceived(String topic, byte[] payload) {
           break;
         case (Response.GETUSERDETAILED):
           println("Got detailed user response");
-          //println(body.toString());
-          //println(body.getString("firstName"));
           user_api.getUserInfo(body);
-          println("sucess called function");
+          refreshData();
+          refreshDashboardData();
           break;
         case (Response.GETUSERSTEPSINTERVAL):
           println("Got user steps interval response");

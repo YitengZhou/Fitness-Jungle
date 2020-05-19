@@ -20,11 +20,15 @@ public class Database {
 }
 
 void loadDummyData() {   
-    JSONObject json;
-    json = loadJSONObject("test.json");
-    if(json != null) {
-        db.listofUsers = json;
-        println("loaded dummy");
+    JSONObject listjson = loadJSONObject("Dummy/dummyList.json");
+    JSONObject userjson = loadJSONObject("Dummy/dummyUser.json");
+    if(listjson != null) {
+        db.listofUsers = listjson;
+        println("loaded dummy list");
+    }
+    if(userjson != null) {
+        db.users = userjson;
+        println("loaded dummy user");
     }  
   
 }
@@ -37,12 +41,19 @@ void refreshData() {
     JSONObject json;
     for (int i = 0; i < files.length; i++) {
       File f = files[i];
-      String path = f.getAbsolutePath();     
+      String path = f.getAbsolutePath();
       if (path.toLowerCase().endsWith("list.json")) {
         json = loadJSONObject(path);
         if (json != null) {
-          println("found file");
+          println("found list file");
           db.listofUsers = json;
+        }
+      }
+      else if (path.toLowerCase().endsWith("user.json")) {
+        json = loadJSONObject(path);
+        if (json != null) {
+          println("found user file");
+          db.users = json;
         }
       } 
     }
@@ -124,12 +135,12 @@ public class User {
         pets = user.getJSONArray("pets");
 
         if(pets != null) {
-            println("JSONARRAY NOT NULL");
             for(int i = 0; i < pets.size(); i++) {
                 JSONObject pet = pets.getJSONObject(i);
                 if(pet != null && pet.getBoolean("active")) {
                     userinfo.setString("petName", pet.getString("name"));
                     userinfo.setInt("petLevel", pet.getInt("level"));
+                    userinfo.setString("petSkin", pet.getString("skin"));
                 }
             }
         }
