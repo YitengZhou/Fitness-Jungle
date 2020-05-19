@@ -212,6 +212,23 @@ const getUserPets = (request, db) => {
    });
 };
 
+const getUserStepsInterval = (request, db) => {  
+   return new Promise((res, rej) => {
+      db.all(
+         `SELECT count, datetime(createdAt, 'unixepoch') as timestamp 
+         FROM UserIntervalStep WHERE userId = ${request.userId}
+         AND createdAt BETWEEN strftime('%s', '${request.intervalFrom}') AND strftime('%s', '${request.intervalTo}')`
+         , (err, rows) => {
+            if (err) {
+               rej(err);            
+            };
+            console.log(rows);
+            res(rows);
+         }
+      );
+   });
+};
+
 module.exports = function (db) 
 {
    let client = mqtt.connect('mqtt://broker.mqttdashboard.com');;
@@ -325,6 +342,27 @@ module.exports = function (db)
                   })
                   .then(function(pets) {                     
                      responseJson.response.body.pets = pets;
+                     responseJson.response.status.code = 200;
+                     responseJson.response.status.message = "OK";
+                  })
+                  .catch(function(err){
+                     console.log(err);
+                     responseJson.response.status.code = 500;
+                     responseJson.response.status.message = "Internal error";
+                  })
+                  .finally(function() {
+                     client.publish(topic, JSON.stringify(responseJson));
+                  });
+                  break;
+               case "/getUserStepsInterval":
+                  request = {
+                     userId: reqObj.request.body.userId,
+                     intervalFrom: reqObj.request.body.intervalFrom,
+                     intervalTo: reqObj.request.body.intervalTo,
+                  };
+                  getUserStepsInterval(request, db)
+                  .then(function(steps) {
+                     responseJson.response.body.steps = steps;
                      responseJson.response.status.code = 200;
                      responseJson.response.status.message = "OK";
                   })
