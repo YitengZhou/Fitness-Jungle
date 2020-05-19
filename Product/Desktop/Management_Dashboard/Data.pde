@@ -1,4 +1,3 @@
-
 static abstract class Response {
     static final String[] LIST = {
         Response.LOGIN,
@@ -96,30 +95,10 @@ public class User {
             return;
         }else {
             saveJSONObject(user, "user.json");
-            println("saved userinfo to DB");
         }
     }
 
-
     //API CALL 2
-    JSONObject getUserinfo1(String user_id) {
-        JSONObject returnObj = new JSONObject();
-        JSONArray users = new JSONArray();
-        users = db.users.getJSONArray("users");
-        if (users != null) {
-            for (int i = 0; i < users.size(); i++) {
-                JSONObject user = users.getJSONObject(i);
-                if (user != null) {
-                    if(user_id.equals(user.getString("user_id"))) {
-                        returnObj = user;
-                    }
-                }
-            }
-        }    
-        return returnObj;
-    }
-
-    //API CALL 3
     void getUserInfo(JSONObject user) {
         JSONObject userinfo = new JSONObject();
         JSONArray pets = new JSONArray();
@@ -151,4 +130,29 @@ public class User {
         saveInfotoDB(userinfo);
     }
    
+}
+
+public class Steps {
+    //API CALL 1
+    void saveStepstoDB(JSONObject steps) {
+        if (steps == null) {
+            return;
+        }else {
+            saveJSONObject(steps, "steps.json");
+        }
+    }
+
+    //API CALL 2
+    String getActivityLevel(Int weekly_steps) {
+        if(weekly_steps >= 70000) {
+            return "High";
+        }
+        else if (weekly_steps > 35000 && weekly_steps < 70000) {
+            return "Medium";
+        }
+        else{
+            return "Low";
+        }
+    }
+
 }
