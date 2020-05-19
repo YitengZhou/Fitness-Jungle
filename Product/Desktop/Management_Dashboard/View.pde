@@ -10,6 +10,7 @@ void refreshTextboxData() {
         cp5.remove("userinfo");
         cp5.remove("statsinfo");
         view.build_textArea(db.users);
+        redraw();
 }
 
 void updateDashboardData() {
@@ -23,7 +24,7 @@ void updateDashboardData() {
 
         surface.setTitle("Fitness Jungle Dashboard");              
         view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));
-        view.set_filename("pet.png");
+        //view.set_filename("pet.png");
         view.build_textArea(db.users);
         //view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
         view.build_labels("userinfo_label" ,"User Infomation", userinfo_x_pos, userinfo_y_pos - label_spacing, 25);
@@ -52,12 +53,12 @@ public class Dashboard_view {
 
         //Building top-left display photo for users
 
-        void set_filename(String filename) {
+        /*void set_filename(String filename) {
                 img_filename = filename; 
-        }
+        }*/
 
         void build_profilephoto() {
-                img = loadImage(img_filename);
+                img = loadImage(db.users.getString("imageUrl"), "png");
                 img.resize(200, 200);
                 image(img, userinfo_x_pos - display_photo_spacing - display_photo_x_size, userinfo_y_pos - 50);
         }
