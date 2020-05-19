@@ -19,8 +19,7 @@ void updateDashboardData() {
         int label_spacing = 35;
         int userinfo_x_pos = 350;
         int userinfo_y_pos = 100;
-        int textbox_spacing = 50;
-         
+        int textbox_spacing = 50;      
 
         surface.setTitle("Fitness Jungle Dashboard");              
         view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));

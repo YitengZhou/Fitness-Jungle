@@ -1,6 +1,8 @@
 //Importing required libraries
 import mqtt.*;
 import controlP5.*;
+import java.util.*;
+import java.text.*;
 import org.gicentre.utils.stat.*;
 
 ControlP5 cp5;
@@ -9,6 +11,7 @@ BarChart dailychart, weeklychart;
 Database db = new Database();
 List list_api = new List();
 User user_api = new User();
+Steps steps = new Steps();
 
 Dashboard_view view = new Dashboard_view();
 
@@ -25,6 +28,7 @@ void setup() {
     client.connect("mqtt://try:try@broker.hivemq.com", "processing_desktop" + client_id);
     delay(100);
     loadDummyData();
+    steps.createStepRequest();
     updateDashboardData();
 }
 

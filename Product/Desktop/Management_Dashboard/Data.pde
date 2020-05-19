@@ -143,7 +143,7 @@ public class Steps {
     }
 
     //API CALL 2
-    String getActivityLevel(Int weekly_steps) {
+    String getActivityLevel(int weekly_steps) {
         if(weekly_steps >= 70000) {
             return "High";
         }
@@ -153,6 +153,33 @@ public class Steps {
         else{
             return "Low";
         }
+    }
+    
+    //API CALL 3
+    void createStepRequest() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String todayDate = df.format(new Date());
+        String intervalFrom = todayDate + " 00:00:00";
+        String intervalTo = todayDate + " 23:59:59";
+
+        JSONObject obj = new JSONObject();
+        JSONObject req = new JSONObject();
+        JSONObject body = new JSONObject();
+
+        body.setInt("adminId", 1);
+        body.setInt("userId", 1);
+        body.setString("intervalFrom", intervalFrom);
+        body.setString("intervalTo", intervalTo);
+
+        req.setString("header", Response.GETUSERSTEPSINTERVAL);
+        req.setJSONObject("body", body);
+
+        obj.setString("from", "desktop_1");
+        obj.setString("to", "server");
+        obj.setJSONObject("request", req);
+
+        saveJSONObject(obj, "Request/getStepsIntervalReq.json");
+
     }
 
 }
