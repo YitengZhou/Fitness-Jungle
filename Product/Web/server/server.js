@@ -4,7 +4,6 @@ const path = require("path");
 const fs = require("fs");
 const sql = require("sqlite3");
 const config = require("./config");
-const mqtt = require("./mqtt");
 const createSqlDb = require("./createSqlDb");
 const insertSqlDb = require("./insertSqlDb");
 const clientDir = path.join(__dirname, "../client");
@@ -18,7 +17,6 @@ app.use(lowercaseUrl);
 app.use(addDbToReq); //add db to req object
 
 require("./routes")(app, express, path, rootDir);
-
 startServer();
 
 async function startServer() {    
@@ -28,6 +26,7 @@ async function startServer() {
         db = new sql.Database(dbFile);
         await createDb();
     }
+    require("./mqtt")(db);
     app.listen(config.port, config.host, () => { console.log("Server running at", config.domainName); });
 }
 
