@@ -62,8 +62,8 @@ const getUserPets = (req, res) => {
          
          req.db.all(
             `SELECT level, stepCount FROM PetLevel`, (err2, levelRows) => {
-               if (err) {
-                  console.log(err);
+               if (err2) {
+                  console.log(err2);
                   res.status(500);
                };
                let levelObj = {};
