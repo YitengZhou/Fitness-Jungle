@@ -13,8 +13,8 @@ static abstract class Response {
 
 public class Database {
     int totalSteps;
+    float[] weekly;
     float[] daily = new float[8];
-    float[] weekly = new float[8];
     JSONObject listofUsers = new JSONObject(); 
     JSONObject users = new JSONObject();
     JSONObject steps = new JSONObject();
@@ -35,6 +35,9 @@ void loadDummyData() {
     }
     steps_api.getStepsInterval(loadJSONObject("Dummy/dummyDaily.json"));
     println("loaded dummy daily data");  
+
+    db.weekly = new float[] {500, 378, 200, 250, 300, 350, 800};
+    println("loaded dummy weekly data");
   
 }
 
@@ -164,8 +167,6 @@ public class User {
             }
         }
 
-        println(userinfo.toString());
-
         saveInfotoDB(userinfo);
     }
    
@@ -183,11 +184,11 @@ public class Steps {
     }
 
     //API CALL 2
-    String getActivityLevel(int weekly_steps) {
-        if(weekly_steps >= 70000) {
+    String getActivityLevel(int daily_steps) {
+        if(daily_steps >= 10000) {
             return "High";
         }
-        else if (weekly_steps > 35000 && weekly_steps < 70000) {
+        else if (daily_steps > 5000 && daily_steps < 10000) {
             return "Medium";
         }
         else{
@@ -221,6 +222,7 @@ public class Steps {
         saveJSONObject(obj, "Request/getStepsIntervalReq.json");
     }
 
+    //API CALL 4
     void getStepsInterval(JSONObject obj) {
 
         //println(obj.toString());
@@ -274,5 +276,11 @@ public class Steps {
         }
         db.totalSteps = totalstep;
     }
+
+    //API CALL 5
+    int getAvgsteps (int weekly_step) {
+        return weekly_step/7;
+    }
+
 
 }

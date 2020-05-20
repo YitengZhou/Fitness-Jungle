@@ -34,7 +34,7 @@ void updateDashboardData() {
         view.build_labels("weeklychart_label" ,"Bar Chart (weekly)", 560, 350, 25);
         view.build_dailychart(db.daily, 
                 new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
-        view.build_weeklychart(new float[] {100, 150, 200, 250, 300, 350, 400}, 
+        view.build_weeklychart(db.weekly, 
                 new String[] {"Mon","Tue","Wed", "Thur","Fri", "Sat", "Sun"});
 
 }
@@ -53,11 +53,6 @@ public class Dashboard_view {
         int display_photo_spacing = 75;
 
         //Building top-left display photo for users
-
-        /*void set_filename(String filename) {
-                img_filename = filename; 
-        }*/
-
         void build_profilephoto() {
                 img = loadImage(db.users.getString("imageUrl"), "png");
                 img.resize(200, 200);
@@ -121,25 +116,10 @@ public class Dashboard_view {
                         .setColorBackground(color(255,100))
                         .setColorForeground(color(255,100))
                         .setText("Steps: " + obj.getInt("totalStepCount") + "\n"
-                        +"Activity Level: " + "high" + "\n"
+                        +"Activity Level: " + steps_api.getActivityLevel(obj.getInt("totalStepCount")) + "\n"
                         +"Weekly Step: " + "123456" + "\n"
                         +"Average Step Daily: " + "10000" + "\n"); 
         }
-
-        /*void build_statisticsinformation(String steps, String activitylevel, String weeklystep, String averagestepdaily) {
-                cp5.addTextarea("statsinfo")
-                .setPosition(userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos)
-                .setSize(text_x_size, text_y_size)
-                .setFont(createFont("arial",17))
-                .setLineHeight(20)
-                .setColor(color(180))
-                .setColorBackground(color(255,100))
-                .setColorForeground(color(255,100))
-                .setText("Steps: " + steps + "\n"
-                +"Activity Level: " + activitylevel + "\n"
-                +"Weekly Step: " + weeklystep + "\n"
-                +"Average Step Daily: " + averagestepdaily + "\n");      
-        }*/
 
         void build_list(String list_name, JSONObject[] users) {
                 ScrollableList list = cp5.addScrollableList(list_name)

@@ -56,12 +56,6 @@ void messageReceived(String topic, byte[] payload) {
 }
 
 void controlEvent(ControlEvent theEvent) {
-    // expand order if clicked via API call
-    //if (theEvent.getController().getValueLabel().getText().contains("O") == true) {
-        // call the api and get the JSON packet
-        //expanded_order = api.getOrdersByStatus(theEvent.getController().getName())[(int) theEvent.getController().getValue()].getString("order_id");
-        //view.build_expanded_order(expanded_order);
-    //}
     
     String userClicked = theEvent.getController().getLabel();
     int userId = list_api.getUserId(userClicked);
@@ -71,14 +65,6 @@ void controlEvent(ControlEvent theEvent) {
       client.publish(MQTT_topic, loadJSONObject("Request/getDetailedUserReq.json").toString());
       steps_api.createStepRequest();
       client.publish(MQTT_topic, loadJSONObject("Request/getStepsIntervalReq.json").toString());
-    }
-
-     
-
+    }    
 }
 
-//void mousePressed() {
-  //used to re-render display picture
-  //view.set_filename("pet.png");
-  //redraw();
-//}
