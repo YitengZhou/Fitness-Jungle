@@ -5,10 +5,10 @@
           <el-card>
           <el-form ref="form" :model="form" label-width="80px">
             <el-form-item label="User id">
-              <el-input></el-input>
+              <el-input v-model="loginValue.userId"></el-input>
             </el-form-item>
             <el-form-item label="password">
-              <el-input></el-input>
+              <el-input v-model="loginValue.password"></el-input>
             </el-form-item>
             <el-form-item>
               <el-button type="primary">Submit</el-button>
@@ -28,7 +28,10 @@ export default {
   },
   data: function () {
     return {
-      msg: "This is LogIn page. "
+      loginValue: {
+        userId: "",
+        password: ""
+      }
     }
   }
 }
