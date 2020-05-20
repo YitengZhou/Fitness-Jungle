@@ -9,20 +9,20 @@
             </el-card>
           </el-col>
           <el-col :span="10">
-            <p class="status">Pet Name: neko</p>
-            <p class="status">Owner: arisu</p>
-            <p class="status">Level: 5</p>
-            <p class="status">Skin: cat</p>
+            <p class="status">Pet Name: {{ petName }}</p>
+            <p class="status">Owner: {{ owner }}</p>
+            <p class="status">Level: {{ level }}</p>
+            <p class="status">Pet Type: {{ petType }}</p>
           </el-col>
         </el-row>
         <el-row type="flex" justify="start">
           <el-col :span="24">
-            <p class="status">EXP: 500 / 1000</p>
+            <p class="status">EXP: {{ currentSteps }} / {{ stepsToNextLevel }}</p>
           </el-col>
         </el-row>
         <el-row class="progress" type="flex" justify="center">
           <el-col :span="24">
-            <el-progress :stroke-width="24" :text-inside="true" :percentage="50"></el-progress>
+            <el-progress :stroke-width="24" :text-inside="true" v-bind:percentage="levelProgress"></el-progress>
           </el-col>
         </el-row>
         <el-row type="flex" justify="space-between">
@@ -66,6 +66,29 @@ export default {
       msg: "This is PetPage page.",
       imgUrl: "@/assets/logo.png",
       imgFit: "fill"
+    }
+  },
+  computed: {
+    petName: function () {
+      return this.$store.state.petName;
+    },
+    owner: function () {
+      return this.$store.state.userName;
+    },
+    level: function () {
+      return this.$store.state.level;
+    },
+    currentSteps: function () {
+      return this.$store.state.currentSteps;
+    },
+    stepsToNextLevel: function () {
+      return this.$store.state.stepsToNextLevel;
+    },
+    petType: function () {
+      return this.$store.state.petType;
+    },
+    levelProgress: function () {
+      return this.$store.state.currentSteps / this.$store.state.stepsToNextLevel * 100;
     }
   }
 }

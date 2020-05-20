@@ -9,10 +9,9 @@
             </el-card>
           </el-col>
           <el-col :span="10">
-            <p class="status">User Name: majyo</p>
-            <p class="status">User Id: majyo</p>
-            <p class="status">Today Steps: 25</p>
-            <p class="status">Total Steps: 456</p>
+            <p class="status">User Name: {{ userName }}</p>
+            <p class="status">User Id: {{ userId }}</p>
+            <p class="status">Total Steps: {{ totalSteps }}</p>
           </el-col>
         </el-row>
         <el-row type="flex" justify="space-between">
@@ -37,6 +36,17 @@ export default {
     return {
       msg: "This is Profile page. ",
       chartType: "monthly"
+    }
+  },
+  computed: {
+    userId: function () {
+      return this.$store.state.userId;
+    },
+    userName: function () {
+      return this.$store.state.userName;
+    },
+    totalSteps: function () {
+      return this.$store.state.currentSteps;
     }
   }
 }
