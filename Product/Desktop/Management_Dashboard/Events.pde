@@ -4,9 +4,12 @@ void clientConnected() {
     println("client connected to broker");
     client.subscribe(MQTT_topic);
     //to get initial list of registered users
-    //client.publish(MQTT_topic, "Desktop client connected");
     client.publish(MQTT_topic, loadJSONObject("Request/getUserListReq.json").toString());
+    //to get first user
     client.publish(MQTT_topic, loadJSONObject("Request/getDetailedUserReq.json").toString());
+    //to get first user steps data
+    client.publish(MQTT_topic, loadJSONObject("Request/getStepsIntervalReq.json").toString());
+
 }
 
 void connectionLost() {
@@ -38,6 +41,8 @@ void messageReceived(String topic, byte[] payload) {
             break;
           case (Response.GETUSERSTEPSINTERVAL):
             println("Got user steps interval response");
+            steps.getStepsInterval(body);
+            refreshDailyChart();
             break;
         }
       }
@@ -57,7 +62,8 @@ void controlEvent(ControlEvent theEvent) {
         //expanded_order = api.getOrdersByStatus(theEvent.getController().getName())[(int) theEvent.getController().getValue()].getString("order_id");
         //view.build_expanded_order(expanded_order);
     //}
-    println(theEvent.getController().getLabel());
+    String userClicked = theEvent.getController().getLabel();
+    
 }
 
 //void mousePressed() {

@@ -13,6 +13,10 @@ void refreshTextboxData() {
         redraw();
 }
 
+void refreshDailyChart() {
+        redraw();
+}
+
 void updateDashboardData() {
 
         int text_x_size = 225;
@@ -23,14 +27,12 @@ void updateDashboardData() {
 
         surface.setTitle("Fitness Jungle Dashboard");              
         view.build_list("List of User", list_api.getListOfUsers(db.listofUsers));
-        //view.set_filename("pet.png");
         view.build_textArea(db.users);
-        //view.build_statisticsinformation("12,345", "high", "54,321", "9,876");
         view.build_labels("userinfo_label" ,"User Infomation", userinfo_x_pos, userinfo_y_pos - label_spacing, 25);
         view.build_labels("statsinfo_label" ,"Statistics", userinfo_x_pos + text_x_size + textbox_spacing, userinfo_y_pos - label_spacing, 25);
         view.build_labels("dailychart_label" ,"Bar Chart (hourly)", 140, 350, 25);
         view.build_labels("weeklychart_label" ,"Bar Chart (weekly)", 560, 350, 25);
-        view.build_dailychart(new float[] {100, 150, 200, 250, 300, 350, 300, 120}, 
+        view.build_dailychart(db.daily, 
                 new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
         view.build_weeklychart(new float[] {100, 150, 200, 250, 300, 350, 400}, 
                 new String[] {"Mon","Tue","Wed", "Thur","Fri", "Sat", "Sun"});
