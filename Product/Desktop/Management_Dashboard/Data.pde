@@ -33,7 +33,7 @@ void loadDummyData() {
         db.users = userjson;
         println("loaded dummy user");
     }
-    steps.getStepsInterval(loadJSONObject("Dummy/dummyDaily.json"));
+    steps_api.getStepsInterval(loadJSONObject("Dummy/dummyDaily.json"));
     println("loaded dummy daily data");  
   
 }

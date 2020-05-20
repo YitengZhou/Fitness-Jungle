@@ -11,7 +11,7 @@ BarChart dailychart, weeklychart;
 Database db = new Database();
 List list_api = new List();
 User user_api = new User();
-Steps steps = new Steps();
+Steps steps_api = new Steps();
 
 Dashboard_view view = new Dashboard_view();
 
@@ -28,7 +28,7 @@ void setup() {
     client.connect("mqtt://try:try@broker.hivemq.com", "processing_desktop" + client_id);
     delay(100);
     loadDummyData();
-    steps.createStepRequest();
+    steps_api.createStepRequest();
     updateDashboardData();
 }
 

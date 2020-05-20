@@ -41,7 +41,7 @@ void messageReceived(String topic, byte[] payload) {
             break;
           case (Response.GETUSERSTEPSINTERVAL):
             println("Got user steps interval response");
-            steps.getStepsInterval(body);
+            steps_api.getStepsInterval(body);
             refreshDailyChart();
             break;
         }
@@ -62,8 +62,19 @@ void controlEvent(ControlEvent theEvent) {
         //expanded_order = api.getOrdersByStatus(theEvent.getController().getName())[(int) theEvent.getController().getValue()].getString("order_id");
         //view.build_expanded_order(expanded_order);
     //}
-    String userClicked = theEvent.getController().getLabel();
     
+    String userClicked = theEvent.getController().getLabel();
+    int userId = list_api.getUserId(userClicked);
+
+    if(userId != 0) {
+      user_api.createUserRequest(userId);
+      client.publish(MQTT_topic, loadJSONObject("Request/getDetailedUserReq.json").toString());
+      steps_api.createStepRequest();
+      client.publish(MQTT_topic, loadJSONObject("Request/getStepsIntervalReq.json").toString());
+    }
+
+     
+
 }
 
 //void mousePressed() {
