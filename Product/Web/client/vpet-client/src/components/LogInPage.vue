@@ -36,8 +36,8 @@
               <el-input v-model="loginValue.password"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary">Submit</el-button>
-              <el-button>Reset</el-button>
+              <el-button type="primary" v-on:click="loginEvent">Submit</el-button>
+              <el-button v-on:click="reset">Reset</el-button>
             </el-form-item>
           </el-form>
           </el-card>
@@ -62,6 +62,16 @@ export default {
     }
   },
   methods: {
+    loginEvent() {
+      this.getUser();
+      this.getUserData();
+      this.getPetData();
+      alert("done");
+    },
+    reset() {
+      this.loginValue.userId = "";
+      this.loginValue.password = "";
+    },
     getUser() {
       this.$http({
         url: './api/login',
@@ -74,6 +84,40 @@ export default {
       .then((response) => {
         if (response != null) {
           this.$store.commit('setUser', response);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    },
+    getUserData() {
+      this.$http({
+        url: './api/getUser',
+        method: 'post',
+        data: {
+          userId: this.$store.state.userId
+        }
+      })
+      .then((response) => {
+        if (response != null) {
+          this.$store.commit('setUserData', response);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    },
+    getPetData() {
+      this.$http({
+        url: './api/getUserPets',
+        method: 'post',
+        data: {
+          userId: this.$store.state.userId
+        }
+      })
+      .then((response) => {
+        if (response != null) {
+          this.$store.commit('setPetData', response.pets[0]);
         }
       })
       .catch(function (error) {
