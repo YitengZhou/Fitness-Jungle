@@ -1,12 +1,12 @@
 {
-    "petName": "Simba",
-    "firstName": "John",
-    "lastName": "Smith",
-    "imageUrl": "https://img.techpowerup.org/200520/img-3269.png",
+    "petName": "NULL",
+    "firstName": "NULL",
+    "lastName": "NULL",
+    "imageUrl": "https://img.techpowerup.org/200521/noimg.jpg",
     "deviceNo": "P4177",
-    "petLevel": 10,
+    "petLevel": 0,
     "userId": 1,
-    "email": "JSmith@email.com",
-    "totalStepCount": 5360,
-    "petSkin": "default"
+    "email": "NULL@email.com",
+    "totalStepCount": 0,
+    "petSkin": "NULL"
   }
