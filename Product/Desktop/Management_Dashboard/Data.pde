@@ -25,6 +25,21 @@ public class Database {
 void loadDummyData() {   
     JSONObject listjson = loadJSONObject("Dummy/dummyList.json");
     JSONObject userjson = loadJSONObject("Dummy/dummyUser.json");
+
+    String del = "/data";
+    String current = dataPath("").replace(del,"");
+    File[] files = listFiles(new File(current));
+
+    for (int i = 0; i < files.length; i++) {
+      File f = files[i];
+      String path = f.getAbsolutePath();
+      if (path.toLowerCase().endsWith("list.json")) {
+       f.delete();
+      }
+      else if (path.toLowerCase().endsWith("user.json")) {
+        f.delete();
+      } 
+    }
     if(listjson != null) {
         db.listofUsers = listjson;
         println("loaded dummy list");
