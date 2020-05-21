@@ -1,5 +1,30 @@
 <template>
   <div class="Login">
+    <!--
+    <div class="PostList">
+      <div class="loading" v-if="loading">
+        Loading...
+      </div>
+      <div class="posts" v-else>
+      <ul>
+        <li v-for="post in posts" v-bind:key="post.author_id">
+					<router-link :to="{ name: 'user_info', params: { name: post.author.loginname }}" :title="post.author_id">
+						<img :src="post.author.avatar_url" :title="post.author.loginname"/>
+					</router-link>
+					<span>
+						{{ post.reply_count }}/{{ post.visit_count }}
+					</span>
+					<router-link :to="{ name: 'post_content', params: { id: post.id,name:post.author.loginname }}" :title="post.title">
+						{{ post.title }}
+					</router-link>
+					<span class="last_reply">
+						{{ post.last_reply_at | formatDate}}
+					</span>
+				</li>
+			</ul>
+      </div>
+    </div>
+    -->
     <el-row type="flex" justify="center">
       <el-col :span="6">
           <el-card>
@@ -28,10 +53,32 @@ export default {
   },
   data: function () {
     return {
+      posts: {},
+      loading: false,
       loginValue: {
         userId: "",
         password: ""
       }
+    }
+  },
+  methods: {
+    getUser() {
+      this.$http({
+        url: './api/login',
+        method: 'post',
+        data: {
+          email: this.loginValue.userId,
+          password: this.loginValue.password
+        }
+      })
+      .then((response) => {
+        if (response != null) {
+          this.$store.commit('setUser', response);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }
   }
 }

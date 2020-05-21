@@ -5,8 +5,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en';
 import router from './router';
 import store from './store/info';
+import axios from 'axios';
 
 Vue.use(ElementUI, { locale });
+
+Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
 
