@@ -1,0 +1,13 @@
+{
+  "request": {
+    "header": "/getUserStepsInterval",
+    "body": {
+      "adminId": 1,
+      "intervalFrom": "2020-05-20 00:00:00",
+      "intervalTo": "2020-05-20 23:59:59",
+      "userId": 1
+    }
+  },
+  "from": "desktop_1",
+  "to": "server"
+}

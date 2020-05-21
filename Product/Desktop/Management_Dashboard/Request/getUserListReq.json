@@ -1,0 +1,10 @@
+{
+    "from": "desktop_1",
+    "to": "server",
+    "request": {
+       "header": "/getUserList",
+       "body": {
+          "adminId": 1
+       }
+    }
+ }
