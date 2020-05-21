@@ -188,19 +188,19 @@ The web application is also designed as a responsive website, which means it can
 <b><p>Version 1: Paper prototyping and self-made video</p></b>
 
 <p align="center">
-<img src="Images/design/paper.jpg" width = 80%>>
+<img src="Images/design/paper.jpg" width = 80%>
 </p>
 <b><p align= "center">Figure 8: Paper prototyping of Fitness Jungle</p></b>
 
 Fitness Jungle, originally called Virtual Pet, was first designed with paper prototypes, using Pen and paper approach. We painted and designed wireframe more than 20 pictures to test the feasibility of our ideas based on the functionality and ease of use. The result of our paper prototypes can be seen are in figure (reference pictures). A short video was filmed to demonstrate all the functionality we planned on having on the M5 stack which includes a page reference (main menu) that has all the features on M5stack such as the virtual pet, steps and health report, friend system, map systems, etc.
 
-[![Paper prototype demo](https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg)
+[![Paper prototype demo](Images/design/videocover.jpg)](https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg)
 <b><p align= "center">Video: Paper prototype demo</p></b>
 
 After the paper prototyping, we employed the Wizard of Oz think-aloud technique seen in the figure below, which is a technique used for the interaction between subject and computer system which in this case was out paper prototype, in this technique the subjects are believed to be autonomous but are usually operated by an unseen human being. This technique requires the role of 3 character namely the observer, facilitator and the user. The facilitator will be the one changing different screen for the user upon the user input, while the observer main task will be to not offer any help but take notes of all the critical incident that the user may be faced when navigating through the system.
 
 <p align="center">
-<img src="Images/design/peer.jpg" width = 80%>>
+<img src="Images/design/peer.jpg" width = 80%>
 </p>
 <b><p align= "center">Figure 9: Paper prototype feedback from peers evaluation </p></b>
 
@@ -209,14 +209,14 @@ We find this technique to be very useful as we immediately found out that some o
 <b><p>Version 2: The Processing code and UI wireframe in Axure</p></b>
 
 <p align="center">
-<img src="Images/design/process.gif" width = 80%>>
+<img src="Images/design/process.gif" width = 80%>
 </p>
 <b><p align= "center">Figure 10: UI wireframe using the Processing code </p></b>
 
 After gathering the feedback from peers and making usability modifications, we build the next UI wireframe version using the Processing and Axure (For UI wireframe). The main advantage of Processing is giving us the ability to simulate all the feature that we expect on M5stack, like the structure of menu, button control and its corresponding feedback. The following gif (reference) show how Fitness Jungle works in M5stack.
 
 <p align="center">
-<img src="Images/design/axure.jpg" width = 80%>>
+<img src="Images/design/axure.jpg" width = 80%>
 </p>
 <b><p align= "center">Figure 11: UI wireframe using the Axure </p></b>
 
@@ -229,10 +229,20 @@ The final version is to visualize the different system and idea on M5stack.
 
 To capture a wide range of user, multiple virtual pets have to be designed. Some of our design includes the pet at different stages life cycles, such as plants and animals in jungle. Most users are generally inclined to continue using our products for the benefit of their own health as well as unlocking different pets and appearances. The following figure shows the evolution of virtual pet.
 
+<p align="center">
+<img src="Images/design/virtual_pet.png" width = 80%>
+</p>
+<b><p align= "center">Figure 12: The evolution of virtual pet </p></b>
 
+* Logo system
 
+In order to display our product logo when M5stack start, multiple libraries need to be configured and installed in advance for these the dynamic pictures. The following gifs show the logo system between computer and M5stack.
 
-
+<p align="center">
+<img src="Images/design/logo.gif" width = 50%>
+<img src="Images/design/logo_M5.gif" width = 50%>
+</p>
+<b><p align= "center">Figure 13: UI wireframe using the Processing code </p></b>
 
 ### Desktop Application
 
