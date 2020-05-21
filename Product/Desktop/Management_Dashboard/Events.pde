@@ -1,4 +1,4 @@
-String MQTT_topic = "DESKTOP: MQTT";
+String MQTT_topic = "fitnessjungle/desktop";
 
 void clientConnected() {
     println("client connected to broker");
