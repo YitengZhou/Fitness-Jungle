@@ -11,46 +11,129 @@ We started the project by brainstorming some ideas for an innovative internet-en
 
 ## Architecture of the system
 
-Overview: We are working on a health fitness tracker that comprises of a virtual pet interface in addition to the basics fitness tracker functionality to encourage end-user to be more pro-active.  
+Overview: We are working on a health fitness tracker that comprises of a virtual pet in addition to the basics fitness tracker functionality to encourage end-user to be pro-active.  The system architecture will encompass three different elements namely M5Stack, desktop application and a web application. Instead of developing a mechanism for data persistence in each of the systems, we decide that having an API server which stores and process data from all the different systems will simply the JSON object that has to be passed around for this application to be feasible. In the next few sections, we will be dive into each of the elements at a greater dept discussing their applications.
 
-The M5 stack will be a wearable device where the user can strap it to his or her wrist or ankle that provides other platform (web application and desktop application) with relevant information. In addition to providing steps, it also displays statistics such as the virtual pet avatar, pet name, pet level, experience points, total steps taken (today), total steps take (weekly) and some health feedbacks to encourage user to be more pro-active. 
+### System workflow
 
-The desktop application will be a platform that allow developer to have the ability to upload, view and edit the virtual pet photo as well as its equipment. It also processes information from the M5 stacks generating statistics such as cumulative steps (daily), cumulative steps (weekly) and average steps daily based on cumulative weekly steps. The UI for the desktop application display health-oriented graphs and usage statics. 
+<p align="center">
+<img src="Images/design/sequence.jpg" width = 80%>
+</p>
+<b><p align= "center">Figure 2: Sequence diagram for Jungle Fitness</p></b>
 
-The Web application allows for the registration of new user, information such as username, gender, age and other relevant information can be added to the user profile. It also allows for the ability to choose the type of pet or equipment the user wishes to display.
+### M5Stack
 
-#### System Architecture
+The M5Stack will be a wearable device where the user can strap it to his or her wrist or ankle provide other platform (web application and desktop application) with relevant information such as steps. In addition, statistics such as the virtual pet avatar, pet name, pet level, experience points, total steps taken (today), total steps take (weekly) and some health feedbacks can also be displayed to encourage user to be more pro-active.
 
-![System Architecture](Images/System_Architecture.png)
+The functions of our M5Stack includes:
+* Display simple UI interface on M5Stack device, including personal information, virtual pet information, collecting steps, menu, map system, friend system, login system, etc.
+* Collect steps per hour using the build-in pedometer
+* Receive JSON information (user, pet and status message) from MQTT
+* Response to web and desktop application via MQTT
+* Send specific steps and time JSON message to MQTT
+* Control various UI interface using M5Stack button
+* Track user distance and location by build-in GPS
 
-![Relationship Diagram](Images/Relationship_Diagram.png)
+<p align="center">
+<img src="Images/design/workflow.jpg" width = 80%>
+</p>
+<b><p align= "center">Figure 3: The workflow of M5stack</p></b>
+
+### Desktop Application
+The desktop application will act as an interface to allow developer to have the ability to upload, view and edit the virtual pet photo as well as its equipment. For data visualisation, API request will be made to our API server and receive data in the form of JSON oobject via MQTT which will be discussed in greater dept in section on communication protocol. It processes information from the M5Stack generating statistics such as cumulative steps (daily), cumulative steps (weekly) and average steps daily based on cumulative weekly steps. 
+Some of the feature of our desktop applications includes:
+* General data visualization of each user’s activity displayed through bar chart, pie chart, etc.
+* A search to search for specific user.
+* A dropdown list that includes all the users registered in the database.
+* A user-friendly user interface for the maintenance of new pet, skin, etc.
+
+### Web Application
+The Web application enable registration of new user. The required information for new users is username, gender, age and other relevant information will be added to the user profile. The web application also allows the user to choose the desired pet and equipment to be displayed on their profile.
+The web application contains following components:
+* Index page: Entry of the web application
+* Register page: create account with user id and password
+* Log in page: log in account with user id and password
+* User page: Display user information
+* Pet page: Display pet information
+* Router components: A frontend router to navigate to all pages
+* Store components: Store all states used in web application
+
+
+### System Architecture
+
+<p align="center">
+<img src="Images/design/System_Architecture.png">
+</p>
+<b><p align= "center">Figure 4: The workflow of M5stack</p></b>
+
+With the requirements from each sub-system and following the principles of managing technical debt, the system architecture is designed as shown. In order to store user account details and their pet details, a data store is required. The data store takes the form of an embedded database served by the server. This fulfills the principle of “Separation-of-Concerns" (SoC) as the data is stored in a separate repository and we can modify the codebase of each sub-system without affecting dependencies. The principles of least surprise and least effort are also fulfilled since we are not introducing another database server and reducing setup overhead by using an embedded database. 
+
+The server that will be serving the data to the different sub-systems will be the web server. This means that the web server will be acting as an API server in addition to serving web pages. The web client will communicate with the server via HTTP, in the form of RESTful HTTP APIs. The M5Stack and desktop applications will communicate with the server via MQTT, through a message broker. A standardised JSON object format is used for MQTT communication to ensure that subscribers on the same topic will be able to distinguish the sender and recipient as well as the API call. Details of the API design will be discussed under section 1e. This fulfills the “Liskov Substitution Principle” where the standardised request and response JSON objects serve as a common “contract” between the different sub-systems, which allows for substitution of the sub-systems. Lastly, the database is designed considering the foreseeable enhancements and normalised to BCNF form. This fulfills the “Open-Closed” principle where we allow for functional extensions to the various sub-systems.
+
 
 ## Object-Oriented design of key sub-systems
 
-### M5Stack Application
+### M5Stack
 
-The main function of M5Stack in this project is to display user’s health statistics and pet information, record and upload user’s physical steps, update data from desktop and web application (loT interacts with web application and desktop application).
+The main function of M5Stack in this project is to display user’s health statistics and pet information, record and upload user’s physical steps, receive and send information to desktop and web application via MQTT. Classes UML diagram shows the object-oriented design of M5Stack as following figure.
 
-#### UML diagram
+<p align="center">
+<img src="Images/design/M5stack.jpg">
+</p>
+<b><p align= "center">Figure 5: UML diagram to show the relationships between classes in the M5Stack</p></b>
 
-![UML for M5Stack App](Images/M5Stack_UML.png)
+* The M5Stack (main) class is the most important component in the whole system. It creates private classes to control and store data, such as Pedometer for collecting steps, Pet and User for storing data, View for showing interface on the screen. Besides, it also contains the method setup(), loop() for the continuous update of the device, and view() to display the UI interface.  
+* The Pedometer class is mainly used to collect user steps timely (record steps per hour). It contains two private classes, Clock and GPS, to handle the problems of distance, steps, and time. Also, a Boolean variable to check pedometer status. The method updateSteps(Clock, GPS) update user steps every hour and then send the message to MQTT.  
+* The Clock and GPS classes that contain different variables and method. The former record time and location for the Pedometer class. The latter serves the ViewMap class to build the map system. 
+* The View class is yet another critical component in the M5stack system. It is extended by various classes, including ViewIndex, ViewLogo, ViewReport, ViewMap, ViewLogin. Among them, the ViewIndex is also extended by ViewPet and ViewUser. These classes build the M5stack interface system. 
+* The ViewLogin, Login and Keyboard classes build-up the login system. ViewLogin class is used to display a login view and keyboard on the screen. Login class stores username, password, and machine code and send this information to MQTT for validation. The Keyboard class is used to display an onscreen keyboard similar to those on a smartphone.
+* The ViewLogo, Logo classes allows for the display of dynamic picture, such as our logo.
+* The ViewReport, Report classes stores the report data and show the user’s health report. 
+* The ViewPet, Pet classes stores virtual pet data and show user’s pet. 
+* The ViewUser, User classes stores user data and show user’s information. 
+* The Menu classes stores current status and show the menu. 
+* The User class store all user’s information, such as user_id, user_name, user_image, user_gender, etc. In addition, this class also contains an array of user’s friends, Friend[], to record the user’s friend for interacting with each friend. 
+* The Pet class store all user’s pet information, such as pet_id, pet_name, pet_level, pet_experience, etc. In addition, the Pet class also contains an array of pet items, item[], to record all equipment and skins decorate on this pet. 
+* The Friend and Item classes store basic information of corresponding items.
 
 ### Desktop Application
 
-#### UML diagram
+<p align="center">
+<img src="Images/design/desktop.png">
+</p>
+<b><p align= "center">Figure 6: UML diagram to show relationship between classes within the desktop application</p></b>
 
-![UML for Desktop App](Images/Desktop_UML.png)
+The main classes for the desktop application are:
+* Database – This is a public class that can be accessed anywhere within the program, this includes strings and JSON object that will be used throughout the application. It deals with the storage of external data such as those from MQTT to be stored locally to be read and written by other methods within the application.
+* Event – This class mainly deal with the communication with MQTT, it listens for incoming message in the form of a string. The string can then be parsed using a JSON object parser built into java to convert it into a JSON object. Based on the JSON object types, different actions can be performed such as saving data into database, requesting of data by publishing JSONObject to MQTT and the refresh of dashboard information. This class also contain event listener such as the interaction with the dropdown list, buttons and carry out the respective actions.
+* View – This class deals with the data visualization done through methods such as the building of dropdown list, building of text area, building of title, etc. The method uses API from the data class as well as data from the database class. It also contains method that deals with the refreshing of data when interacting with elements of the dashboard.
 
 ### Web Application
+
+<p align="center">
+<img src="Images/design/web.png">
+</p>
+<b><p align= "center">Figure 7: UML diagram to show the relationship between components in the web application</p></b>
+
+The main components for the web application are: 
+* Index Page - This is the main vue component and acts as an index for the entire web application. It allows for the navigation to register page, login page, profile page, pet page, friend page and map page by router. 
+* Router – This is a front-end router implemented by Vue Router. It helps to build a single page application and controls the navigation between all vue components. 
+* Register component – A vue component which is used to create account with user id and password. 
+* Login component – A vue component used to log in account with user id and password
+* Profile component – A vue component used to display user information. An Echart external library was introduced for the implementation steps statistics display. 
+* Pet component – A vue component used to display pet information
+* Friends component – A vue component used for management of friends. 
+* Map component - A vue component used to display user’s daily route. 
+* Store – This is a store to manage all the states of every components in this web application. It contains two objects: the state object, which stores all the states used by other components, and the mutated object, which is the only way to change the values in the state object.
 
 ## Requirements of key sub-systems
 
 ### M5Stack Application
-IoT device (M5Stack) is designed for registered users, who could wear this device to tracker their physical steps, view health report and interact with virtual pets. There are two principal features of the loT device:  
+M5Stack is designed for registered users, who could wear this device to tracker their physical steps, view health report and interact with virtual pets. The two main features of this loT device are: 
 
-The first feature is to display user information and virtual pet information. The former includes user profiles, and daily or weekly health performance (steps, calorie count, etc). The latter includes virtual pet status, such as avatar, name, gender, age, level, etc. Each user and virtual pet have a unique ID to store, transfer and recall data conveniently. Besides, in the user information section, contacts and challenge modes are created. Users can view the step rankings of friends and challenge them. The challenge is usually to compare the next day’s sports behavior, and the winner can unlock more virtual pet model and skin.   
+To display user information and virtual pet information. The former includes user profiles, and daily or weekly health performance (steps, calorie count, etc). The latter includes virtual pet status, such as avatar, name, gender, age, level, etc. Each user and virtual pet have a unique ID to store, transfer and recall data conveniently. Besides, in the user information section, contacts and challenge modes are created. Users can view the step rankings of friends and issue challenges. The challenge is in the form of a competition between players to get more steps in a single day, and the winner can unlock more virtual pet model and skin. 
 
-The second feature is to track user steps and record health activities. The user’s steps/per minute and paths are obtained by counters and sensors built into the device. These obtained data are uploaded to the server and processed by the developer as a health report and then can be viewed in the first function. 
+The second feature is to track user steps and record health activities. The user’s steps/per minute and paths are obtained by counters and sensors built into the device. These obtained data are uploaded to the server and processed by the developer as a health report and then can be viewed in the first function.
+
 
 | User Story ID |                                                                             User Story                                                                            |  Backlog Items | Sub-system | priority |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------:|:----------:|:--------:|
