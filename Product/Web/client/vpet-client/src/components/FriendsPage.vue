@@ -1,7 +1,10 @@
 <template>
   <div class="Profile">
-    <p>test</p>
-    <Friend v-for="friend in friendList" v-bind:key="friend.friendId" v-bind:friendInfo="friend"></Friend>
+    <el-row type="flex" justify="center">
+      <el-col :span="12">
+        <Friend v-for="friend in friendList" v-bind:key="friend.friendId" v-bind:friendInfo="friend"></Friend>
+      </el-col>
+    </el-row>
   </div>
 </template>
 

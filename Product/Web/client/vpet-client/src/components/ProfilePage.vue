@@ -17,8 +17,12 @@
         <el-row type="flex" justify="space-between">
           <el-col :span="24">
             <el-tabs v-model="chartType" type="border-card">
-              <el-tab-pane label="Monthly Steps" name="monthly">Insert monthly step chart here</el-tab-pane>
-              <el-tab-pane label="Yearly Steps" name="yearly">Insert yearly step chart here</el-tab-pane>
+              <el-tab-pane label="Monthly Steps" name="monthly">
+                <chart></chart>
+              </el-tab-pane>
+              <el-tab-pane label="Yearly Steps" name="yearly">
+                <p>Yearly Chart.</p>
+              </el-tab-pane>
             </el-tabs>
           </el-col>
         </el-row>
@@ -28,8 +32,13 @@
 </template>
 
 <script>
+import chart from './chart/stepCart'
+
 export default {
   name: 'ProfilePage',
+  components: {
+    chart
+  },
   props: {
   },
   data: function () {
