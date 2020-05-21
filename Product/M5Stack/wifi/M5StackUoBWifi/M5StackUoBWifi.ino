@@ -47,7 +47,7 @@ const char* password = "4HUxeKbwKpqb";            // No password for UoB Guest
 
 // MQTT Settings
 const char* MQTT_clientname = "JUNGLE_FITNESS"; // Make up a short name
-const char* MQTT_sub_topic = "pet"; // pub/sub topics
+const char* MQTT_sub_topic = "json"; // pub/sub topics
 const char* MQTT_pub_topic = "M5stack"; // You might want to create your own
 
 // Please leave this alone - to connect to HiveMQ
@@ -61,11 +61,8 @@ const int port = 1883;
 // See Timer.h for more details.
 // Argument = millisecond period to schedule
 // task.  Here, 2 seconds.
+// replace, 10 seconds
 Timer publishing_timer(5000);
-
-
-
-
 
 /*******************************************************************************************
  *
@@ -227,7 +224,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
-  M5.Lcd.print(" << From HiveMQ (topic-pet): ");
+  M5.Lcd.print(" << From HiveMQ (json): ");
   M5.Lcd.println( in_str );
 }
 
