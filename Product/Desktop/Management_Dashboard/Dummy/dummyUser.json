@@ -1,0 +1,12 @@
+{
+    "petName": "Simba",
+    "firstName": "John",
+    "lastName": "Smith",
+    "imageUrl": "https://img.techpowerup.org/200520/img-3269.png",
+    "deviceNo": "P4177",
+    "petLevel": 10,
+    "userId": 1,
+    "email": "JSmith@email.com",
+    "totalStepCount": 5360,
+    "petSkin": "default"
+  }
