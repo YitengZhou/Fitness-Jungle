@@ -134,20 +134,9 @@ To display user information and virtual pet information. The former includes use
 
 The second feature is to track user steps and record health activities. The user’s steps/per minute and paths are obtained by counters and sensors built into the device. These obtained data are uploaded to the server and processed by the developer as a health report and then can be viewed in the first function.
 
-
-| User Story ID |                                                                             User Story                                                                            |  Backlog Items | Sub-system | priority |
-|:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------:|:----------:|:--------:|
-|       1       | As a user who wants to make his body healthier, I want to view my walking and running activity so that I can lead a well-balanced life between fitness and health |  Health report |   M5Stack  |          |
-|       2       |                        As a lover of fitness, I want to track my steps and calories so that I can plan sport and exercise more efficiently.                       |   Track steps  |   M5Stack  |          |
-|       3       |                           As a user who wants to make his life more interesting, I want to enjoy interacting with my virtual pet so that                          |   Virtual pet  |   M5Stack  |          |
-|       4       |                          As a user, I want to be able to log into my account on the M5Stack so that and I can count steps for my sports.                          |   Log system   |   M5Stack  |          |
-|       5       |   As a loT user, I want to visualize my health reports and lovely digital pet on my device, so that I can check my fitness data and pets at any time to review.   | Display system |   M5Stack  |          |
-|       6       |   As a user whose friends also use same device, I want to rank and challenge with my friends, so that I can interact with my friends and do fitness more active.  |  Friend system |   M5Stack  |          |
-|       7       |                       As a user, I want to check map and track walking or running movement so that I can record traces of my movement on map                      |   Map system   |   M5Stack  |          |
-|       8       |                                                                                ...                                                                                |                |            |          |
-
+<b><p align= "center">Table : User story</p></b>
 | User Story ID|User Story|
-|:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|:-:|:-|
 |       1       | As a user, I want to view my activity report, so that I can better plan my exercise regime. |
 |       2       | As a user, I want to track my steps and calories, so that I can know my daily step count. |
 |       3       | As a user, I want to view my virtual pet details, so that I can see its progress.|
@@ -158,37 +147,39 @@ The second feature is to track user steps and record health activities. The user
 |       8       | As a user, I want to send my steps to server, so that I can track my steps and calories. |
 |       9       |As a user, I want to view my health report, so that I can monitor my health status.|
 
+### Fesktop application
+As described in our system architecture, the desktop application element is meant to allow developer/ administrator to have a user-friendly interface to manage certain features of the Virtual Pet system. The desktop application is divided into two main sections: a section to view all the relevant information of the users registered in the database and a section that allows developer to add new pets or skins as well as make change on existing pets or skins such as adding new types of pet or skin.
 
-
-### Desktop Application
-
-The desktop application is designed for developer/ administrator to manage certain features of the VitualPet system. There are two main parts of the desktop application: 
-
-For the first part, the developer can add new pets or skins as well as make change on existing pets or skins such as adding new types of pet or skin. 
-
-For the second part, the developer can monitor user statistics. A search can be performed by username to access the specific user profile page, where basis information as well as health statistics such as such as the daily steps and weekly steps taken by a user are displayed.  
-
-The health statistics such as daily steps can be displayed in a form of vertical bar chart where the bars are denoted by the hours of the day (e.g. 00:00, 01:00), similarly the weekly graph can be display in the same fasion where the bars denote each day of the week (e.g. Mon, Tue), making it easier for the developer to get some health feedback to the user. 
-
-| User Story ID |                                                                        User Story                                                                        |         Backlog Items        |      Sub-system     | priority |
-|:-------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------:|:-------------------:|:--------:|
-|       1       |                  As a developer, I want to be able to view user’s profile so that I can have a better understanding of my user’s usage.                  |       User Information       | Desktop Application |          |
-|       2       |              As a developer, I want to be able to get statistics about the specific user, so I can tailor specific health feedback to them.              |        User statistics       | Desktop Application |          |
-|       3       |          As a developer, I want to be able to have a visual representation of my user usage, so that I can have a better understanding visually.         |       Visual Statistics      | Desktop Application |          |
-|       4       |           As a developer, I want to be able to upload, view and edit the pet and skin database, so that capture user interest with new content.          | Manage pet and skin database | Desktop Application |          |
-|       5       | As a developer, I want to be able to view all the changes made on the desktop application, so that I can revert to previous state if a bug was produced. |        Logging System        | Desktop Application |          |
-|       6       |                                                                            ...                                                                           |                              |                     |          |
-
+<b><p align= "center">Table : User story</p></b>
+| User Story ID|User Story|
+|:-:|:-|
+|       1       | As a developer, I want to be able to log in to the application, so that I can be authenticated to view privileged information about my users. |
+|       2       | As a developer, I want to be able to view information about any user, so I can tailor specific health feedback to them. |
+|       3       | As a developer, I want to be able to view a graphical representation of my user’s usage statistics, so that I can have a better understanding about the user’s usage. |
+|       4       | As a developer, I want to be able to add new virtual pets and pet skins, so that the users will have a variety to pet and pet skins to choose from. |
+|       5       | As a developer, I want to be able to modify virtual pets and pet skins, so that I can make updates to the designs. |
+|       6       | As a developer, I want to be able to view virtual pets and pet skins, so that I can see the list currently available to the users. |
+|       7       | As a developer, I want to be able to view all the changes made on the desktop application, so that I can revert to previous state if a bug was produced. |
 
 ### Web Application
 
-The web application is designed for pc/mobile users to register account and connect the M5Stack to their account. After registration they also can check and edit the detail information of their account and virtual pet in the web application. 
+The web application is designed for pc/mobile users to register account and connect the M5Stack to their account. After registration they can check and edit detail information of their account and virtual pet using the web application. 
 
-The first feature for users is to register their account. A user of M5stack can create an account with profile in the web application and connect their M5stack to their account by input the machine code of the M5Stack into the web application. After that the data between M5Stack and web application will be synchronously updated.  
+The first feature for users is to register their account. A user of M5stack can create an account with profile in the web application and connect their M5stack to their account by input the device number of the M5Stack into the web application. After that the data between M5Stack and web application will be synchronously updated. 
 
-The second feature is that users can check and edit their profile and pet information. It can illustrate much more detailed information than M5Stack as it is displayed on a larger screen. The main information for user to check includes username, gender, age, steps per day (in form of chart and table), friends, pet name, pet status and unlocked equipment for pet.  
+The second feature is that users can check and edit their profile and pet information. Which can illustrate much more detailed information than M5Stack as it is displayed on a larger screen. The main information for user to check includes username, gender, age, steps per day (in form of chart and table), friends, pet name, pet status and unlocked equipment for pet. 
 
-The web application is also designed as a reactive website, which means it can be correctly displayed in any kinds of network devices including pc/tablet/phone.  
+The web application is also designed as a responsive website, which means it can be correctly displayed in any kinds of network devices including pc/tablet/phone. 
+
+<b><p align= "center">Table : User story</p></b>
+| User Story ID|User Story|
+|:-:|:-|
+|       1       | As a user, I want to register an account, log in and link my M5Stack to it, so that I can start playing the game. |
+|       2       | As a user, I want to register an account, log in and link my M5Stack to it, so that I can start playing the game. |
+|       3       | As a user, I want to view a report about my daily steps, so that I can monitor my daily activity.  |
+|       4       | As a user, I want to edit my profile and pet status, so that I can make changes should I want to. |
+|       5       | As a user, I want to view my friends list, so that I can interact with my friends. |
+|       6       | As a user, I want to check my daily route on the map, so that I can look back at and see where I have been today. |
 
 ## Evolution of UI wireframes for key sub-systems
 
