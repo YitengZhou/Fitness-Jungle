@@ -34,7 +34,7 @@ void updateDashboardData() {
         view.build_labels("weeklychart_label" ,"Bar Chart (weekly)", 560, 350, 25);
         view.build_dailychart(db.daily, 
                 new String[] {"00:00","03:00","06:00", "09:00","12:00", "15:00", "18:00", "21:00"});
-        view.build_weeklychartl(db.weekly, 
+        view.build_weeklychart(db.weekly, 
                 new String[] {"Mon","Tue","Wed", "Thur","Fri", "Sat", "Sun"});
 
 }
