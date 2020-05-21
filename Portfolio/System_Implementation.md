@@ -100,8 +100,82 @@ Importantly, the Agile software development lifecycle is dominated by the iterat
 
 By contrasting the different models for software development, we decide to go for the Agile approach for the following few reasons. Firstly, the Agile approach has a few immediate advantages over traditional method such as the waterfall model due to its nature of being flexible. Although the rigidity of the waterfall model does prove to be very efficient in completing task phase by phase, and also the methodology can be explained with ease to ammeter coder there are inherent risk in this approach one of the most obvious being the lack to unit testing. Secondly, due to our idea and features for the project constantly evolving as we are implementing new features, so the Agile model fits our requirement as it features frequent check-ins which allow for changes to be made constantly. Whereas in the waterfall model, due to the linear progression does not encourage phases to be revisited.  Thirdly, the Agile methodology is way faster overall compared to the other methodology because far less re-work or major changes are made when progressing as most issues and changes are identified in the early stages.
 
-
 ## Breakdown of project into sprints
+As mentioned above in our system implementation we decided on the agile approach which features breaking down of project into sprints. Sprint planning is part of the scrum framework where we will determine what to work on in each of the sprint and discuss the initial plan for completing these backlog items. The figure below is a graphical representation of our sprint cycle and the detailed backlogs items derived from our user stories can be seen at (reference start of backlog) here.
+
+<p align="center">
+<img src="Images/implementation/sprint.jpg">
+</p>
+<b><p align= "center">Figure 1: The agile model for Fitness Jungle </p></b>
+
+### M5 Product Backlog
+<b><p align= "center">Table 4: M5 Product Backlog</p></b>
+
+|Priority|Backlog Item|User Story ID|User Story|Estimated time (hours)|
+|:-:|:-:|:-:|:-:|:-:|
+|1|Application setup|-|-|3|
+|2|MQTT connectivity|-|-|8|
+|3|View user details|5|As a user, I want to view my details on my device, so that I can identify my device.|15|
+|4|View pet details|3|As a user, I want to view my virtual pet details, so that I can see its progress.|26|
+|5|View steps|2|As a user, I want to track my steps and calories, so that I can know my daily step count.|12|
+|6|View activity report|1|As a user, I want to view my activity report, so that I can better plan my exercise regime.|17|
+|7|User login|4|As a user, I want to be able to log in, so that I can access the application.|17|
+|8|Send step updates|8|As a user, I want to send my steps to server, so that I can track my steps and calories.|2|
+|9|Map system|7|As a user, I want to check the map and track my movement route, so that I can look back and see what I have been today.|18|
+|10|Friend system|6|As a user, I want to view and add friends, so that I can interact with my friends.|14|
+|11|View health report|9|As a user, I want to receive my health report, so that I can see my sport progress.|15|
+
+### Desktop Product Backlog
+<b><p align= "center">Table 5: Desktop Product Backlog</p></b>
+|Priority|Backlog Item|User Story ID|User Story|Estimated time (hours)|
+|:-:|:-:|:-:|:-:|:-:|
+|1|Application setup|-|-|3.5|
+|2|MQTT connectivity|-|-|3.5|
+|3|View user information|2|As a developer, I want to be able to view information about any user, so I can tailor specific health feedback to them.|22.5|
+|4|View user statistics|3|As a developer, I want to be able to view a graphical representation of my user’s usage statistics, so that I can have a better understanding about the user’s usage.|17.5|
+|5|Add pets|4|As a developer, I want to be able to add new virtual pets and pet skins, so that the users will have a variety to pet and pet skins to choose from.|15|
+|6|View pets|6|As a developer, I want to be able to view virtual pets and pet skins, so that I can see the list currently available to the users.|1|
+|7|Modify pets|5|As a developer, I want to be able to modify virtual pets and pet skins, so that I can make updates to the designs.|15|
+|8|Admin authentication|1|As a developer, I want to be able to log in to the application, so that I can be authenticated to view privileged information about my users.|15|
+|9|Logging System|7|As a developer, I want to be able to view all the changes made on the desktop application, so that I can revert to previous state if a bug was produced.|20|
+
+### Web Product Backlog 
+<b><p align= "center">Table 6: Web Product Backlog </p></b>
+|Priority|Backlog Item|User Story ID|User Story|Estimated time (hours)|
+|:-:|:-:|:-:|:-:|:-:|
+|1|Application setup|-|-|5|
+|2|User account|1|As a user, I want to register an account, log in and link my M5Stack to it, so that I can start playing the game.|10|
+|3|View profiles|2|As a user, I want to view my profile and pet information, so that I can identify my account and view my pet’s progress.|8|
+|4|Update profile|4|As a user, I want to edit my profile and pet status, so that I can make changes should I want to.|10|
+|5|Friend system|5|As a user, I want to view my friends list, so that I can interact with my friends.|12|
+|6|Step count report|3|As a user, I want to view a report about my daily steps, so that I can monitor my daily activity.|10|
+|7|Map system|6|As a user, I want to check my daily route on the map, so that I can look back at and see where I have been today.|18|
+
+### Server Product Backlog
+<b><p align= "center">Table 7: Server Product Backlog </p></b>
+|Priority|Backlog Item|For sub-system|User Story ID|Estimated time (hours)|
+|:-:|:-:|:-:|:-:|:-:|
+|1|Server setup|-|-|3|
+|2|Database Creation|-|-|22|
+|3|Register new user (HTTP)|Web|1|5|
+|4|Authenticate user (HTTP)|Web|1|5|
+|5|Get user details (HTTP)|Web|2|5|
+|6|Update user details (HTTP)|Web|4|5|
+|7|Get pet types (HTTP)|Web|4|5|
+|8|Create user’s pet (HTTP)|Web|4|5|
+|9|Get user’s pets (HTTP)|Web|2|5|
+|10|Update user’s pet (HTTP)|Web|4|5|
+|11|Set user’s active pet (HTTP)|Web|4|5|
+|12|Get user and active pet details (MQTT)|M5stack|5|5|
+|13|Send step count update (MQTT)|M5stack|3|5|
+|14|Get list of users (MQTT)|Desktop|2|5|
+|15|Get user details (MQTT)|Desktop|2|5|
+|16|Get user’s step count updates within|Desktop|-|5|
+|17|Register device (MQTT)|M5stack|3|5|
+|18|Authenticate admin (MQTT)|Desktop|4|5|
+
+<b>Sprint 1: Building user interfaces and API design<b>
+
 
 ## Details of evaluation for designs
 
