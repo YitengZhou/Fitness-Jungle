@@ -10,9 +10,11 @@ export default new Vuex.Store({
     userName: "majyo",
     userImg: "",
     userPassword: "12345",
+    devicesNumber: "0",
     currentSteps: 50,
     level: 5,
     stepsToNextLevel: 100,
+    petId: 1,
     petName: "Neko",
     petType: "Cactus",
     skinId: 1,
@@ -48,8 +50,24 @@ export default new Vuex.Store({
   mutations: {
     setUser(state, data) {
       state.userId = data.userId;
-      state.userName = data.firstName;
+      state.userName = data.firstName + data.lastName;
       state.userImg = data.imageUrl;
+    },
+    setUserData(state, data) {
+      state.userName = data.firstName + data.lastName;
+      state.userImg = data.imageUrl;
+      state.devicesNumber = data.deviceNo;
+      state.currentSteps = data.totalStepCount;
+    },
+    setPetData(state, data) {
+      state.petId = data.petId;
+      state.petName = data.name;
+      state.level = data.level;
+      state.petType = data.type;
+      state.skinId = data.skinId;
+      state.skinName = data.skinName;
+      state.currentSteps = data.stepCount;
+      state.stepsToNextLevel = data.stepsToNextLevel;
     }
   }
 })
