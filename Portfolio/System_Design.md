@@ -134,7 +134,7 @@ To display user information and virtual pet information. The former includes use
 
 The second feature is to track user steps and record health activities. The user’s steps/per minute and paths are obtained by counters and sensors built into the device. These obtained data are uploaded to the server and processed by the developer as a health report and then can be viewed in the first function.
 
-<b><p align= "center">Table : User story</p></b>
+<b><p align= "center">Table 1: User story related M5stack</p></b>
 | User Story ID|User Story|
 |:-:|:-|
 |       1       | As a user, I want to view my activity report, so that I can better plan my exercise regime. |
@@ -147,13 +147,13 @@ The second feature is to track user steps and record health activities. The user
 |       8       | As a user, I want to send my steps to server, so that I can track my steps and calories. |
 |       9       |As a user, I want to view my health report, so that I can monitor my health status.|
 
-### Fesktop application
+### Desktop application
 As described in our system architecture, the desktop application element is meant to allow developer/ administrator to have a user-friendly interface to manage certain features of the Virtual Pet system. The desktop application is divided into two main sections: a section to view all the relevant information of the users registered in the database and a section that allows developer to add new pets or skins as well as make change on existing pets or skins such as adding new types of pet or skin.
 
-<b><p align= "center">Table : User story</p></b>
+<b><p align= "center">Table 2: User story related Desktop application</p></b>
 | User Story ID|User Story|
-|:-:|:-|
-|       1       | As a developer, I want to be able to log in to the application, so that I can be authenticated to view privileged information about my users. |
+|:----------:|:-|
+|       1    | As a developer, I want to be able to log in to the application, so that I can be authenticated to view privileged information about my users. |
 |       2       | As a developer, I want to be able to view information about any user, so I can tailor specific health feedback to them. |
 |       3       | As a developer, I want to be able to view a graphical representation of my user’s usage statistics, so that I can have a better understanding about the user’s usage. |
 |       4       | As a developer, I want to be able to add new virtual pets and pet skins, so that the users will have a variety to pet and pet skins to choose from. |
@@ -171,7 +171,7 @@ The second feature is that users can check and edit their profile and pet inform
 
 The web application is also designed as a responsive website, which means it can be correctly displayed in any kinds of network devices including pc/tablet/phone. 
 
-<b><p align= "center">Table : User story</p></b>
+<b><p align= "center">Table 3: User story related Web Application</p></b>
 | User Story ID|User Story|
 |:-:|:-|
 |       1       | As a user, I want to register an account, log in and link my M5Stack to it, so that I can start playing the game. |
@@ -185,7 +185,54 @@ The web application is also designed as a responsive website, which means it can
 
 ### M5Stack Application
 
-![Wireframe 1 for M5Stack App](Images/Wireframes/M5Stack/1_Main.png)
+<b><p>Version 1: Paper prototyping and self-made video</p></b>
+
+<p align="center">
+<img src="Images/design/paper.jpg" width = 80%>>
+</p>
+<b><p align= "center">Figure 8: Paper prototyping of Fitness Jungle</p></b>
+
+Fitness Jungle, originally called Virtual Pet, was first designed with paper prototypes, using Pen and paper approach. We painted and designed wireframe more than 20 pictures to test the feasibility of our ideas based on the functionality and ease of use. The result of our paper prototypes can be seen are in figure (reference pictures). A short video was filmed to demonstrate all the functionality we planned on having on the M5 stack which includes a page reference (main menu) that has all the features on M5stack such as the virtual pet, steps and health report, friend system, map systems, etc.
+
+[![Paper prototype demo](https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg)
+<b><p align= "center">Video: Paper prototype demo</p></b>
+
+After the paper prototyping, we employed the Wizard of Oz think-aloud technique seen in the figure below, which is a technique used for the interaction between subject and computer system which in this case was out paper prototype, in this technique the subjects are believed to be autonomous but are usually operated by an unseen human being. This technique requires the role of 3 character namely the observer, facilitator and the user. The facilitator will be the one changing different screen for the user upon the user input, while the observer main task will be to not offer any help but take notes of all the critical incident that the user may be faced when navigating through the system.
+
+<p align="center">
+<img src="Images/design/peer.jpg" width = 80%>>
+</p>
+<b><p align= "center">Figure 9: Paper prototype feedback from peers evaluation </p></b>
+
+We find this technique to be very useful as we immediately found out that some of our user interface such as the placement of ‘back’ button to not be ideal in some situations and the user has to navigate through numerous screens before returning back to the main page.
+
+<b><p>Version 2: The Processing code and UI wireframe in Axure</p></b>
+
+<p align="center">
+<img src="Images/design/process.gif" width = 80%>>
+</p>
+<b><p align= "center">Figure 10: UI wireframe using the Processing code </p></b>
+
+After gathering the feedback from peers and making usability modifications, we build the next UI wireframe version using the Processing and Axure (For UI wireframe). The main advantage of Processing is giving us the ability to simulate all the feature that we expect on M5stack, like the structure of menu, button control and its corresponding feedback. The following gif (reference) show how Fitness Jungle works in M5stack.
+
+<p align="center">
+<img src="Images/design/axure.jpg" width = 80%>>
+</p>
+<b><p align= "center">Figure 11: UI wireframe using the Axure </p></b>
+
+ In addition to processing, we made use Axure PR 9, which is an all-in-one software design tool for creating prototypes, specifications and diagrams to create different UI wireframe for all of our key subsystems. Using this method, we can test and validate the practicality of design and make design decisions based on the user experience.
+
+<b><p>Final version 3: Display in M5stack</p></b>
+The final version is to visualize the different system and idea on M5stack.
+
+* Pet system – the evolution of virtual pet
+
+To capture a wide range of user, multiple virtual pets have to be designed. Some of our design includes the pet at different stages life cycles, such as plants and animals in jungle. Most users are generally inclined to continue using our products for the benefit of their own health as well as unlocking different pets and appearances. The following figure shows the evolution of virtual pet.
+
+
+
+
+
 
 ### Desktop Application
 
