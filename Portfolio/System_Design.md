@@ -146,6 +146,20 @@ The second feature is to track user steps and record health activities. The user
 |       7       |                       As a user, I want to check map and track walking or running movement so that I can record traces of my movement on map                      |   Map system   |   M5Stack  |          |
 |       8       |                                                                                ...                                                                                |                |            |          |
 
+| User Story ID|User Story|
+|:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|       1       | As a user, I want to view my activity report, so that I can better plan my exercise regime. |
+|       2       | As a user, I want to track my steps and calories, so that I can know my daily step count. |
+|       3       | As a user, I want to view my virtual pet details, so that I can see its progress.|
+|       4       | As a user, I want to be able to log in, so that I can access the application. |
+|       5       | As a user, I want to view my details on my device, so that I can identify my device. |
+|       6       | As a user, I want to view and add friends, so that I can interact with my friends. |
+|       7       | As a user, I want to check the map and track my movement route, so that I can look back and see where I have been today. |
+|       8       | As a user, I want to send my steps to server, so that I can track my steps and calories. |
+|       9       |As a user, I want to view my health report, so that I can monitor my health status.|
+
+
+
 ### Desktop Application
 
 The desktop application is designed for developer/ administrator to manage certain features of the VitualPet system. There are two main parts of the desktop application: 
