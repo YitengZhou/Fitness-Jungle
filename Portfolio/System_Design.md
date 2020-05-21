@@ -375,7 +375,8 @@ MQTT also takes a publish-subscribe pattern, where the clients will subscribe to
 
 The communication protocol used by the Web client is HTTP, since the Web client has to communicate with the server via HTTP.
 
-<b><p align = "center">!!! Insert API design markdown !!!</p></b>
+<p align = "center" style = "color:red">
+<b>!!! Insert API design markdown !!!</b></p>
 
 ## Details of the data persistence mechanisms in use
 
