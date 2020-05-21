@@ -1,5 +1,14 @@
 # System Design
 
+## Design thinking
+
+<p align="center">
+<img src="Images/design/designThinking.jpg">
+</p>
+<center> Figure 1: Brainstorming during design thinking </center>
+
+We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects.
+
 ## Architecture of the system
 
 Overview: We are working on a health fitness tracker that comprises of a virtual pet interface in addition to the basics fitness tracker functionality to encourage end-user to be more pro-active.  

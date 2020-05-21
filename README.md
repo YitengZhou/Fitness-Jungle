@@ -1,5 +1,7 @@
 # Fitness Jungle
 
+![Logo](Portfolio/Images/logo.jpg)
+
 Fitness Jungle is a health and fitness IoT product that makes use of your daily step-count to level up your virtual animal.
 
 ## Group Members
