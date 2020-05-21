@@ -312,7 +312,7 @@ Our initial goal for the desktop application is to provide a user-friendly inter
 <b><p>Frist version of web application </p></b>
 
 <p align="center">
-<img src="Images/Wireframes/Web/1_Home.png" width = 69%>
+<img src="Images/Wireframes/Web/1_Home.png" width = 70%>
 </p>
 <b><p align= "center">Figure 20: Upload pet in desktop application </p></b>
 
@@ -320,33 +320,89 @@ The first version of UI wireframe is as shown above. The goal of the web applica
 
 <b><p>Final version of web application </p></b>
 
+* Log in page
 
+<p align="center">
+<img src="Images/Wireframes/Web/login page.jpg" width = 70%>
+</p>
+<b><p align= "center">Figure 21: Log in page of Web application </p></b>
 
+* User profile page
 
+<p align="center">
+<img src="Images/Wireframes/Web/profile page.jpg" width = 70%>
+</p>
+<b><p align= "center">Figure 22: User profile page of Web application </p></b>
 
+* Pet page
 
+<p align="center">
+<img src="Images/Wireframes/Web/pet page.jpg" width = 70%>
+</p>
+<b><p align= "center">Figure 23: Pet page of Web application </p></b>
 
+* Friend page
 
-
+<p align="center">
+<img src="Images/Wireframes/Web/friend page.jpg" width = 70%>
+</p>
+<b><p align= "center">Figure 24: Friend page of Web application </p></b>
 
 ## Details of the communication protocols in use
 
-The communication protocol used by the M5Stack application is the Message Queuing Telemetry Transport (MQTT) protocol. MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources. For Internet of Things (IoT) devices, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP). MQTT is chosen over the others due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. MQTT also takes a publish-subscribe pattern, where the clients will subscribe to channels hosted by a message broker and be able to send and receive messages over the subscribed channels. This is especially helpful as clients can easily communicate with one another with little setup and procedures can be triggered upon receipt of messages. An alternate approach will be to use the HyperText Transfer Protocol (HTTP) with WebSockets. However, MQTT is once again chosen due to the lower bandwidth and battery usage, faster throughput, and higher delivery guarantees. 
+The two main communication protocols used by the system are the Message Queuing Telemetry Transport (MQTT) protocol and HyperText Transfer Protocol (HTTP). 
 
-The communication protocol used by the web application is HTTP and MQTT, since the client of the web application communicates with the server using HTTP and the server has to communicate with the other applications using MQTT. The communication protocol used by the desktop application is MQTT for the same reason. 
+<b><p>MQTT for M5Stack-Server and Desktop-Server communication </p></b>
+
+MQTT is used by the M5Stack and Desktop clients to communicate with the server.
+
+* MQTT and M5Stack
+
+MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources[1]. For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP)[2]. The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
+
+* MQTT and Desktop
+
+MQTT also takes a publish-subscribe pattern, where the clients will subscribe to channels hosted by a message broker and be able to send and receive messages over the subscribed channels. This is helpful as clients can easily communicate with the server with low setup overhead and procedures can be triggered upon receipt of messages. MQTT is chosen over HTTP as the communication protocol for the Desktop client due to this reason.
+
+<b><p>HTTP for Web-Server communication</p></b>
+
+The communication protocol used by the Web client is HTTP, since the Web client has to communicate with the server via HTTP.
+
+<b><p align = "center">!!! Insert API design markdown !!!</p></b>
 
 ## Details of the data persistence mechanisms in use
 
-The data persistence mechanism used for the system will be an embedded database system. An embedded database system is chosen over a served database system (i.e. an additional database server) due to the reduced network and resource overhead and the ease of setup. In addition, an embedded database is more than sufficient for the scale of the project. A relational database is chosen in this case, since there are relationships to be defined between the entities of the system and it will be easier to maintain consistency in the data as such. The embedded database will be integrated with the web application, and the library used for the embedded database is SQLite. It is chosen as it is lightweight and it is the most widely used database engine. 
+The data persistence mechanism used for the system will be an embedded database system. An embedded database system is chosen over a served database system (i.e. an additional database server) due to the reduced network and resource overhead and the ease of setup. In addition, an embedded database is more than sufficient for the scale of the project. A relational database is chosen in this case, since there are relationships to be defined between the entities of the system and it will be easier to maintain consistency in the data as such. The embedded database will be integrated with the web application, and the library used for the embedded database is SQLite. It is chosen as it is lightweight, and it is the most widely used database engine.
+
+<p align="center">
+<img src="Images/design/dataSchema.png">
+</p>
+<b><p align= "center">Figure 25: Friend page of Web application </p></b>
+
+The main entities of the system are the end users, the administrators and the virtual pets, and these are represented in the ER diagram with entities “User”, “PetType”, and “Admin” respectively. “User” contains account information of the end users, while “Admin” contains account information of the administrators. User accounts and administrator accounts are separated since the access privileges to the user accounts and the administrator accounts can differ. “PetType” contains information about the different virtual pets available to the users.
+
+Firstly, users can own multiple virtual pets or none at all and this is represented with “UserPet” and the relationship with “User”. Each user’s pet is one of the available pet types represented in “PetType”. Each pet type is derived from a base pet type represented by “BasePetType”. Base pet type can be thought as the type of pet and pet type represents the “skin” or different appearances for that pet type. Each of the pets can grow in level, and the required steps to reach the different levels will be found in “PetLevel”. In addition, as each pet can have a different number of accumulated steps, the interval updates that the M5Stack device sends to the server will be recorded for both the user and the user’s pet stored in “UserIntervalStep” and “UserPetIntervalStep” respectively. 
+
+Next, the users can add friends and each friendship is stored in “Friend” with the statues of the friendship represented in “FriendStatus”. In order to ensure each pair of users is unique, the smaller of the user IDs will always be stored as the first user ID. Lastly, most tables will have a surrogate key as the primary key as this allows for a reduction in storage space when storing foreign keys. The exceptions are “Petlevel”, where the level is also an integer, and “Friend”, where the composite natural key ensures the uniqueness of the pair and the table does not need to be referenced elsewhere.
+
+The database schema has also been normalised to Boyce–Codd normal form (BCNF). Normalising to 3NF is broadly considered to be adequate as data redundancy is greatly reduced and the most common data anomalies are circumvented [1]. Schema is upgraded to BNCF since it could be achieved without significant effort. The schema satisfies the first normal form (1NF) with an atomic value in any one column and no duplicate of records. The second normal form (2NF) is also satisfied with no partial functional dependencies from a candidate key to a non-key attribute in the schema. In addition, the third normal form is satisfied with no transitive dependencies between non-key attributes. Lastly, the schema is of BCNF with no overlapping candidate keys.
 
 ## Details of web technologies in use
 
 ### Web client 
 
-The basic programming language in our web client are HTML5, CSS3 and Typescript. A famous front-end framework Vue.js and a CSS extension Less are also introduced in this project to implement a modern self-adaptation webpage design. This website is also designed as a single page application, thus the front-end router implemented in Vue is used.  
+For front-end web development, HTML5, CSS3 and JavaScript is used. HTML5 and CSS3 are chosen to make use of the latest features available to web pages and have a greater consistency across different browsers.
 
-Vue.js is a MIT open source front-end framework designed for reactive website development. This framework is chosen in our project mainly based on following rational: Firstly, comparing with Angular and React, it has a less steep learning curve so that the project can be started up without too much preparation. Secondly, Vue is quite suitable for a lightweight application development just like this project, while Angular is designed for a much more complex development and most of its functions are redundant for our project.  
+Framework: A popular front-end framework Vue.js is chosen in this project to implement a modern self-adaptation webpage design. Vue.js is a MIT open source front-end framework designed for reactive website development. The framework is chosen mainly based on following reasons: Firstly, comparing with Angular and React, it has a less steep learning curve so that the project can be started up without too much preparation. Secondly, Vue.js is suitable for a lightweight application development, which is suitable for the needs of this project, while Angular is designed for a much more complex development and most of its functions are redundant for our project. 
+
+Project and package management: NPM package management tool is used to maintain the package and their dependency information in this application, and VS Code with Vue.js plugin is used as the code editor.
+
+Building and testing environment: The vue-cli with hot-reloaded server and lint-on-save checking is used to quickly create this single page application. Testing and debugging are conducted using vue-cli-service and Google Chrome DevTool. 
+
+Application structure: This application is designed as a single page application, thus the front-end router implemented in vue-router is used to navigate between Vue.js components. Vuex is also introduced to implement the state management. It unites all states sharing between multi components into a single JavaScript file to isolate the State layer from View layer.
 
 ### Web server 
 
-Our web server is developed using Node.js. Node.js is designed for developing a scalable network application. The rational for choosing this framework is that the web server in our project is not complex and Node.js is capable for dealing with it, as well as the Node.js is much more swift and easy to use in comparison of Java based framework such as Spring.  
+The web server is developed using Node.js and the Express framework. The rationale for choosing Node.js is that it has a lower setup overhead as compared to other languages like Java and the Spring framework. It is also one of the most widely used module for web development, so it will be easier to find tutorials and answers in coding question and answer websites. In additional, the Express framework streamlines web development with functions that simplifies the building of common server components.
+
+The other libraries used are MQTT and SQLite. MQTT is used to allow communication between the server and the M5Stack and desktop clients. The reasons for using MQTT is detailed in section 1e. The MQTT JavaScript (JS) library is chosen for it is the most popular and most supported JS library for MQTT. The reasons for using an embedded database is detailed in section 1f. SQLite is chosen as the embedded database of choice due to it being the most used embedded database by a long shot and the best documented library among the others. The SQLite3 JS library is also chosen due to its popularity and online community support.
