@@ -230,7 +230,7 @@ The final version is to visualize the different system and idea on M5stack.
 To capture a wide range of user, multiple virtual pets have to be designed. Some of our design includes the pet at different stages life cycles, such as plants and animals in jungle. Most users are generally inclined to continue using our products for the benefit of their own health as well as unlocking different pets and appearances. The following figure shows the evolution of virtual pet.
 
 <p align="center">
-<img src="Images/design/virtual_pet.png" width = 80%>
+<img src="Images/design/virtual_pet.png" width = 50%>
 </p>
 <b><p align= "center">Figure 12: The evolution of virtual pet </p></b>
 
@@ -239,10 +239,11 @@ To capture a wide range of user, multiple virtual pets have to be designed. Some
 In order to display our product logo when M5stack start, multiple libraries need to be configured and installed in advance for these the dynamic pictures. The following gifs show the logo system between computer and M5stack.
 
 <p align="center">
-<img src="Images/design/logo.gif" width = 50%>
-<img src="Images/design/logo_M5.gif" width = 50%>
+<img src="Images/design/logo.gif" width = 41%>
+
+<img src="Images/design/logo_M5.gif" width = 39%>
 </p>
-<b><p align= "center">Figure 13: UI wireframe using the Processing code </p></b>
+<b><p align= "center">Figure 13: Logo view on M5stack </p></b>
 
 ### Desktop Application
 
