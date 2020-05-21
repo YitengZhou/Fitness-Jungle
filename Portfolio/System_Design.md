@@ -3,9 +3,9 @@
 ## Design thinking
 
 <p align="center">
-<img src="Images/design/designThinking.jpg">
+<img src="Images/design/designThinking.jpg" width = 40%>
 </p>
-<center> Figure 1: Brainstorming during design thinking </center>
+<p align= "center"> Figure 1: Brainstorming during design thinking </p>
 
 We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects.
 
