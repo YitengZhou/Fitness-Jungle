@@ -245,16 +245,89 @@ In order to display our product logo when M5stack start, multiple libraries need
 </p>
 <b><p align= "center">Figure 13: Logo view on M5stack </p></b>
 
+* Login and keyboard system
+
+Here the keyboard designed into M5stack, as shown on the right picture. Users can input they username and password, and login to the main system in Fitness Jungle after sending that information to MQTT.
+
+<p align="center">
+<img src="Images/design/page1.png" width = 45%>
+
+<img src="Images/design/keyboard.gif" width = 40%>
+</p>
+<b><p align= "center">Figure 14: Login and keyboard on M5stack </p></b>
+
+* Index page
+
+In the index page, the pet, user and steps information are displayed on the M5stack screen, including pet level, steps and calorie report, rank in friends and pet model. At the bottom of screen, pet experience also is shown, and user can unlock more pets and appearances after collecting enough steps.
+
+<p align="center">
+<img src="Images/design/Main_2.png" width = 45%>
+
+<img src="Images/design/index.jpg" width = 45%>
+</p>
+<b><p align= "center">Figure 15: Index page on M5stack </p></b>
+
+* Menu page
+
+In the menu page, users can select different interfaces, profile, friends, map and pet system to view their information. At the bottom of the M5stack, the three buttons are used to control arrow, respectively representing previous, select and next.
+
+<p align="center">
+<img src="Images/design/Menu_Profile.png" width = 45%>
+<img src="Images/design/menu.jpg" width = 45%>
+</p>
+<b><p align= "center">Figure 16: Menu page on M5stack </p></b>
+
+* Map page
+
+In the map system, we only show hand-drawn maps in M5stack as the right figure because the GPS function is not implemented.
+
+<p align="center">
+<img src="Images/design/Map_design.png" width = 45%>
+<img src="Images/design/map.png" width = 43%>
+</p>
+<b><p align= "center">Figure 17: Map page on M5stack </p></b>
+
 ### Desktop Application
 
-![Wireframe 1 for Desktop App](Images/Wireframes/Desktop/1_Update_Pet.png)
+* User Statistics
 
-![Wireframe 2 for Desktop App](Images/Wireframes/Desktop/2_Stat.png)
+<p align="center">
+<img src="Images/Wireframes/Desktop/1_Update_Pet.png" width = 49%>
+<img src="Images/design/18.png" width = 49%>
+</p>
+<b><p align= "center">Figure 18: User statistics in desktop application </p></b>
 
+* Upload Pet
+
+<p align="center">
+<img src="Images/Wireframes/Desktop/2_Stat.png" width = 49%>
+<img src="Images/design/19.png" width = 49%>
+</p>
+<b><p align= "center">Figure 19: Upload pet in desktop application </p></b>
+
+Our initial goal for the desktop application is to provide a user-friendly interface for admins to make changes such as the uploading new types of pet and uploading new skins to the existing pet database as seen from picture 2. We then wanted to have an interface for the admins to view all the registered user’s basic information as well as general statistics in the database as well. Next, we added in data visualization tool such as the bar graph to allow admins to have be able to make get general usage pattern of users immediately. Finally, we added a dropdown list on the top right-hand corner to allow for the switching between users, which lead us to picture 1 and the final evolution of our desktop application user-interface.
 
 ### Web Application
 
-![Wireframe 1 for Web App](Images/Wireframes/Web/1_Home.png)
+<b><p>Frist version of web application </p></b>
+
+<p align="center">
+<img src="Images/Wireframes/Web/1_Home.png" width = 69%>
+</p>
+<b><p align= "center">Figure 20: Upload pet in desktop application </p></b>
+
+The first version of UI wireframe is as shown above. The goal of the web application is to provide users with an interface to register and login to their account and display the data collected from M5Stack device. Thus, a user-friendly UI is the core rule of the web application design. The entire web page space is divided into three parts: navigation menu, display space and footer. The navigation menu includes logo, navigator to profile page, pet page, friends page, map page, log in page and register page. The body space is the main area to display of user’s data. It takes a half of width of screen space in a full width screen, which is a general design in modern web applications. A self-adaptation design is introduced so that it can adjust its interface to adapt to different screen resolutions.  A footer is used to display external links to social medias such as YouTube or Facebook. The entire UI is designed using the Element framework to unify the style.
+
+<b><p>Final version of web application </p></b>
+
+
+
+
+
+
+
+
+
 
 ## Details of the communication protocols in use
 
