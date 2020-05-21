@@ -196,10 +196,11 @@ Fitness Jungle, originally called Virtual Pet, was first designed with paper pro
 
 <p align="center">
 <a href="https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg
-" target="_target"><img src="Images/design/videocover.jpg" 
+" target="_blank"><img src="Images/design/videocover.jpg" 
 alt="Paper prototype demo" width="320" height="240" border="2"/></a>
 </p>
-<b><p align= "center">Video: Paper prototype demo</p></b>
+<b><p align= "center" href="https://www.youtube.com/watch?v=s3r_6IuI_X0&feature=youtu.be/0.jpg
+" target="_blank">Video: Paper prototype demo</p></b>
 
 After the paper prototyping, we employed the Wizard of Oz think-aloud technique seen in the figure below, which is a technique used for the interaction between subject and computer system which in this case was out paper prototype, in this technique the subjects are believed to be autonomous but are usually operated by an unseen human being. This technique requires the role of 3 character namely the observer, facilitator and the user. The facilitator will be the one changing different screen for the user upon the user input, while the observer main task will be to not offer any help but take notes of all the critical incident that the user may be faced when navigating through the system.
 
