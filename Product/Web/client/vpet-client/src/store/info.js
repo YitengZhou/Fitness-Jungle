@@ -5,8 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    userId: "admin",
+    userId: 0,
+    userEmail: "test@test.com",
     userName: "majyo",
+    userImg: "",
     userPassword: "12345",
     currentSteps: 50,
     level: 5,
@@ -44,5 +46,10 @@ export default new Vuex.Store({
       }
   },
   mutations: {
+    setUser(state, data) {
+      state.userId = data.userId;
+      state.userName = data.firstName;
+      state.userImg = data.imageUrl;
+    }
   }
 })
