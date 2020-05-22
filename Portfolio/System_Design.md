@@ -298,13 +298,23 @@ In the map system, we only show hand-drawn maps in M5stack as the right figure b
 
 ### Desktop Application
 
+<b><p>Frist version of desktop application </p></b>
+
+<p align="center">
+<img src="Images/design/deskv1.png" width = 49%>
+<img src="Images/design/deskv2.png" width = 50%>
+</p>
+<b><p align= "center">Figure 18: Frist version of desktop application </p></b>
+
+<b><p>Second version of desktop application </p></b>
+
 * User Statistics
 
 <p align="center">
 <img src="Images/design/2_Stat(updated).png" width = 49%>
 <img src="Images/design/18(updated).jpeg" width = 49%>
 </p>
-<b><p align= "center">Figure 18: User statistics in desktop application </p></b>
+<b><p align= "center">Figure 19: User statistics in desktop application </p></b>
 
 * Upload Pet
 
@@ -312,7 +322,7 @@ In the map system, we only show hand-drawn maps in M5stack as the right figure b
 <img src="Images/design/1_Update_Pet(updated).png" width = 49%>
 <img src="Images/design/19(updated).jpeg" width = 49%>
 </p>
-<b><p align= "center">Figure 19: Upload pet in desktop application </p></b>
+<b><p align= "center">Figure 20: Upload pet in desktop application </p></b>
 
 Our initial goal for the desktop application is to provide a user-friendly interface for admins to make changes such as the uploading new types of pet and uploading new skins to the existing pet database as seen from picture 2. We then wanted to have an interface for the admins to view all the registered user’s basic information as well as general statistics in the database as well. Next, we added in data visualization tool such as the bar graph to allow admins to have be able to make get general usage pattern of users immediately. Finally, we added a dropdown list on the top right-hand corner to allow for the switching between users, which lead us to picture 1 and the final evolution of our desktop application user-interface.
 
@@ -323,7 +333,7 @@ Our initial goal for the desktop application is to provide a user-friendly inter
 <p align="center">
 <img src="Images/Wireframes/Web/1_Home.png" width = 70%>
 </p>
-<b><p align= "center">Figure 20: Upload pet in desktop application </p></b>
+<b><p align= "center">Figure 21: Upload pet in desktop application </p></b>
 
 The first version of UI wireframe is as shown above. The goal of the web application is to provide users with an interface to register and login to their account and display the data collected from M5Stack device. Thus, a user-friendly UI is the core rule of the web application design. The entire web page space is divided into three parts: navigation menu, display space and footer. The navigation menu includes logo, navigator to profile page, pet page, friends page, map page, log in page and register page. The body space is the main area to display of user’s data. It takes a half of width of screen space in a full width screen, which is a general design in modern web applications. A self-adaptation design is introduced so that it can adjust its interface to adapt to different screen resolutions.  A footer is used to display external links to social medias such as YouTube or Facebook. The entire UI is designed using the Element framework to unify the style.
 
@@ -336,28 +346,45 @@ The theme colour in final version of UI is changed to azure and white, which mak
 <p align="center">
 <img src="Images/Wireframes/Web/login page.jpg" width = 70%>
 </p>
-<b><p align= "center">Figure 21: Log in page of Web application </p></b>
+<b><p align= "center">Figure 22: Log in page of Web application </p></b>
 
 * User profile page
 
 <p align="center">
 <img src="Images/Wireframes/Web/profile page.jpg" width = 70%>
 </p>
-<b><p align= "center">Figure 22: User profile page of Web application </p></b>
+<b><p align= "center">Figure 23: User profile page of Web application </p></b>
 
 * Pet page
 
 <p align="center">
 <img src="Images/Wireframes/Web/pet page.jpg" width = 70%>
 </p>
-<b><p align= "center">Figure 23: Pet page of Web application </p></b>
+<b><p align= "center">Figure 24: Pet page of Web application </p></b>
 
 * Friend page
 
 <p align="center">
 <img src="Images/Wireframes/Web/friend page.jpg" width = 70%>
 </p>
-<b><p align= "center">Figure 24: Friend page of Web application </p></b>
+<b><p align= "center">Figure 25: Friend page of Web application </p></b>
+
+### Communication of different sub-systems 
+
+<b> M5stack with MQTT hive</b>
+<p align="center">
+<img src="Images/design/m5-hive.jpg">
+</p>
+<b><p align= "center">Figure 26: Commnuication between M5stack and MQTT hive </p></b>
+
+<b> Desktop with MQTT hive</b>
+<p align="center">
+<img src="Images/design/Initiallising.png" width=50%>
+<img src="Images/design/desk-hive.png" width=37%>
+<img src="Images/design/desk-hive2.png" width=60%>
+</p>
+<b><p align= "center">Figure 27: Commnuication between Desktop and MQTT hive </p></b>
+<p align="center">
 
 ## e. Details of the communication protocols in use
 
@@ -934,7 +961,7 @@ The data persistence mechanism used for the system will be an embedded database 
 <p align="center">
 <img src="Images/design/dataSchema.png">
 </p>
-<b><p align= "center">Figure 25: Friend page of Web application </p></b>
+<b><p align= "center">Figure 28: Friend page of Web application </p></b>
 
 The main entities of the system are the end users, the administrators and the virtual pets, and these are represented in the ER diagram with entities “User”, “PetType”, and “Admin” respectively. “User” contains account information of the end users, while “Admin” contains account information of the administrators. User accounts and administrator accounts are separated since the access privileges to the user accounts and the administrator accounts can differ. “PetType” contains information about the different virtual pets available to the users.
 
