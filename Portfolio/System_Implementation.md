@@ -51,8 +51,7 @@ Based on its characteristics, the spiral model is best used in large, expensive 
 |:-:|:-:|
 |Risk handling|Complex|
 |Flexibility - Changes made to the requirements during the process can be easily adopted and incorporated|Too much dependable on Risk Analysis - Without very highly experienced expertise, it is going to be a failure to develop a project using this model.|
-|Customer satisfaction - The spiral model facilitates customer feedback|
-|Difficulty in time management - The number of phases is unknown at the start of the project, so time estimation is very difficult.|
+|Customer satisfaction - The spiral model facilitates customer feedback|Difficulty in time management - The number of phases is unknown at the start of the project, so time estimation is very difficult.|
 |Easy to estimate cost of the whole project| Expensive, not suitable for small projects|
 
 <b>Agile Model</b>
@@ -174,7 +173,112 @@ As mentioned above in our system implementation we decided on the agile approach
 |17|Register device (MQTT)|M5stack|3|5|
 |18|Authenticate admin (MQTT)|Desktop|4|5|
 
-<b>Sprint 1: Building user interfaces and API design<b>
+<b>Sprint 1: Building user interfaces and API design</b>
+
+In this sprint, we will not be building the full features but rather just the user interfaces. This is a little unconventional since a sprint cycle usually takes a feature through design to implementation. However, the team felt that it will be more beneficial if we started with the building of the user interfaces to make clear of the data requirements and allow a more coherent flow of the applications. This will also allow for a better API design as the API designer will have an overview of the data required by the different clients and be able to build more general-purpose APIs that can be shared by clients. This contrasts with building APIs with each feature implementation, which can result in APIs with narrow scopes and increase data redundancy in APIs. In addition, making any API changes will result in previous implemented features having to be modified to keep with the changes. Thus, to reduce API changes and have a better application design flow, the team decided to take an unconventional approach in the first sprint. 
+
+At this stage, the meetings are held every 2 days instead of daily as advocated in Scrum. This is due to the reason that more time is required for coming up with designs before holding meetings. An end of sprint meeting is held to discuss about the sprint that just happened, and to identify the areas we did well and the areas to improve. In particular, the team felt that the meetings held every other day are great in keeping everyone on the same page. However, we felt that the communication of requirements is not as active as we will like and will work on it for subsequent sprints. We also reviewed and confirmed on the design details and decided on details for the next sprint.
+
+### M5Stack Sprint 1 Backlog
+<b><p align= "center">Table 8: M5Stack Sprint 1 Backlog</p></b>
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|
+|1|<b>Application setup|-|3
+| |Setup M5Stack environment and import relevant modules| |3
+|2|<b>View user details (user interface)|5|6
+| |Designing user details page| |3
+| |Creating user details page| |3
+|3|<b>View pet details (user interface)|3|10
+| |Designing pet details page| |5
+| |Creating pet details page| |5
+|4|<b>View steps (user interface)|2|4
+| |Designing track steps page| |2
+| |Creating track steps page| |2
+|5|<b>View activity report (user interface)|1|6
+| |Designing report page| |2
+| |Creating report page| |4
+|6|<b>User login (user interface)|4|9
+| |Designing logo page| |1.5
+| |Creating logo page| |1.5
+| |Designing login page| |1.5
+| |Creating login page| |1.5
+| |Designing keyboard plug-in unit| |1.5
+| |Creating keyboard plug-in unit| |1.5
+
+### Desktop Sprint 1 Backlog
+<b><p align= "center">Table 9: Desktop Sprint 1 Backlog</p></b>
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|
+|1|<b>Application setup|-|2.5
+| |Create a setup method for the processing window| |1
+| |Create a draw method for setting background of window| |1
+| |Create a dashboard class for the methods such as building of display elements| |0.5
+|2|<b>View user Information (user interface)|2|4
+| |Create an element that loads picture from web, resize image and appropriately displaying image at a suitable position| |0.5
+| |Create an element that display user information such as username, first name, etc. (Static information)| |0.5
+| |Create a dropdown list to display all the different user registered in the database| |2
+|3|<b>View user statistics (user interface)|3|3.5
+| |Create an element that display user basic statistic such as daily steps, weekly steps and average daily steps (Static information)| |0.5
+| |Create an element that plot bar chart for daily steps by hourly basis and weekly steps daily basis (Static information)| |3
+
+### Web Sprint 1 Backlog
+<b><p align= "center">Table 10: Web Sprint 1 Backlog</p></b>
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|
+|1|<b>Application setup|-|2
+| |Setup Vue.js and import relevant libraries| |2
+|2|<b>User account (user interface)| 1|4
+| |Log in page framework| | 2
+| |Log in page CSS| | 2
+|3|<b>View profile (user interface)| 2| 4
+| |Profile page framework| | 2
+| |Profile page CSS| | 2
+|4|<b>Update profile (user interface)|4|4
+| |Profile edit page framework| | 2
+| |Profile edit page CSS| | 2
+|5|<b>Friend system (user interface)| 5| 6
+| |Friend component| | 2
+| |Friend component CSS| | 2
+| |Friend list page| |1
+| |Friend list page CSS| | 1
+|6|<b>Map system (user interface)| 6|2
+| |Map page framework| | 1
+| |Map page CSS| |1
+
+Server Sprint Backlog
+Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+|1|Database Creation (Design)|-|-|10
+||Design User table||1
+||Design BasePetType table||1
+||Design PetType table||1
+||Design PetLevel table||1
+||Design UserPet table||1
+||Design UserIntervalStep table||1
+||Design UserPetIntervalStep table||1
+||Design Friend table||1
+||Design FriendStatus table||1
+||Design Admin table||1
+|2|Register new user (HTTP) API Design|Web|1|1
+|3|Authenticate user (HTTP) API Design|Web|1|1
+|4|Get user details (HTTP) API Design|Web|2|1
+|5|Update user details (HTTP) API Design|Web|4|1
+|6|Get pet types (HTTP) API Design|Web|4|1
+|7|Create user’s pet (HTTP) API Design|Web|4|1
+|8|Get user’s pets (HTTP) API Design|Web|2|1
+|9|Update user’s pet (HTTP) API Design|Web|4|1
+|10|Set user’s active pet (HTTP) API Design|Web|4|1
+|11|Get user and active pet details (MQTT) API Design|M5Stack|5|1
+|12|Send step count update (MQTT) API Design|M5Stack|3|1
+|13|Get list of users (MQTT) API Design|Desktop|2|1
+|14|Get user details (MQTT) API Design|Desktop|2|1
+|15|Get user’s step count updates within interval (MQTT) API Design|Desktop|3|1
+|16|Register device (MQTT) API Design|M5Stack|4|1
+|17|Authenticate admin (MQTT) API Design|Desktop|1|1
+
+<b>Sprint 2: First wave of implementation</b>
+
+In this sprint, we start off the first wave of feature implementations. The server is added with the APIs required by the different sub-systems, developing in the sequence shown in the user sequence diagram. The different sub-systems build on from the user interfaces and establish communication with the server via API calls to retrieve the required data. In particular, for the desktop application, the time required to build the user interfaces exceed the initial expectations in the previous sprint and thus a portion of this sprint will be to continue building the user interfaces alongside implementing features.
 
 
 ## Details of evaluation for designs
