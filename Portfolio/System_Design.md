@@ -98,7 +98,7 @@ The main function of M5Stack in this project is to display user’s health stati
 ### Desktop Application
 
 <p align="center">
-<img src="Images/design/desktop.png">
+<img src="Images/design/desktop(updated).png">
 </p>
 <b><p align= "center">Figure 6: UML diagram to show relationship between classes within the desktop application</p></b>
 
