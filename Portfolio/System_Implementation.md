@@ -286,34 +286,34 @@ At this stage, meetings are held daily as the pace of implementation has picked 
 ### M5Stack Sprint 2 Backlog
 <b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
 
-Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
+|Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
 |:-:|:-:|:-:|:-:|:-:|
-1|<b>MQTT connectivity</b>|-|8|
+|1|<b>MQTT connectivity</b>|-|8|
 | |Setup MQTT environment| |1|
 | |Setup WiFi class on M5stack| |3|
 | |Setup publish and subscribe topics| |1|
 | |Test sending messages| |1.5|
 | |Test receiving messages| |1.5|
-2|<b>View user details</b>|5|6|
+|2|<b>View user details</b>|5|6|
 | |Send request JSON| |1|
 | |Receive response JSON| |1|
 | |Display user details| |4|
-3|<b>View pet details</b>|3|6|
+|3|<b>View pet details</b>|3|6|
 | |Send request JSON| |1|
 | |Receive response JSON| |1|
 | |Display pet details| |4|
-4|<b>Send steps updates</b>|8|2|
+|4|<b>Send steps updates</b>|8|2|
 | |Send request JSON| |1|
 | |Receive response JSON| |1|
-5|<b>View steps</b>|2|5|
+|5|<b>View steps</b>|2|5|
 | |Send request JSON| |1|
 | |Receive response JSON| |1|
 | |Display steps| |3|
-6|<b>View activity report</b>|1|8|
+|6|<b>View activity report</b>|1|8|
 | |Send request JSON| |1|
 | |Receive response JSON| |1|
 | |Display activity report| |6|
-7|<b>User login</b>|4|8|
+|7|<b>User login</b>|4|8|
 | |Send request JSON| |1|
 | |Receive response JSON| |1|
 | |Display login workflow| |6|
