@@ -1,5 +1,34 @@
 # 1. System Design
 
+## Contents of System Design
+- [**Design thinking**](#Design-thinking) 
+- [**a. Architecture of the system**](#a.-Architecture-of-the-system)
+  - [System workflow](#System-workflow)
+  - [M5Stack](#M5Stack)
+  - [Desktop Application](#Desktop-Application)
+  - [Web Application](#Web-Application)
+  - [System Architecture](#System-Architecture)
+- [**b. Object-Oriented design of key sub-systems**](#b.-Object-Oriented-design-of-key-sub-systems)
+  - [M5Stack OOD](#M5Stack-OOD)
+  - [Desktop Application OOD](#Desktop-Application-OOD)
+  - [Web Application OOD](#Web-Application-OOD)
+- [**c. Requirements of key sub-systems**](#c.-Requirements-of-key-sub-systems)
+  - [M5Stack requirements](#M5Stack-requirements)
+  - [Desktop Application requirements](#Desktop-Application-requirements)
+  - [Web Application requirements](#Web-Application-requirements)
+- [**d. Evolution of UI wireframes for key sub-systems**](#d.-Evolution-of-UI-wireframes-for-key-sub-systems)
+  - [M5Stack UI](#M5Stack-UI)
+  - [Desktop Application UI](#Desktop-Application-UI)
+  - [Web Application UI](#Web-Application-UI)
+  - [Communication of different sub-systems](#Communication-of-different-sub-systems)
+- [**e. Details of the communication protocols in use**](#e.-Details-of-the-communication-protocols-in-use)
+  - [API Design](#API-Design)
+- [**f. Details of the data persistence mechanisms in use**](#f.-Details-of-the-data-persistence-mechanisms-in-use)
+
+- [**g. Details of web technologies in use**](#g.-Details-of-web-technologies-in-use)
+  - [Web client](#Web-client)
+  - [Web server ](#Web-server)
+
 ## Design thinking
 
 <p align="center">
@@ -65,16 +94,15 @@ The web application contains following components:
 <p align="center">
 <img src="Images/design/System_Architecture.png">
 </p>
-<b><p align= "center">Figure 4: The workflow of M5stack</p></b>
+<b><p align= "center">Figure 4: System architecture</p></b>
 
 With the requirements from each sub-system and following the principles of managing technical debt, the system architecture is designed as shown. In order to store user account details and their pet details, a data store is required. The data store takes the form of an embedded database served by the server. This fulfills the principle of “Separation-of-Concerns" (SoC) as the data is stored in a separate repository and we can modify the codebase of each sub-system without affecting dependencies. The principles of least surprise and least effort are also fulfilled since we are not introducing another database server and reducing setup overhead by using an embedded database. 
 
 The server that will be serving the data to the different sub-systems will be the web server. This means that the web server will be acting as an API server in addition to serving web pages. The web client will communicate with the server via HTTP, in the form of RESTful HTTP APIs. The M5Stack and desktop applications will communicate with the server via MQTT, through a message broker. A standardised JSON object format is used for MQTT communication to ensure that subscribers on the same topic will be able to distinguish the sender and recipient as well as the API call. Details of the API design will be discussed under section 1e. This fulfills the “Liskov Substitution Principle” where the standardised request and response JSON objects serve as a common “contract” between the different sub-systems, which allows for substitution of the sub-systems. Lastly, the database is designed considering the foreseeable enhancements and normalised to BCNF form. This fulfills the “Open-Closed” principle where we allow for functional extensions to the various sub-systems.
 
-
 ## b. Object-Oriented design of key sub-systems
 
-### M5Stack
+### M5Stack OOD
 
 The main function of M5Stack in this project is to display user’s health statistics and pet information, record and upload user’s physical steps, receive and send information to desktop and web application via MQTT. Classes UML diagram shows the object-oriented design of M5Stack as following figure.
 
@@ -97,7 +125,7 @@ The main function of M5Stack in this project is to display user’s health stati
 * The Pet class store all user’s pet information, such as pet_id, pet_name, pet_level, pet_experience, etc. In addition, the Pet class also contains an array of pet items, item[], to record all equipment and skins decorate on this pet. 
 * The Friend and Item classes store basic information of corresponding items.
 
-### Desktop Application
+### Desktop Application OOD
 
 <p align="center">
 <img src="Images/design/desktop(updated).png">
@@ -109,7 +137,7 @@ The main classes for the desktop application are:
 * Event – This class mainly deal with the communication with MQTT, it listens for incoming message in the form of a string. The string can then be parsed using a JSON object parser built into java to convert it into a JSON object. Based on the JSON object types, different actions can be performed such as saving data into database, requesting of data by publishing JSONObject to MQTT and the refresh of dashboard information. This class also contain event listener such as the interaction with the dropdown list, buttons and carry out the respective actions.
 * View – This class deals with the data visualization done through methods such as the building of dropdown list, building of text area, building of title, etc. The method uses API from the data class as well as data from the database class. It also contains method that deals with the refreshing of data when interacting with elements of the dashboard.
 
-### Web Application
+### Web Application OOD
 
 <p align="center">
 <img src="Images/design/webUML.png">
@@ -129,7 +157,7 @@ The main components for the web application are:
 
 ## c. Requirements of key sub-systems
 
-### M5Stack Application
+### M5Stack requirements
 M5Stack is designed for registered users, who could wear this device to tracker their physical steps, view health report and interact with virtual pets. The two main features of this loT device are: 
 
 To display user information and virtual pet information. The former includes user profiles, and daily or weekly health performance (steps, calorie count, etc). The latter includes virtual pet status, such as avatar, name, gender, age, level, etc. Each user and virtual pet have a unique ID to store, transfer and recall data conveniently. Besides, in the user information section, contacts and challenge modes are created. Users can view the step rankings of friends and issue challenges. The challenge is in the form of a competition between players to get more steps in a single day, and the winner can unlock more virtual pet model and skin. 
@@ -149,7 +177,7 @@ The second feature is to track user steps and record health activities. The user
 |       8       | As a user, I want to send my steps to server, so that I can track my steps and calories. |
 |       9       |As a user, I want to view my health report, so that I can monitor my health status.|
 
-### Desktop application
+### Desktop application requirements
 As described in our system architecture, the desktop application element is meant to allow developer/ administrator to have a user-friendly interface to manage certain features of the Virtual Pet system. The desktop application is divided into two main sections: a section to view all the relevant information of the users registered in the database and a section that allows developer to add new pets or skins as well as make change on existing pets or skins such as adding new types of pet or skin.
 
 <b><p align= "center">Table 2: User story related Desktop application</p></b>
@@ -163,7 +191,7 @@ As described in our system architecture, the desktop application element is mean
 |       6       | As a developer, I want to be able to view virtual pets and pet skins, so that I can see the list currently available to the users. |
 |       7       | As a developer, I want to be able to view all the changes made on the desktop application, so that I can revert to previous state if a bug was produced. |
 
-### Web Application
+### Web Application requirements
 
 The web application is designed for pc/mobile users to register account and connect the M5Stack to their account. After registration they can check and edit detail information of their account and virtual pet using the web application. 
 
@@ -185,7 +213,7 @@ The web application is also designed as a responsive website, which means it can
 
 ## d. Evolution of UI wireframes for key sub-systems
 
-### M5Stack Application
+### M5Stack UI
 
 <b><p>Version 1: Paper prototyping and self-made video</p></b>
 
@@ -296,7 +324,7 @@ In the map system, we only show hand-drawn maps in M5stack as the right figure b
 </p>
 <b><p align= "center">Figure 17: Map page on M5stack </p></b>
 
-### Desktop Application
+### Desktop Application UI
 
 <b><p>Frist version of desktop application </p></b>
 
@@ -326,7 +354,7 @@ In the map system, we only show hand-drawn maps in M5stack as the right figure b
 
 Our initial goal for the desktop application is to provide a user-friendly interface for admins to make changes such as the uploading new types of pet and uploading new skins to the existing pet database as seen from picture 2. We then wanted to have an interface for the admins to view all the registered user’s basic information as well as general statistics in the database as well. Next, we added in data visualization tool such as the bar graph to allow admins to have be able to make get general usage pattern of users immediately. Finally, we added a dropdown list on the top right-hand corner to allow for the switching between users, which lead us to picture 1 and the final evolution of our desktop application user-interface.
 
-### Web Application
+### Web Application UI
 
 <b><p>Frist version of web application </p></b>
 
