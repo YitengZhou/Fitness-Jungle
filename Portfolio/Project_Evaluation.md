@@ -1,7 +1,23 @@
 # Project Evaluation
+
+- [**a. Reflective discussion of the success of the project**](#a.-Reflective-discussion-of-the-success-of-the-project)
+  - [System Design](#System-Design)
+  - [System Implementation](#System-Implementation)
+- [**b. Discussion of future work**](#b.-Discussion-of-future-work)
+  - [M5Stack Application](#M5Stack-Application)
+  - [Desktop Application](#Desktop-Application)
+  - [Web-Application](#Web-Application)
+- [**c. Reflect on the working practices of your group**](#c.-Reflect-on-the-working-practices-of-your-group)
+  - [Team Organisation](#Team-Organisation)
+  - [Management of issues](#Management-of-issues)
+  - [Communication](#Communication)
+  - [Code Management](#Code-Management)
+- [**d. How Coronavirus Has Affected Our Project**](#d.-How-Coronavirus-Has-Affected-Our-Project)
+
+
 ## a. Reflective discussion of the success of the project
 
-### System design
+### System Design
 
 In terms of system design, the team felt it is a good system design after our evaluation detailed in the previous section. The system delivers according to the system requirements with our testing, and it is able to extend on functionalities easily. Each sub-system can also be substituted without affecting the other parts of the system with the “Separation-of-Concerns” and common “contract” in place. However, in terms of user interface design, we will require actual user testing to have a more accurate evaluation of them. 
 
@@ -12,7 +28,7 @@ In terms of system implementation, the team felt that it is a very successful so
 In terms of code management, we also felt it was a very successful run with few merge conflicts. This can be credited to our code management style in terms of branching, which will be discussed further in section 3c.
 
 ## b. Discussion of future work
-### M5Stack application
+### M5Stack Application
 
 The M5stack as the core component of IoT device still has great potential to bring greater benefits to users.
 
@@ -67,7 +83,7 @@ s
 
 ## c. Reflect on the working practices of your group
 
-<b>Team Organisation</b>
+### Team Organisation
 
 Because the members of our team have different advantages and interests, everyone was tasked with one responsibility or subsystem. In addition, each person is involved in system design and project sprints to ensure that everyone always understands what is happening and always keeps up to date with the project's skills and knowledge. These are particularly valuable in this difficult time. 
 
@@ -75,13 +91,13 @@ Beibei has extraordinary meticulousness and seriousness, and always been interes
 
 Despite in this special period, our work keeps well organized and each member remains passionate about this project. This ensures that everyone is committed to and excited about this IoT device.
 
-<b>Management of issues</b>
+### Management of issues
 
 At first, we managed issues or subsystem requirements was at GitHub, which can create, delete and manage various issues easily. During different sprints, team members can clearly see product backlogs and milestones with colored labels in GitHub. However, some members cannot use GitHub effectively due to their geographic location. Subsequently, we not only update on GitHub, but also in Trello, which has more powerful Todo-Doing-Done boards with tick and deadline.
 
 While executing the agile sprints, the frequency of group members meetings from the original twice a week gradually changed to once a day. This is because many details need to be communicated in time that ensure our backlogs and sprints can be completed on time. For example, in the process of mutual communication between different subsystems, even a short halt hour (usually more than 1 hour) can greatly improve the progress and completeness of the project.
 
-<b>Communication</b>
+### Communication
 
 Due to the outbreak of the coronavirus epidemic, the team members were separated in four different countries and endured by the time difference and internet problems. In order to effectively communicate and share information with each other, we decide to use the Tencent Meeting for discussing and the WeChat software for daily communication, as shown in the following two pictures.
 
@@ -111,7 +127,7 @@ The Tencent Meeting is also used to scrum meetings, communicate with each other 
 </p>
 <b><p align= "center">Figure 4: Edit documents together using OneDrive </p></b>
 
-<b> Code Management </b>
+### Code Management
 
 Firstly, the development of the codebase is split according to the sub-systems, mainly branches “m5-master”, “desktop-master”, and “web-master”. This serves as the main or master branches of the sub-systems. To simulate an actual development workflow, commits are only made to master branches on releases of the applications or urgent bug fixes. That is to say, commits on master branch are minimised and be made only after reaching certain checkpoints and have passed the testing phase. Thus, we will primarily work on development branches which are namely “m5-dev”, “desktop-dev”, and “web-dev”. For sub-system groups with a single developer, they will be working on committing on these branches. They will also be their own branch managers. However, for groups with multiple developers, they will be development on their own feature branch branched from the development branch. One member will act as the branch manager and be in charge of merging the code. The branch manager will consult the member who did the pull request to find out what implementations are and will check and resolve any merge conflicts. This is a better approach than multiple team members committing to the same branch, which can cause confusion and have one member unintentionally deleting another member’s code. Another advantage is that there will always be one member kept in the know of all the changes in the codebase and can serve as the point of contact for the other sub-systems. Example of these feature branches are “web-dev-frontend” and “web-dev-backend”, with the backend developer acting as the branch manager and merging changes. 
 
@@ -120,7 +136,7 @@ Firstly, the development of the codebase is split according to the sub-systems, 
 </p>
 <b><p align= "center">Figure 5: Share code and merge branch using The Github </p></b>
 
-## How Coronavirus Has Affected Our Project
+## d. How Coronavirus Has Affected Our Project
 <b>Limited time</b>
 
 Due to the dangerous situation in March, our students were busy dealing with all kinds of problems, such as getting tickets back home, forced quarantine policy taken by their countries, preparing for essentials and so on, for a long period of time our plan had to be paused, which greatly messed up our original plan. After then we had to discuss about new solutions to make up for it, thus leading to less efficient time to work on the project. 
