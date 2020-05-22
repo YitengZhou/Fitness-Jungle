@@ -22,6 +22,7 @@
   - [Physical Safety](#Physical-Safety)
   - [Addiction](#Addiction)
 
+## Software Development Lifecycle (SDLC)
 
 With our system design on hand, we are mindful of the importance of a clear software development lifecycle (SDLC) which is the methodology of creating a high-quality software using the shortest time possible. This is accomplished by splitting the project into phases. Some of the most popular SDLC models include the waterfall model, spiral model and Agile model which will be discussed in greater depths in the following sections.
 
