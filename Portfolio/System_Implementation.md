@@ -288,35 +288,35 @@ At this stage, meetings are held daily as the pace of implementation has picked 
 
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|:-:|
-1|<b>MQTT connectivity|-|8
-| |Setup MQTT environment| |1
-| |Setup WiFi class on M5stack| |3
-| |Setup publish and subscribe topics| |1
-| |Test sending messages| |1.5
-| |Test receiving messages| |1.5
-2|<b>View user details|5|6
-| |Send request JSON| |1
-| |Receive response JSON| |1
-| |Display user details| |4
-3|<b>View pet details|3|6
-| |Send request JSON| |1
-| |Receive response JSON| |1
-| |Display pet details| |4
-4|<b>Send steps updates|8|2
-| |Send request JSON| |1
-| |Receive response JSON| |1
-5|<b>View steps|2|5
-| |Send request JSON| |1
-| |Receive response JSON| |1
-| |Display steps| |3
-6|<b>View activity report|1|8
-| |Send request JSON| |1
-| |Receive response JSON| |1
-| |Display activity report| |6
-7|<b>User login|4|8
-| |Send request JSON| |1
-| |Receive response JSON| |1
-| |Display login workflow| |6
+1|<b>MQTT connectivity|-|8|
+| |Setup MQTT environment| |1|
+| |Setup WiFi class on M5stack| |3|
+| |Setup publish and subscribe topics| |1|
+| |Test sending messages| |1.5|
+| |Test receiving messages| |1.5|
+2|<b>View user details|5|6|
+| |Send request JSON| |1|
+| |Receive response JSON| |1|
+| |Display user details| |4|
+3|<b>View pet details|3|6|
+| |Send request JSON| |1|
+| |Receive response JSON| |1|
+| |Display pet details| |4|
+4|<b>Send steps updates|8|2|
+| |Send request JSON| |1|
+| |Receive response JSON| |1|
+5|<b>View steps|2|5|
+| |Send request JSON| |1|
+| |Receive response JSON| |1|
+| |Display steps| |3|
+6|<b>View activity report|1|8|
+| |Send request JSON| |1|
+| |Receive response JSON| |1|
+| |Display activity report| |6|
+7|<b>User login|4|8|
+| |Send request JSON| |1|
+| |Receive response JSON| |1|
+| |Display login workflow| |6|
 
 ### Desktop Sprint2 Backlog
 <b><p align= "center">Table 13: Desktop Sprint2 Backlog</p></b>
