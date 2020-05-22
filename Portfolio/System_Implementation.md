@@ -6,16 +6,16 @@
   - [Spiral Model](#Spiral-Model)
   - [Agile Model](#Agile-Model)
   - [Choice of SDLC methodology](#Choice-of-SDLC-methodology)
-- [**a. Breakdown of project into sprints**](###a.-Breakdown-of-project-into-sprints)
+- [**a. Breakdown of project into sprints**](###Breakdown-of-project-into-sprints)
   - [Product Backlog](#M5-Product-Backlog)
   - [Sprint 1: Building user interfaces and API design](#Sprint-1-Building-user-interfaces-and-API-design)
   - [Sprint 2: First wave of implementation](#Sprint-2-First-wave-of-implementation)
   - [Sprint 3: Second wave of implementation](#Sprint-3s-Second-wave-of-implementation)
-- [**b. Details of evaluation for designs**](###b.-Details-of-evaluation-for-designs)
+- [**b. Details of evaluation for designs**](###Details-of-evaluation-for-designs)
   - [Functional Testing](#Functional-testing)
   - [User Interface Design](#Evaluation-of-user-interface-design)
   - [Heuristic Evaluation](#Choice-of-evaluation-technique--Heuristic-Evaluation)
-- [**c. Discussion of Social and Ethical implications of the work**](###c.-Discussion-of-Social-and-Ethical-implications-of-the-work)
+- [**c. Discussion of Social and Ethical implications of the work**](###Discussion-of-Social-and-Ethical-implications-of-the-work)
   - [Society Implications](#Society-Implications)
   - [Informed Consent](#Informed-Consent)
   - [Privacy](#Privacy)
@@ -140,7 +140,7 @@ By contrasting the different models for software development, we decide to go fo
 ### References
 [[1] MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
-## a. Breakdown of project into sprints
+## Breakdown of project into sprints
 As mentioned above in our system implementation we decided on the agile approach which features breaking down of project into sprints. Sprint planning is part of the scrum framework where we will determine what to work on in each of the sprint and discuss the initial plan for completing these backlog items. The figure below is a graphical representation of our sprint cycle and the detailed backlogs items derived from our user stories can be seen at (reference start of backlog) here.
 
 <p align="center">
@@ -550,7 +550,7 @@ The next two figures are backlog in the Gantt chart and Trello we used in sprint
 <b><p align= "center">Figure 6: The sprints in Trello </p></b>
 
 
-## b. Details of evaluation for designs
+## Details of evaluation for designs
 
 The two groups of design under evaluation will be the system design, as discussed in the previous section, and the user interface design. 
 
@@ -628,7 +628,7 @@ The evaluation is only as good as the people we get to do it. This means we have
 * The team does not consist of an expert on user experience design, thus it may not be the most accurate evaluation of design
 
 
-## c. Discussion of Social and Ethical implications of the work
+## Discussion of Social and Ethical implications of the work
 From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. To adhere with all the possible guidelines, we follow the BCS Code of Conduct, and we are aware of the implications on public health, privacy, security and wellbeing of others and the environment.  We also have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise[[1]].(System_Implementation.md#Ethical-sReferences)
 
 We will be focusing on addressing the social implications, consent, physical and mental wellbeing as well as privacy and security in the next few paragraphs.  
