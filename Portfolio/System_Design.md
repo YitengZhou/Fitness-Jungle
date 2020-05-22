@@ -1,7 +1,7 @@
 # 1. System Design
 
 ## Contents of System Design
-- [**Design thinking**](#Design-thinking) 
+- [**Introduction**](#Introduction) 
 - [**a. Architecture of the system**](#a.-Architecture-of-the-system)
   - [System workflow](#System-workflow)
   - [M5Stack](#M5Stack)
@@ -24,20 +24,21 @@
 - [**e. Details of the communication protocols in use**](#e.-Details-of-the-communication-protocols-in-use)
   - [API Design](#API-Design)
 - [**f. Details of the data persistence mechanisms in use**](#f.-Details-of-the-data-persistence-mechanisms-in-use)
+
 - [**g. Details of web technologies in use**](#g.-Details-of-web-technologies-in-use)
   - [Web client](#Web-client)
   - [Web server ](#Web-server)
 
-## Design thinking
+## Introduction
 
 <p align="center">
 <img src="Images/design/designThinking.jpg" width = 50%>
 </p>
 <b><p align= "center">Figure 1: Brainstorming during design thinking</p></b>
 
-We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects.
+The team started the project with brainstorming ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas on the areas to provide value in include academics, health, entertainment, sports and fitness as seen in the post-it notes in Figure 1. We concluded that fitness is what we are all interested in and started brainstorming on a product that will span the three platforms. A trend that we realised is that obesity is becoming a serious issue with the steady growth of the economy and the rising standard of living. There are existing solutions in the wearable technology market, and they take the form of step tracking apps. However, the problem with these apps is that they lack elements to keep users engaged on them. They are usually no more than statistical tools for users to monitor their stepping activity.
 
-Following that, we decided that our problem area will be to encourage people to maintain an active lifestyle by walking or running regularly. Our stakeholders will therefore be people who are interested to maintaining an active lifestyle, hereafter known as the users, and the developers or administrators of the product. We will go on to draft product requirements based on this objective and the two groups of stakeholders.
+To contribute to this rising issue, we decided that our problem area will be to encourage people to maintain an active lifestyle by walking or running regularly. To achieve this, we will be adding elements of gamification to keep people engaged. Our stakeholders will therefore be people who are interested in maintaining an active lifestyle, hereafter known as the users, and the developers or administrators of the product. We will go on to draft product requirements based on this objective and the two groups of stakeholders.
 
 ## a. Architecture of the system
 
@@ -423,7 +424,7 @@ MQTT is used by the M5Stack and Desktop clients to communicate with the server.
 
 * MQTT and M5Stack
 
-MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources[[1]](System_Design.md#references). For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP)[[2]](System_Design.md#references). The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
+MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources [[1]](#References). For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP) [[2]](#References). The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
 
 * MQTT and Desktop
 
@@ -976,10 +977,7 @@ Having a response status allows clients to manage the returned object more easil
    }
 }
 ```
-### References
-[[1] MQTT FAQ](http://mqtt.org/faq)
 
-[[2] AZURE Overview](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
 
 ## f. Details of the data persistence mechanisms in use
 
@@ -996,10 +994,8 @@ Firstly, users can own multiple virtual pets or none at all and this is represen
 
 Next, the users can add friends and each friendship is stored in “Friend” with the statues of the friendship represented in “FriendStatus”. In order to ensure each pair of users is unique, the smaller of the user IDs will always be stored as the first user ID. Lastly, most tables will have a surrogate key as the primary key as this allows for a reduction in storage space when storing foreign keys. The exceptions are “Petlevel”, where the level is also an integer, and “Friend”, where the composite natural key ensures the uniqueness of the pair and the table does not need to be referenced elsewhere.
 
-The database schema has also been normalised to Boyce–Codd normal form (BCNF). Normalising to 3NF is broadly considered to be adequate as data redundancy is greatly reduced and the most common data anomalies are circumvented [[1]](System_Design.md#references-1). Schema is upgraded to BNCF since it could be achieved without significant effort. The schema satisfies the first normal form (1NF) with an atomic value in any one column and no duplicate of records. The second normal form (2NF) is also satisfied with no partial functional dependencies from a candidate key to a non-key attribute in the schema. In addition, the third normal form is satisfied with no transitive dependencies between non-key attributes. Lastly, the schema is of BCNF with no overlapping candidate keys.
+The database schema has also been normalised to Boyce–Codd normal form (BCNF). Normalising to 3NF is broadly considered to be adequate as data redundancy is greatly reduced and the most common data anomalies are circumvented [[3]](#References). Schema is upgraded to BNCF since it could be achieved without significant effort. The schema satisfies the first normal form (1NF) with an atomic value in any one column and no duplicate of records. The second normal form (2NF) is also satisfied with no partial functional dependencies from a candidate key to a non-key attribute in the schema. In addition, the third normal form is satisfied with no transitive dependencies between non-key attributes. Lastly, the schema is of BCNF with no overlapping candidate keys.
 
-### References
-[[1] MariaDB 3rd Normal Form](https://mariadb.com/kb/en/database-normalization-3rd-normal-form/)
 
 ## g. Details of web technologies in use
 
@@ -1020,3 +1016,10 @@ Application structure: This application is designed as a single page application
 The web server is developed using Node.js and the Express framework. The rationale for choosing Node.js is that it has a lower setup overhead as compared to other languages like Java and the Spring framework. It is also one of the most widely used module for web development, so it will be easier to find tutorials and answers in coding question and answer websites. In additional, the Express framework streamlines web development with functions that simplifies the building of common server components.
 
 The other libraries used are MQTT and SQLite. MQTT is used to allow communication between the server and the M5Stack and desktop clients. The reasons for using MQTT is detailed in section 1e. The MQTT JavaScript (JS) library is chosen for it is the most popular and most supported JS library for MQTT. The reasons for using an embedded database is detailed in section 1f. SQLite is chosen as the embedded database of choice due to it being the most used embedded database by a long shot and the best documented library among the others. The SQLite3 JS library is also chosen due to its popularity and online community support.
+
+## References
+[1] [MQTT FAQ](http://mqtt.org/faq)
+
+[2] [AZURE Overview](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
+
+[3] [MariaDB 3rd Normal Form](https://mariadb.com/kb/en/database-normalization-3rd-normal-form/)
