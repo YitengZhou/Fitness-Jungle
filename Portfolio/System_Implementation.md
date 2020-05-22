@@ -415,6 +415,7 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 ||Test API|||2
 
 <b>Sprint 3: Second wave of implementation</b>
+
 Coming to the second wave of implementation and the final sprint, the first part of this sprint will be to make improvements on the features implemented in Sprint 2 as discussed in the previous end of sprint meeting. Then it is to continue to work on the new features that are decided upon. Throughout the sprints, system testing is carried out with the implementation of each new feature to ensure the previous features are still working as intended with the addition of the new feature. The last part of the sprint, although not specified in the sprint backlog, is a full system testing where the 3 sub-systems are integrated and combined. Each group will test their sub-system and well as the other sub-systems to ensure functionalities of the system work as intended. Each group provides a checklist of use cases to the other groups to facilitate the testing. An end of sprint meeting is held to conclude on the development of the system, and to highlights any bugs that still exist. Bug fixes will be carried out and resolved before requesting for other groups to test the system again.
 
 ### M5Stack Sprint 3 Backlog
@@ -476,6 +477,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Render map using data from server| |8
 
 ### Server Sprint 3 Backlog
+<b><p align= "center">Table 19: Server Sprint 3 Backlog</p></b>
 Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|:-:|
 1|<b>Get list of users (MQTT)|Desktop|2|4
@@ -578,7 +580,7 @@ The evaluation is only as good as the people we get to do it. This means we have
 * The team does not consist of an expert on user experience design, thus it may not be the most accurate evaluation of design
 
 <p align="center">
-<img src="Images/implementation/question.jpeg">
+<img src="Images/implementation/question.jpeg" width=80%>
 </p>
 <b><p align= "center">Figure 4: Heuristic Evaluation of Fitness Jungle </p></b>
 
