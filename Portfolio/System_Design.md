@@ -918,6 +918,9 @@ Having a response status allows clients to manage the returned object more easil
    }
 }
 ```
+### References
+[[1] MQTT FAQ](http://mqtt.org/faq)
+[[2] AZURE Overview](] https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
 
 ## Details of the data persistence mechanisms in use
 
