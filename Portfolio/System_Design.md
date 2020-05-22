@@ -365,7 +365,7 @@ MQTT is used by the M5Stack and Desktop clients to communicate with the server.
 
 * MQTT and M5Stack
 
-MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources[1](System_Design.md#references). For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP)[2](System_Design.md#references). The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
+MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources[[1]](System_Design.md#references). For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP)[[2]](System_Design.md#references). The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
 
 * MQTT and Desktop
 
@@ -920,6 +920,7 @@ Having a response status allows clients to manage the returned object more easil
 ```
 ### References
 [[1] MQTT FAQ](http://mqtt.org/faq)
+
 [[2] AZURE Overview](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
 
 ## Details of the data persistence mechanisms in use
@@ -937,7 +938,10 @@ Firstly, users can own multiple virtual pets or none at all and this is represen
 
 Next, the users can add friends and each friendship is stored in “Friend” with the statues of the friendship represented in “FriendStatus”. In order to ensure each pair of users is unique, the smaller of the user IDs will always be stored as the first user ID. Lastly, most tables will have a surrogate key as the primary key as this allows for a reduction in storage space when storing foreign keys. The exceptions are “Petlevel”, where the level is also an integer, and “Friend”, where the composite natural key ensures the uniqueness of the pair and the table does not need to be referenced elsewhere.
 
-The database schema has also been normalised to Boyce–Codd normal form (BCNF). Normalising to 3NF is broadly considered to be adequate as data redundancy is greatly reduced and the most common data anomalies are circumvented [1]. Schema is upgraded to BNCF since it could be achieved without significant effort. The schema satisfies the first normal form (1NF) with an atomic value in any one column and no duplicate of records. The second normal form (2NF) is also satisfied with no partial functional dependencies from a candidate key to a non-key attribute in the schema. In addition, the third normal form is satisfied with no transitive dependencies between non-key attributes. Lastly, the schema is of BCNF with no overlapping candidate keys.
+The database schema has also been normalised to Boyce–Codd normal form (BCNF). Normalising to 3NF is broadly considered to be adequate as data redundancy is greatly reduced and the most common data anomalies are circumvented [[1]](www.google.com). Schema is upgraded to BNCF since it could be achieved without significant effort. The schema satisfies the first normal form (1NF) with an atomic value in any one column and no duplicate of records. The second normal form (2NF) is also satisfied with no partial functional dependencies from a candidate key to a non-key attribute in the schema. In addition, the third normal form is satisfied with no transitive dependencies between non-key attributes. Lastly, the schema is of BCNF with no overlapping candidate keys.
+
+### References
+[[1] MariaDB 3rd Normal Form](https://mariadb.com/kb/en/database-normalization-3rd-normal-form/)
 
 ## Details of web technologies in use
 
