@@ -637,16 +637,16 @@ Like with any games, there is a risk of user addiction. If the users really like
 ### References
 [[1] W. W. Royce. 1987. Managing the development of large software systems: concepts and techniques](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
-[[2]Spiral Model](https://pdfs.semanticscholar.org/3d71/0cdac84dce7387177da471b9822e03029d1c.pdf?_ga=2.68442905.987963553.1590128111-1603561370.1589100842)
+[[2] Spiral Model](https://pdfs.semanticscholar.org/3d71/0cdac84dce7387177da471b9822e03029d1c.pdf?_ga=2.68442905.987963553.1590128111-1603561370.1589100842)
 
-[[3]Sprint](http://www.seherfranz.com/story.html)
+[[3] Sprint](http://www.seherfranz.com/story.html)
 
-[[4]Agile model](https://www.smashingmagazine.com/2020/04/collaborative-coding-ultimate-career-hack/)
+[[4] Agile model](https://www.smashingmagazine.com/2020/04/collaborative-coding-ultimate-career-hack/)
 
 [[5] MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
 [[6] Limaye, M.G. (2009). Software Testing Tata McGraw-Hill Education. pp. 108–11. ISBN 9780070139909](https://www.worldcat.org/title/software-testing-principles-techniques-and-tools/oclc/773796642)
 
-[[7]BCS,the BCS Code of Conduct](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
+[[7] BCS,the BCS Code of Conduct](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
 
-[[8]The EU General Data Protection Regulation(GDPR)](https://ttps://gdpr-info.eu/)
+[[8] The EU General Data Protection Regulation(GDPR)](https://ttps://gdpr-info.eu/)
