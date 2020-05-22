@@ -4,7 +4,7 @@ With our system design on hand, we are mindful of the importance of a clear soft
 
 <b>Waterfall Model</b>
 
- The idea of a waterfall model was one of the first process model proposed by Winston W. Royce in his paper regarding managing the development of large software system in 1970 [1]. In Royce’s article the term “waterfall” was not used and it was an example for a flawed model, which we will discuss later. 
+ The idea of a waterfall model was one of the first process model proposed by Winston W. Royce in his paper regarding managing the development of large software system in 1970 [[1]](System_Implementation.md#references). In Royce’s article the term “waterfall” was not used and it was an example for a flawed model, which we will discuss later. 
 
 The waterfall model emphasises the logical progression of phases taken throughout the software development life cycle. It is termed the waterfall due to the nature of the model progression, which is like the cascading steps down an incremental waterfall. This means that the next phase of development only begins only if the previous phase is completed, and do not overlap. The waterfall model gained its popularity due to its simplicity. The sequential phases in waterfall are:
 
@@ -98,6 +98,9 @@ Importantly, the Agile software development lifecycle is dominated by the iterat
 <b>Choice of SDLC methodology</b>
 
 By contrasting the different models for software development, we decide to go for the Agile approach for the following few reasons. Firstly, the Agile approach has a few immediate advantages over traditional method such as the waterfall model due to its nature of being flexible. Although the rigidity of the waterfall model does prove to be very efficient in completing task phase by phase, and also the methodology can be explained with ease to ammeter coder there are inherent risk in this approach one of the most obvious being the lack to unit testing. Secondly, due to our idea and features for the project constantly evolving as we are implementing new features, so the Agile model fits our requirement as it features frequent check-ins which allow for changes to be made constantly. Whereas in the waterfall model, due to the linear progression does not encourage phases to be revisited.  Thirdly, the Agile methodology is way faster overall compared to the other methodology because far less re-work or major changes are made when progressing as most issues and changes are identified in the early stages.
+
+### References
+[[1] MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
 ## Breakdown of project into sprints
 As mentioned above in our system implementation we decided on the agile approach which features breaking down of project into sprints. Sprint planning is part of the scrum framework where we will determine what to work on in each of the sprint and discuss the initial plan for completing these backlog items. The figure below is a graphical representation of our sprint cycle and the detailed backlogs items derived from our user stories can be seen at (reference start of backlog) here.
