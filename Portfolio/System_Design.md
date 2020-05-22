@@ -299,16 +299,16 @@ In the map system, we only show hand-drawn maps in M5stack as the right figure b
 * User Statistics
 
 <p align="center">
-<img src="Images/Wireframes/Desktop/1_Update_Pet.png" width = 49%>
-<img src="Images/design/18.png" width = 49%>
+<img src="Images/Wireframes/Desktop/2_Stat(updated).png" width = 49%>
+<img src="Images/design/18(updated).png" width = 49%>
 </p>
 <b><p align= "center">Figure 18: User statistics in desktop application </p></b>
 
 * Upload Pet
 
 <p align="center">
-<img src="Images/Wireframes/Desktop/2_Stat.png" width = 49%>
-<img src="Images/design/19.png" width = 49%>
+<img src="Images/Wireframes/Desktop/1_Update_Pet(updated).png" width = 49%>
+<img src="Images/design/19(updated).png" width = 49%>
 </p>
 <b><p align= "center">Figure 19: Upload pet in desktop application </p></b>
 
