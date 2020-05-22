@@ -1,1 +1,142 @@
 # Project Evaluation
+## Reflective discussion of the success of the project
+
+### System design
+
+### System Implementation
+
+In terms of system implementation, the team felt that it is a very successful software engineering project. While we may not have implemented all the features we will like on the system, our approach to software development is very structured and transparent. By adhering to the Scrum practices, we drafted the product backlogs for each sub-system and the sprint backlogs for each sprint. Coupled with the Trello board organising the tasks in each sprint backlog into “To do”, “In Progress”, and “Done”, we can clearly see the progress of each member and what each member is working on at any given time. This also allows every member to be on the same page and it is easier to raise questions and issues. By Scrum standards, we also conducted daily meetings to discuss issues and do daily updates.
+
+In terms of code management, we also felt it was a very successful run with few merge conflicts. This can be credited to our code management style in terms of branching, which will be discussed further in section 3c.
+
+## Discussion of future work
+### M5Stack application
+
+The M5stack as the core component of IoT device still has great potential to bring greater benefits to users.
+
+<b>More optimization in UI</b>
+
+In the process of developing IoT device, although we have tried	 to make the UI wireframe closer to the final product, there are still many model or picture still in the draft stage. Human are kind of visual animals; better UI design can firmly grasp the user’s heart.
+
+<b>Richer content</b>
+
+In this topic, only the minimal functions are designed and implemented that can meet the requirements of the entire project. There can be more improvements in M5stack function, for instance, the pet interactive systems can enhance fun and dependence, the friend communication system could form users circle and increase project influence, reminder and suggestion system could help users better plan their sports schedule.
+
+<b>More effective evaluation</b>
+
+In this project, although we used peer evaluation and heuristic evaluation to develop and optimize our project, the important user evaluation was not carried out in this special period, which can get a lot of information on advantages and disadvantages of our IoT. Therefore, before the next sprint, we need to recruit participants to carry out the user evaluation.
+
+<b>Safer data</b>
+
+We discussed privacy and data protection issues in 2c section. In order to improve data security, all user data will be stored in an encrypted format and remains encrypted during migrations. In addition, delete redundant data to prevent stale data from being forgotten about and stolen at a later date
+
+<b>Better wear</b>
+
+Our imagined this IoT device is portable and wearable during sports and daily work rather than temporary wearing this device for accumulating steps or training pets. However, we did the wearable test for the possibility of the current device, and results show that the current M5stack device is so large that it is movement is hindered. Hence, lighter devices may need to be considered, may be like a watch or a bracelet.
+
+### Desktop Application
+
+In terms of the desktop application, in addition to a platform for developer to analyse data as well as manage pets it has the potential to be expanded for users of this fitness eco-system make use of this application. 
+
+<b>UI Design</b>
+
+The current state of the desktop application although useable, the user-interface is not as astatically pleasing as we hoped. The future work for UI design would be the ability to change desktop background, customising the placement of elements within the desktop application such as the dropdown list, display pictures and also the ability to change types of data visualisation tools that the developer wishes to use. In conclusion we wish to add more customisation options for the user of the desktop application.
+
+<b>Login support</b>
+
+We also wish to add in login support to allow the desktop application to differentiate between admin user and a normal user assigning them with the correct privileges. This allow us to expand the platform to not only the developer as mentioned above. With this feature users can also customise their own pets to be checked and optimised by the developer before uploading it to the system to be used by another user. The option of designing a pet from scratch would definitely encourage the end-user to be more pro-active to show the pet to friends and family by climbing the leader board.
+ 
+### Web Application
+This web application has shown the potential as an account management terminal of M5Stack for users, it shows the ability to display users’ data collected by M5Stack in multi terminals including PC and mobile device due to the support of the modern web design. In the future, several features could be further developed:
+
+<b>Optimized UI</b>
+
+The current UI of web application is too simple and have a great potential to be improved. Adding some animation effect and transition effect in the GUI will make it more attractive for users.
+Pet System Improvement: More entertainment functions relating to the pet system could be added, such as pet animation effect and interaction with pet. 
+
+<b>Multi M5Stack Support</b>
+
+Currently an account can only management data collected from one M5Stack. It will be more convenient for users with more than one M5Stack if we can extend this application to making it can maintain multi M5Stacks in one account. 
+
+<b>AR Support with Map function</b>
+
+AR (Augmented reality) games such as Ingress and Pokémon Go are one of the next generation electronic entertainment. We can implement the support to M5Stacks with AR functions in the future.
+s
+
+## Reflect on the working practices of your group
+
+<b>Team Organisation</b>
+
+Because the members of our team have different advantages and interests, everyone was tasked with one responsibility or subsystem. In addition, each person is involved in system design and project sprints to ensure that everyone always understands what is happening and always keeps up to date with the project's skills and knowledge. These are particularly valuable in this difficult time. 
+
+Beibei has extraordinary meticulousness and seriousness, and always been interested in art, so She is mainly responsible for system design, pets design and UI optimization. Yan is largely in charge of desktop application and statistical analysis because he is an expert in various software and has a mathematical background. Yiteng, who often has some novel ideas and strong programming ability, is in charge of the development of M5stack and visualization. Huawei, with powerful web development technology, is responsible for web application and communication work. Lewis, who was once responsible for company’s database project, is in charge of the database in this project and management of sprint processes.
+
+Despite in this special period, our work keeps well organized and each member remains passionate about this project. This ensures that everyone is committed to and excited about this IoT device.
+
+<b>Management of issues</b>
+
+At first, we managed issues or subsystem requirements was at GitHub, which can create, delete and manage various issues easily. During different sprints, team members can clearly see product backlogs and milestones with colored labels in GitHub. However, some members cannot use GitHub effectively due to their geographic location. Subsequently, we not only update on GitHub, but also in Trello, which has more powerful Todo-Doing-Done boards with tick and deadline.
+
+While executing the agile sprints, the frequency of group members meetings from the original twice a week gradually changed to once a day. This is because many details need to be communicated in time that ensure our backlogs and sprints can be completed on time. For example, in the process of mutual communication between different subsystems, even a short halt hour (usually more than 1 hour) can greatly improve the progress and completeness of the project.
+
+<b>Communication</b>
+
+Due to the outbreak of the coronavirus epidemic, the team members were separated in four different countries and endured by the time difference and internet problems. In order to effectively communicate and share information with each other, we decide to use the Tencent Meeting for discussing and the WeChat software for daily communication, as shown in the following two pictures.
+
+<p align="center">
+<img src="Images/evaluation/Wechat.png" width= 80%>
+</p>
+<b><p align= "center">Figure 1: Communication using the WeChat </p></b>
+
+The WeChat mainly used for coordinating meetings, asking questions, seeking assistance and sharing resources. Actually, we tried other software, such as Slack and WhatsApp, but these will be blocked or hindered by mainland China’s policies. Hence, WeChat seems to be the most suitable choice without additional restrictions. So far it can meet all the communication requirements of developing this project.
+
+
+<p align="center">
+<img src="Images/evaluation/Teamwork.png" width= 80%>
+</p>
+<b><p align= "center">Figure 2: Scrum meetings using The Tencent Meeting </p></b>
+
+The Tencent Meeting is also used to scrum meetings, communicate with each other without delay and have a “face-to-face” discussion. We initially tried to use WeChat for video conferencing, but multi-person conference function of this software Is very unstable. So, we chose Tencent Meeting in the end. However, the time difference is inevitable. Hence, we usually hold meetings from 12pm to 17pm UK time (evening in East Asia and Southeast Asia) as no other time is more suitable. In general, the combination of the above two software can meet all our communication needs.
+
+<b>Agile development</b>
+
+<p align = "center" style = "color:red">
+<b>Need add!!!</b></p>
+
+<p align="center">
+<img src="Images/evaluation/Onedrive.png" width= 80%>
+</p>
+<b><p align= "center">Figure 3: Share documents using OneDrive </p></b>
+
+<p align="center">
+<img src="Images/evaluation/Mic1.png" width= 20%>
+<img src="Images/evaluation/Mic2.png" width= 19.25%>
+<img src="Images/evaluation/Mic3.png" width= 20%>
+</p>
+<b><p align= "center">Figure 4: Edit documents together using OneDrive </p></b>
+
+<p align="center">
+<img src="Images/evaluation/merge.png" width= 80%>
+</p>
+<b><p align= "center">Figure 5: Share code and merge branch using The Github </p></b>
+
+## How Coronavirus Has Affected Our Project
+<b>Limited time</b>
+
+Due to the dangerous situation in March, our students were busy dealing with all kinds of problems, such as getting tickets back home, forced quarantine policy taken by their countries, preparing for essentials and so on, for a long period of time our plan had to be paused, which greatly messed up our original plan. After then we had to discuss about new solutions to make up for it, thus leading to less efficient time to work on the project. 
+
+<b>Environment instability</b>
+
+The complicated and unstable COVID-19 has caused our members plenty of anxiety as some of us are staying in areas where the situation is very serious, which affected our condition both physically and mentally so much that we cannot really focused on our own work well for a few weeks.
+
+<b>Remote Working Practices</b>
+
+Because of the social distance policy we had to transfer our work to online, and what’s worse, our group members are apart in four different countries. The biggest obstacle is the time difference, due to this factor sometimes our communication is not very sufficient. And remote working is definitely no better than normal teaching arrangement. One thing is that we previously planned some off-line user testing process, which had to be changed afterwards. What’s more, the learning experience and outcome has more or less been affected due to the lack of studying environment and resources. 
+
+<b>Pressure from other modules</b>
+
+Besides this software engineering group project, we still got many other coursework from other modules to finish, and all of them are very challenging, and the due time are all very intensive. Although the Uni kindly offer us no detriment policies as well as considerate extension time, because we cannot keep the same working outcome as before, the pressure is still rather heavy.
+
+<b>Fewer contributors</b>
+
+One of our group members suspended study because of the current unstable situation. Although she still tried best to make contribution due to the sense of responsibility, as she got her own issues and plans to deal with, her effort are rather limited than we planned at the very beginning. So the workload for the rest of the members has increased.
