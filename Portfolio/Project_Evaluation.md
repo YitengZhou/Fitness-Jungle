@@ -1,7 +1,9 @@
 # Project Evaluation
-## Reflective discussion of the success of the project
+## a. Reflective discussion of the success of the project
 
 ### System design
+
+In terms of system design, the team felt it is a good system design after our evaluation detailed in the previous section. The system delivers according to the system requirements with our testing, and it is able to extend on functionalities easily. Each sub-system can also be substituted without affecting the other parts of the system with the “Separation-of-Concerns” and common “contract” in place. However, in terms of user interface design, we will require actual user testing to have a more accurate evaluation of them. 
 
 ### System Implementation
 
@@ -9,7 +11,7 @@ In terms of system implementation, the team felt that it is a very successful so
 
 In terms of code management, we also felt it was a very successful run with few merge conflicts. This can be credited to our code management style in terms of branching, which will be discussed further in section 3c.
 
-## Discussion of future work
+## b. Discussion of future work
 ### M5Stack application
 
 The M5stack as the core component of IoT device still has great potential to bring greater benefits to users.
@@ -63,7 +65,7 @@ Currently an account can only management data collected from one M5Stack. It wil
 AR (Augmented reality) games such as Ingress and Pokémon Go are one of the next generation electronic entertainment. We can implement the support to M5Stacks with AR functions in the future.
 s
 
-## Reflect on the working practices of your group
+## c. Reflect on the working practices of your group
 
 <b>Team Organisation</b>
 
@@ -90,18 +92,12 @@ Due to the outbreak of the coronavirus epidemic, the team members were separated
 
 The WeChat mainly used for coordinating meetings, asking questions, seeking assistance and sharing resources. Actually, we tried other software, such as Slack and WhatsApp, but these will be blocked or hindered by mainland China’s policies. Hence, WeChat seems to be the most suitable choice without additional restrictions. So far it can meet all the communication requirements of developing this project.
 
-
 <p align="center">
 <img src="Images/evaluation/Teamwork.png" width= 80%>
 </p>
 <b><p align= "center">Figure 2: Scrum meetings using The Tencent Meeting </p></b>
 
 The Tencent Meeting is also used to scrum meetings, communicate with each other without delay and have a “face-to-face” discussion. We initially tried to use WeChat for video conferencing, but multi-person conference function of this software Is very unstable. So, we chose Tencent Meeting in the end. However, the time difference is inevitable. Hence, we usually hold meetings from 12pm to 17pm UK time (evening in East Asia and Southeast Asia) as no other time is more suitable. In general, the combination of the above two software can meet all our communication needs.
-
-<b>Agile development</b>
-
-<p align = "center" style = "color:red">
-<b>Need add!!!</b></p>
 
 <p align="center">
 <img src="Images/evaluation/Onedrive.png" width= 80%>
@@ -114,6 +110,10 @@ The Tencent Meeting is also used to scrum meetings, communicate with each other 
 <img src="Images/evaluation/Mic3.png" width= 20%>
 </p>
 <b><p align= "center">Figure 4: Edit documents together using OneDrive </p></b>
+
+<b> Code Management </b>
+
+Firstly, the development of the codebase is split according to the sub-systems, mainly branches “m5-master”, “desktop-master”, and “web-master”. This serves as the main or master branches of the sub-systems. To simulate an actual development workflow, commits are only made to master branches on releases of the applications or urgent bug fixes. That is to say, commits on master branch are minimised and be made only after reaching certain checkpoints and have passed the testing phase. Thus, we will primarily work on development branches which are namely “m5-dev”, “desktop-dev”, and “web-dev”. For sub-system groups with a single developer, they will be working on committing on these branches. They will also be their own branch managers. However, for groups with multiple developers, they will be development on their own feature branch branched from the development branch. One member will act as the branch manager and be in charge of merging the code. The branch manager will consult the member who did the pull request to find out what implementations are and will check and resolve any merge conflicts. This is a better approach than multiple team members committing to the same branch, which can cause confusion and have one member unintentionally deleting another member’s code. Another advantage is that there will always be one member kept in the know of all the changes in the codebase and can serve as the point of contact for the other sub-systems. Example of these feature branches are “web-dev-frontend” and “web-dev-backend”, with the backend developer acting as the branch manager and merging changes. 
 
 <p align="center">
 <img src="Images/evaluation/merge.png" width= 80%>
