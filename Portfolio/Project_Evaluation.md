@@ -104,7 +104,7 @@ At first, we managed issues or subsystem requirements on GitHub, where we create
 
 While executing the agile sprints, the frequency of group members meetings from the original twice a week gradually changed to once a day. This is because many details need to be communicated in time that ensure our backlogs and sprints can be completed on time. For example, in the process of mutual communication between different subsystems, even a short half hour (usually more than 1 hour) can greatly improve the progress and completeness of the project.
 
-### Communication
+### Communication and Report collaboration
 
 Due to the outbreak of the coronavirus epidemic, the team members were separated in four different countries and endured by the time difference and internet problems. In order to effectively communicate and share information with each other, we decide to use the Tencent Meeting for discussing and the WeChat software for daily communication, as shown in the following two pictures.
 
@@ -133,6 +133,8 @@ The Tencent Meeting is also used to scrum meetings, communicate with each other 
 <img src="Images/evaluation/Mic3.png" width= 20%>
 </p>
 <b><p align= "center">Figure 4: Edit documents together using OneDrive </p></b>
+
+We have also decided to make use of OneDrive to collaboratively work on the report. We feel that this is a more flexible way to report writing and allows quick changes during meetings.
 
 ### Code Management
 
