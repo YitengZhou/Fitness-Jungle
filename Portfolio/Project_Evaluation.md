@@ -10,7 +10,7 @@
 - [**c. Reflect on the working practices of your group**](#c.-Reflect-on-the-working-practices-of-your-group)
   - [Team Organisation](#Team-Organisation)
   - [Management of issues](#Management-of-issues)
-  - [Communication](#Communication)
+  - [Communication and Report collaboration](#Communication-and-Report-collaboration)
   - [Code Management](#Code-Management)
 - [**d. How Coronavirus Has Affected Our Project**](#d.-How-Coronavirus-Has-Affected-Our-Project)
 
