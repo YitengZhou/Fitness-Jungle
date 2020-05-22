@@ -629,7 +629,7 @@ The evaluation is only as good as the people we get to do it. This means we have
 
 
 ## c. Discussion of Social and Ethical implications of the work
-From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. To adhere with all the possible guidelines, we follow the BCS Code of Conduct, and we are aware of the implications on public health, privacy, security and wellbeing of others and the environment.  We also have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise.[[1]](System_Implementation.md#Ethical-sReferences)
+From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. To adhere with all the possible guidelines, we follow the BCS Code of Conduct, and we are aware of the implications on public health, privacy, security and wellbeing of others and the environment.  We also have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise[[1]].(System_Implementation.md#Ethical-sReferences)
 
 We will be focusing on addressing the social implications, consent, physical and mental wellbeing as well as privacy and security in the next few paragraphs.  
 
@@ -653,5 +653,6 @@ With our planned introduction of challenges and competitions, there may be incre
 Like with any games, there is a risk of user addiction. If the users really like the game and wants to spend long hours to achieve better results in the game, it can affect their other aspects of life. This may have an impact on their careers or their studies as they will be spending less time on them. In addition, an addiction can be detrimental for the mental health. However, the user may not realise spending too much time on the app unless it is too late. It is therefore important that we send reminders to the users to alert them about the time spent on the app to help them notice this. 
 
 ### Ethical References 
-[BCS](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
-[GDPR](https://ttps://gdpr-info.eu/)
+[BCS, the BCS Code of Conduct](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
+
+[The EU General Data Protection Regulation(GDPR)](https://ttps://gdpr-info.eu/)
