@@ -28,29 +28,33 @@ In terms of system implementation, the team felt that it is a very successful so
 In terms of code management, we also felt it was a very successful run with few merge conflicts. This can be credited to our code management style in terms of branching, which will be discussed further in section 3c.
 
 ## b. Discussion of future work
+
+We will talk about the future improvement in detail according to the different three subsystems.
+
 ### M5Stack Application
 
-The M5stack as the core component of IoT device still has great potential to bring greater benefits to users.
+The M5stack as the core component of our product has great potential to bring greater benefits to users.
 
 <b>More optimization in UI</b>
 
-In the process of developing IoT device, although we have tried	 to make the UI wireframe closer to the final product, there are still many model or picture still in the draft stage. Human are kind of visual animals; better UI design can firmly grasp the user’s heart.
+In the process of developing IoT device, although we have tried to make the final product as close to the UI wireframe possible with the time constraints, resulting in some of the features idealised in the brainstorming was not implemented. For future improvement we hope to have a more user-friendly interface through running product trial getting valuable feedback from users.
 
 <b>Richer content</b>
 
-In this topic, only the minimal functions are designed and implemented that can meet the requirements of the entire project. There can be more improvements in M5stack function, for instance, the pet interactive systems can enhance fun and dependence, the friend communication system could form users circle and increase project influence, reminder and suggestion system could help users better plan their sports schedule.
+The possible improvements on the M5stack are, for instance, the pet interactive systems can enhance fun and dependence, the friend communication system could form users circle and increase project influence, reminder and suggestion system could help users better plan their sports schedule.
 
 <b>More effective evaluation</b>
 
-In this project, although we used peer evaluation and heuristic evaluation to develop and optimize our project, the important user evaluation was not carried out in this special period, which can get a lot of information on advantages and disadvantages of our IoT. Therefore, before the next sprint, we need to recruit participants to carry out the user evaluation.
+In this project, although peer evaluation and heuristic are used, the user evaluation was not carried due to the ongoing pandeamic, which result in the lack of feedback on our IoT. Therefore, before the next sprint, we need to recruit participants to carry out the user evaluation.
 
 <b>Safer data</b>
 
-We discussed privacy and data protection issues in 2c section. In order to improve data security, all user data will be stored in an encrypted format and remains encrypted during migrations. In addition, delete redundant data to prevent stale data from being forgotten about and stolen at a later date
+We discussed privacy and data protection issues in 2c section. In order to improve data security, all user data will be stored in an encrypted format as well as the possible transfer of devices. In addition, deletion of redundant data can be implemented to prevent stale data from being forgotten about and stolen at a later date.
 
 <b>Better wear</b>
 
-Our imagined this IoT device is portable and wearable during sports and daily work rather than temporary wearing this device for accumulating steps or training pets. However, we did the wearable test for the possibility of the current device, and results show that the current M5stack device is so large that it is movement is hindered. Hence, lighter devices may need to be considered, may be like a watch or a bracelet.
+Our imagined this IoT device is portable and wearable during sports and daily work rather than temporary wearing this device for accumulating steps or training pets. Our initial testing review that the current device is very inconvenient due to its bulky nature of the M5Stack possibly hindering intensive activities . Hence, lighter devices may need to be considered, may be like a watch or a bracelet.
+
 
 ### Desktop Application
 
