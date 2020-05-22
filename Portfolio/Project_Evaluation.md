@@ -91,17 +91,18 @@ AR (Augmented reality) games such as Ingress and Pokémon Go are a form of next 
 
 ### Team Organisation
 
-Because the members of our team have different advantages and interests, everyone was tasked with one responsibility or subsystem. In addition, each person is involved in system design and project sprints to ensure that everyone always understands what is happening and always keeps up to date with the project's skills and knowledge. These are particularly valuable in this difficult time. 
+Because the members of our team have different strengths and interests, everyone was tasked with one responsibility or subsystem. In addition, each person is involved in system design and project sprints to ensure that everyone always understands what is happening and always keeps up to date with the project's skills and knowledge. These are particularly valuable in this difficult time. 
 
-Beibei has extraordinary meticulousness and seriousness, and always been interested in art, so She is mainly responsible for system design, pets design and UI optimization. Yan is largely in charge of desktop application and statistical analysis because he is an expert in various software and has a mathematical background. Yiteng, who often has some novel ideas and strong programming ability, is in charge of the development of M5stack and visualization. Huawei, with powerful web development technology, is responsible for web application and communication work. Lewis, who was once responsible for company’s database project, is in charge of the database in this project and management of sprint processes.
+Beibei has extraordinary meticulousness and seriousness, and always been interested in art, so she is mainly responsible for system design, pets design and UI optimization. Yan is largely in charge of desktop application and statistical analysis because he is an expert in various software and has a mathematical background. Yiteng, who often has some novel ideas and strong programming ability, is in charge of the development of M5stack and visualization. Huawei, with powerful web development technology, is responsible for web application and communication work. Lewis, who has software development experience, is well-suited to developing the server to suit the needs of the different sub-systems. He takes charge of designing the database schema and the APIs, as well as managing the development sprints.
 
-Despite in this special period, our work keeps well organized and each member remains passionate about this project. This ensures that everyone is committed to and excited about this IoT device.
+Despite this special period, our work are organised and each member remains passionate about this project. Everyone is committed to and excited about this IoT project.
+
 
 ### Management of issues
 
-At first, we managed issues or subsystem requirements was at GitHub, which can create, delete and manage various issues easily. During different sprints, team members can clearly see product backlogs and milestones with colored labels in GitHub. However, some members cannot use GitHub effectively due to their geographic location. Subsequently, we not only update on GitHub, but also in Trello, which has more powerful Todo-Doing-Done boards with tick and deadline.
+At first, we managed issues or subsystem requirements on GitHub, where we create, delete and manage various issues on the GitHub board under “Projects”. Subsequently, however, we decided to turn to Trello as it provides more features like adding checklists and deadlines. This is especially useful for sprints as we require checklists like "To Do", "In Progress", and "Done" to keep track of the sprint progress.
 
-While executing the agile sprints, the frequency of group members meetings from the original twice a week gradually changed to once a day. This is because many details need to be communicated in time that ensure our backlogs and sprints can be completed on time. For example, in the process of mutual communication between different subsystems, even a short halt hour (usually more than 1 hour) can greatly improve the progress and completeness of the project.
+While executing the agile sprints, the frequency of group members meetings from the original twice a week gradually changed to once a day. This is because many details need to be communicated in time that ensure our backlogs and sprints can be completed on time. For example, in the process of mutual communication between different subsystems, even a short half hour (usually more than 1 hour) can greatly improve the progress and completeness of the project.
 
 ### Communication
 
