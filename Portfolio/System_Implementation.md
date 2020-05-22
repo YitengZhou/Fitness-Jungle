@@ -26,6 +26,9 @@ The waterfall model emphasises the logical progression of phases taken throughou
 |Easy to arrange task|Adjusting scope during life cycle can end a project|
 |Process and result well documented|Delayed testing period|
 
+### References
+[[1] W. W. Royce. 1987. Managing the development of large software systems: concepts and techniques](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
+
 
 <b>Spiral Model</b>
 
