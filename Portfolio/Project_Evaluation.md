@@ -148,20 +148,20 @@ Firstly, the development of the codebase is split according to the sub-systems, 
 ## d. How Coronavirus Has Affected Our Project
 <b>Limited time</b>
 
-Due to the dangerous situation in March, our students were busy dealing with all kinds of problems, such as getting tickets back home, forced quarantine policy taken by their countries, preparing for essentials and so on, for a long period of time our plan had to be paused, which greatly messed up our original plan. After then we had to discuss about new solutions to make up for it, thus leading to less efficient time to work on the project. 
+Due to the unforeseen situation in March, most of our members were dealing with all kinds of problems, such as getting tickets back home, forced quarantine policy taken by their countries, preparing for essentials and so on, for a long period of time our plan had to be paused, which greatly affected our initial scheduled for sprint cycles. We had to make adjustment on different aspect such as communications leading to delays on sprint cycle affecting the overall progress of our project. 
 
 <b>Environment instability</b>
 
-The complicated and unstable COVID-19 has caused our members plenty of anxiety as some of us are staying in areas where the situation is very serious, which affected our condition both physically and mentally so much that we cannot really focused on our own work well for a few weeks.
+The complicated and unstable COVID-19 has caused our members plenty of anxiety as some of us are staying in areas where the situation is very serious, which affected our condition both physically and mentally so much that we found it really difficult at time to focus focused on our own work.
 
 <b>Remote Working Practices</b>
 
-Because of the social distance policy we had to transfer our work to online, and what’s worse, our group members are apart in four different countries. The biggest obstacle is the time difference, due to this factor sometimes our communication is not very sufficient. And remote working is definitely no better than normal teaching arrangement. One thing is that we previously planned some off-line user testing process, which had to be changed afterwards. What’s more, the learning experience and outcome has more or less been affected due to the lack of studying environment and resources. 
+Because of the social distance policy we had to transfer our work to online. In addition, our members are from four different countries. The biggest obstacle being the time difference, due to this factor sometimes our communication may be limited. And remote working is definitely no better than normal teaching arrangement. One thing is that we previously planned some off-line user testing process, which had to be changed afterwards. The learning experience and outcome has more or less been affected due to the lack of studying environment and resources. 
 
 <b>Pressure from other modules</b>
 
-Besides this software engineering group project, we still got many other coursework from other modules to finish, and all of them are very challenging, and the due time are all very intensive. Although the Uni kindly offer us no detriment policies as well as considerate extension time, because we cannot keep the same working outcome as before, the pressure is still rather heavy.
+Besides this software engineering group project, there are still coursework from other modules to be completed, with most of them being very challenging, and the due dates are all very close together. Although the Uni kindly offer us no detriment policies as well as considerate extension time, because we cannot keep the same working outcome as before, the pressure is still rather heavy.
 
 <b>Fewer contributors</b>
 
-One of our group members suspended study because of the current unstable situation. Although she still tried best to make contribution due to the sense of responsibility, as she got her own issues and plans to deal with, her effort are rather limited than we planned at the very beginning. So the workload for the rest of the members has increased.
+one of our group members suspended studies because of the current unstable situation. Although she still tried best to make contribution due to the sense of responsibility, as she got her own issues and plans to deal with, her effort are rather limited than we planned at the very beginning. So the workload for the rest of the members has increased.
