@@ -110,9 +110,6 @@ Importantly, the Agile software development lifecycle is dominated by the iterat
 |Reduce total development time| |
 |Continuous attention to technical excellence and good design| |
 
-<p align = "center" style = "color:red">
-<b>???missing column!!!</b></p>
-
 <b>Choice of SDLC methodology</b>
 
 By contrasting the different models for software development, we decide to go for the Agile approach for the following few reasons. Firstly, the Agile approach has a few immediate advantages over traditional method such as the waterfall model due to its nature of being flexible. Although the rigidity of the waterfall model does prove to be very efficient in completing task phase by phase, and also the methodology can be explained with ease to ammeter coder there are inherent risk in this approach one of the most obvious being the lack to unit testing. Secondly, due to our idea and features for the project constantly evolving as we are implementing new features, so the Agile model fits our requirement as it features frequent check-ins which allow for changes to be made constantly. Whereas in the waterfall model, due to the linear progression does not encourage phases to be revisited.  Thirdly, the Agile methodology is way faster overall compared to the other methodology because far less re-work or major changes are made when progressing as most issues and changes are identified in the early stages.
@@ -120,13 +117,13 @@ By contrasting the different models for software development, we decide to go fo
 ### References
 [[1] MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
-## Breakdown of project into sprints
+## a. Breakdown of project into sprints
 As mentioned above in our system implementation we decided on the agile approach which features breaking down of project into sprints. Sprint planning is part of the scrum framework where we will determine what to work on in each of the sprint and discuss the initial plan for completing these backlog items. The figure below is a graphical representation of our sprint cycle and the detailed backlogs items derived from our user stories can be seen at (reference start of backlog) here.
 
 <p align="center">
 <img src="Images/implementation/sprint.jpg">
 </p>
-<b><p align= "center">Figure 1: The agile model for Fitness Jungle </p></b>
+<b><p align= "center">Figure 4: The agile model for Fitness Jungle </p></b>
 
 ### M5 Product Backlog
 <b><p align= "center">Table 4: M5 Product Backlog</p></b>
@@ -517,19 +514,20 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 | |Build API| | |2
 | |Test API| | |2
 
+The next two figures are backlog in the Gantt chart and Trello we used in sprints:
 
 <p align="center">
 <img src="Images/implementation/sprint-total.jpg">
 </p>
-<b><p align= "center">Figure 2: The Gantt chart of sprints </p></b>
+<b><p align= "center">Figure 5: The Gantt chart of sprints </p></b>
 
 <p align="center">
 <img src="Images/implementation/trello.png">
 </p>
-<b><p align= "center">Figure 3: The sprints in Trello </p></b>
+<b><p align= "center">Figure 6: The sprints in Trello </p></b>
 
 
-## Details of evaluation for designs
+## b. Details of evaluation for designs
 
 The two groups of design under evaluation will be the system design, as discussed in the previous section, and the user interface design. 
 
@@ -550,6 +548,7 @@ Succeeding the functional testing will be system testing, where each feature of 
 ### Limitations of testing techniques
 
 After justifying the chosen techniques for testing, it is also important to state the limitations of these techniques. As mentioned earlier, there are other techniques in functional testing such as boundary value analysis and error guessing. The limitation of use case testing will be that we are not testing for edge cases with user input or action that can cause errors in the system. The system may be prone to errors with unexpected inputs or actions. These are bugs that are caused by unexpected user behaviour.
+
 Next, for system bugs caused by the mistakes of programmers, functional testing is not comprehensive in detecting this type of bugs. System testing also only tests if the functionalities are working after integration using the expected user workflow. These tests do not test each section of the written program to ensure each section of the code is working as intended. The tests we employed are tests on the functionalities of the system on a higher level. The testing techniques that are aimed at mitigating such bugs are the unit test and integration test of the white-box testing. These tests are written for each section of the code written to ensure each unit of the code works as intended.
 
 ### Extensibility of system
@@ -595,17 +594,18 @@ We made a questionnaire following the principles of Heuristic Evaluation for our
 
 The evaluation is only as good as the people we get to do it. This means we have to spend a lot of time analysing and reviewing experts to make sure they are relevant and experienced in the issues you are concerned with.
 
+<p align="center">
+<img src="Images/implementation/question.jpeg" width=80%>
+</p>
+<b><p align= "center">Figure 7: Heuristic Evaluation of Fitness Jungle </p></b>
+
 ### Limitations of Heuristic Evaluation
 * The groups developing each sub-system are small, therefore the range of views is narrow
 * As the evaluation is done by the developers of the system, it may not reflect the actual needs of the users.
 * The team does not consist of an expert on user experience design, thus it may not be the most accurate evaluation of design
 
-<p align="center">
-<img src="Images/implementation/question.jpeg" width=80%>
-</p>
-<b><p align= "center">Figure 4: Heuristic Evaluation of Fitness Jungle </p></b>
 
-## Discussion of Social and Ethical implications of the work
+## c. Discussion of Social and Ethical implications of the work
 
 From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. We will be focusing on addressing the social implications, consent as well as privacy and security in the next few paragraphs. 
 ### Society implication 
