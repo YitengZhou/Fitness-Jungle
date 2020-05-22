@@ -16,7 +16,7 @@ Fitness Jungle is a health and fitness IoT product that makes use of your daily 
 
 The report is divided into 3 sections:
 
-## 1. [System Design](Portfolio/System_Design.md)
+### 1. [System Design](Portfolio/System_Design.md)
 
 This section comprises of the following segments:  
 
@@ -28,7 +28,7 @@ e. Details of the communication protocols in use
 f. Details of the data persistence mechanisms in use  
 g. Details of web technologies in use  
 
-## 2. [System Implementation](Portfolio/System_Implementation.md)
+### 2. [System Implementation](Portfolio/System_Implementation.md)
 
 This section comprises of the following segments:  
 
@@ -36,13 +36,13 @@ a. Breakdown of project into sprints
 b. Details of how the designs are evaluated  
 c. Discussion of Social and Ethical implications of the work  
 
-## 3. [Project Evaluation](Portfolio/Project_Evaluation.md)
+### 3. [Project Evaluation](Portfolio/Project_Evaluation.md)
 
 This section comprises of the following segments:  
 
 a. Reflective discussion of the success of the project  
 b. Discussion of future work  
-c. Reflection on the working practices of the group  
+c. Reflection on the working practices of the group (includes report collaboration and branching practices)  
 d. Effects of Covid-19 on the project  
 
 ## Product
