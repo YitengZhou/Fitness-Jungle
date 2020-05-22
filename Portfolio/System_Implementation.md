@@ -285,11 +285,17 @@ At this stage, meetings are held daily as the pace of implementation has picked 
 
 ### M5Stack Sprint 2 Backlog
 <b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
-
 |Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
 |:-:|:-:|:-:|:-:|:-:|
 |1|<b>MQTT connectivity</b>|-|8|
-| |Setup MQTT environment| |1|
+
+
+
+<b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
+|Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
+|:-:|:-:|:-:|:-:|:-:|
+|1|<b>MQTT connectivity</b>|-|8|
+| |Setup MQTT environment||1|
 | |Setup WiFi class on M5stack| |3|
 | |Setup publish and subscribe topics| |1|
 | |Test sending messages| |1.5|
