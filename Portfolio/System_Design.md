@@ -1,4 +1,4 @@
-# System Design
+# 1. System Design
 
 ## Design thinking
 
@@ -7,9 +7,9 @@
 </p>
 <b><p align= "center">Figure 1: Brainstorming during design thinking</p></b>
 
-We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects.
+We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects. Following that, we decided that our problem area will be to encourage people to maintain an active lifestyle by walking or running regularly. Our stakeholders will therefore be people who are interested to maintaining an active lifestyle, hereafter known as the users, and the developers or administrators of the product. We will go on to draft product requirements based on this objective and the two groups of stakeholders.
 
-## Architecture of the system
+## a. Architecture of the system
 
 Overview: We are working on a health fitness tracker that comprises of a virtual pet in addition to the basics fitness tracker functionality to encourage end-user to be pro-active.  The system architecture will encompass three different elements namely M5Stack, desktop application and a web application. Instead of developing a mechanism for data persistence in each of the systems, we decide that having an API server which stores and process data from all the different systems will simply the JSON object that has to be passed around for this application to be feasible. In the next few sections, we will be dive into each of the elements at a greater dept discussing their applications.
 
@@ -70,7 +70,7 @@ With the requirements from each sub-system and following the principles of manag
 The server that will be serving the data to the different sub-systems will be the web server. This means that the web server will be acting as an API server in addition to serving web pages. The web client will communicate with the server via HTTP, in the form of RESTful HTTP APIs. The M5Stack and desktop applications will communicate with the server via MQTT, through a message broker. A standardised JSON object format is used for MQTT communication to ensure that subscribers on the same topic will be able to distinguish the sender and recipient as well as the API call. Details of the API design will be discussed under section 1e. This fulfills the “Liskov Substitution Principle” where the standardised request and response JSON objects serve as a common “contract” between the different sub-systems, which allows for substitution of the sub-systems. Lastly, the database is designed considering the foreseeable enhancements and normalised to BCNF form. This fulfills the “Open-Closed” principle where we allow for functional extensions to the various sub-systems.
 
 
-## Object-Oriented design of key sub-systems
+## b. Object-Oriented design of key sub-systems
 
 ### M5Stack
 
@@ -125,7 +125,7 @@ The main components for the web application are:
 * Map component - A vue component used to display user’s daily route. 
 * Store – This is a store to manage all the states of every components in this web application. It contains two objects: the state object, which stores all the states used by other components, and the mutated object, which is the only way to change the values in the state object.
 
-## Requirements of key sub-systems
+## c. Requirements of key sub-systems
 
 ### M5Stack Application
 M5Stack is designed for registered users, who could wear this device to tracker their physical steps, view health report and interact with virtual pets. The two main features of this loT device are: 
@@ -355,7 +355,7 @@ The first version of UI wireframe is as shown above. The goal of the web applica
 </p>
 <b><p align= "center">Figure 24: Friend page of Web application </p></b>
 
-## Details of the communication protocols in use
+## d. Details of the communication protocols in use
 
 The two main communication protocols used by the system are the Message Queuing Telemetry Transport (MQTT) protocol and HyperText Transfer Protocol (HTTP). 
 
@@ -375,8 +375,549 @@ MQTT also takes a publish-subscribe pattern, where the clients will subscribe to
 
 The communication protocol used by the Web client is HTTP, since the Web client has to communicate with the server via HTTP.
 
-<p align = "center" style = "color:red">
-<b>!!! Insert API design markdown !!!</b></p>
+### API Design
+
+The API endpoints provided by the server to the clients are as follows:
+
+#### HTTP
+
+Web APIs are designed according to the Representational State Transfer (REST) architectural style.
+
+API endpoints (accompanied with the example request and response JSON objects):
+
+`POST /api/register` (Register a new user)
+
+**Request**
+```
+{
+   "email": "ccole2020@email.com",
+   "password": "12345",
+   "firstName": "Cheryl",
+   "lastName": "Cole"
+}
+```
+
+**Response**
+```
+{
+   "resultCode": 0,
+   "resultMessage": "OK"
+}
+```
+
+`POST /api/login` (Authenticate a user)
+
+**Request**
+```
+{
+   "email": "ccole2020@email.com",
+   "password": "12345"
+}
+```
+
+**Response**
+```
+// supposed to return token, but will be a future enhancement since it is not deemed as crucial for Proof-Of-Concept
+{
+   "userId": 1,
+   "firstName": "Cheryl",
+   "lastName": "Cole",
+   "imageUrl": "https://some-url"
+}
+```
+
+`POST /api/getUser` (Get user details)
+
+**Request**
+```
+{
+   "userId": 1
+}
+```
+
+**Response**
+```
+{
+   "firstName": "Cheryl",
+   "lastName": "Cole",
+   "imageUrl": "https://some-url",
+   "deviceNo": "P4177",
+   "totalStepCount": 1001
+}
+```
+
+`PUT /api/updateUser` (Update user details)
+
+**Request**
+```
+{
+   "userId": 1,
+   "toUpdate": {
+      "firstName": "Cheryl",
+      "lastName": "Cole",
+      "imageUrl": "https://some-url",
+      "deviceNo": "P4177"
+   }
+}
+```
+
+**Response**
+```
+{
+   "resultCode": 0,
+   "resultMessage": "OK"
+}
+```
+
+`POST /api/getPetTypes` (Get all pet types)
+
+**Request**
+```
+{}
+```
+
+**Response**
+```
+{
+   "petTypes": [
+      {
+         "id": 1,
+         "type": "Cactus",
+         "skin": "Default",
+         "imageUrl": "https://some-url"
+      }
+   ]
+}
+```
+
+`POST /api/createUserPet` (Add a new pet for user)
+
+**Request**
+```
+{
+   "userId": 1,
+   "name": "Scarlett",
+   "typeId": 1,
+   "skin": "Default"
+}
+```
+
+**Response**
+```
+{
+   "resultCode": 0,
+   "resultMessage": "OK"
+}
+```
+
+`POST /api/getUserPets` (Get all pets of a user)
+
+**Request**
+```
+{
+   "userId": 1
+}
+```
+
+**Response**
+```
+{
+   "pets": [
+      {
+         "petId": 1,
+         "name": "Scarlett",
+         "level": 5,
+         "type": "Cactus",
+         "skinId": 1,
+         "skinName": "Default",
+         "imageUrl": "https://some-url",
+         "stepCount": 500,
+         "stepsToNextLevel": 1000,
+         "active": true
+      }
+   ]
+}
+```
+
+`PUT /api/updateUserPet` (Update a user's pet details)
+
+**Request**
+```
+{
+   "userId": 1,
+   "petId": 1,
+   "toUpdate": {
+      "name": "Scarlett",
+      "skinId": 1
+   }
+}
+```
+
+**Response** 
+```
+{
+   "resultCode": 0,
+   "resultMessage": "OK"
+}
+```
+
+`PUT /api/setActivePet` (Set the pet to be active on user's M5Stack)
+
+**Request**
+```
+{
+   "userId": 1,
+   "petId": 1
+}
+```
+
+**Response**
+```
+{
+   "resultCode": 0,
+   "resultMessage": "OK"
+}
+```
+
+#### MQTT (M5Stack)
+
+MQTT communication follows a request-response cycle similar to the HTTP API calls. This is to allow the clients to identify the responses returned. Thus, the JSON objects used in communication are designed with a standardised request and response format. 
+
+**Request format**
+```
+{
+   "from": "", // sender
+   "to": "", // intended receipient
+   "request": {
+      "header": "", // API endpoint
+      "body": {} // parameters to pass to server (optional)
+   }
+}
+```
+
+**Response format**
+```
+{
+   "from": "",
+   "to": "",
+   "response": {
+      "header": "", // API endpoint in response to
+      "body": {}, // response data, if any
+      "status": {
+         // currently supported: [200: "OK", 500: "Internal Error"]
+         "code": 0,
+         "message": ""
+      }
+   }
+}
+```
+
+Having a response status allows clients to manage the returned object more easily and neatly.
+
+`/registerDevice` (Inform the server the device is online and ready to sync)
+
+**Request**
+```
+{
+   "from": "m5_P4177",
+   "to": "server",
+   "request": {
+      "header": "/registerDevice"
+   }
+}
+```
+
+**Response**
+```
+{
+   "from": "server",
+   "to": "m5_P4177",
+   "response": {
+      "header": "/registerDevice",
+      "body": {},
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   }
+}
+```
+
+`/getDeviceData` (Get user and pet details for M5 device)
+
+**Request**
+```
+{
+   "from": "m5_P4177",
+   "to": "server",
+   "request": {
+      "header": "/getDeviceData"
+   }
+}
+```
+
+**Response**
+```
+{ 
+   "from": "server",
+   "to": "m5_P4177",
+   "response": {
+      "header": "/getDeviceData",
+      "body": {
+         "user": {
+            "firstName": "Cheryl",
+            "lastName": "Cole",
+            "totalStepCount": 1001
+         },
+         "pet": {
+            "id": 1,
+            "name": "Scarlett",
+            "level": 5,
+            "type": "Cactus",
+            "skin": "Default",
+            "imageUrl": "https://some-url",
+            "stepCount": 500,
+            "stepsToNextLevel": 1000
+         }
+      },
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   } 
+}
+```
+
+`/postSteps` (Post interval update of new steps)
+
+**Request**
+```
+{
+   "from": "m5_P4177",
+   "to": "server",
+   "request": {
+      "header": "/postSteps",
+      "body": {
+         "stepCount": 10
+      }
+   }
+}
+```
+
+**Response**
+```
+{ 
+   "from": "server",
+   "to": "m5_P4177",
+   "response": {
+      "header": "/postSteps",
+      "body": {},
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   }
+}
+```
+
+*Notification: In the event that the server needs to send notifications to the M5Stack, it will be in the following format:*
+
+```
+{ 
+   "from": "server",
+   "to": "",
+   "notification": {
+      "header": "",
+      "body": {}
+   }
+}
+```
+
+#### MQTT (Desktop)
+
+`/login` (Authenicate an admin)
+
+**Request**
+```
+{
+   "from": "desktop_1",
+   "to": "server",
+   "request": {
+      "header": "/login",
+      "body": {
+         "username": "admin",
+         "password": "12345"
+      }
+   }
+}
+```
+
+**Response**
+```
+{
+   "from": "server",
+   "to": "desktop_1",
+   "response": {
+      "header": "/login",
+      "body": {
+         "adminId": 1,
+         "firstName": "Mister",
+         "lastName": "Admin"
+      },
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   }
+}
+```
+
+`/getUserList` (Get list of users)
+
+**Request**
+```
+{
+   "from": "desktop_1",
+   "to": "server",
+   "request": {
+      "header": "/getUserList",
+      "body": {
+         "adminId": 1
+      }
+   }
+}
+```
+
+**Response**
+```
+{
+   "from": "server",
+   "to": "desktop_1",
+   "response": {
+      "header": "/getUserList",
+      "body": {
+         "users": [
+            {
+               "userId": 1,
+               "email": "ccole2020@email.com",
+               "firstName": "Cheryl",
+               "lastName": "Cole"
+            },
+            {
+               "userId": 2,
+               "email": "someguy@email.com",
+               "firstName": "Some",
+               "lastName": "Guy"
+            }
+         ]
+      },
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   }
+}
+```
+
+`/getUserDetailed` (Get details of a user)
+
+**Request**
+```
+{
+   "from": "desktop_1",
+   "to": "server",
+   "request": {
+      "header": "/getUserDetailed",
+      "body": {
+         "adminId": 1,
+         "userId": 1
+      }
+   }
+}
+```
+
+**Response**
+```
+{
+   "from": "server",
+   "to": "desktop_1",
+   "response": {
+      "header": "/getUserDetailed",
+      "body": {
+         "userId": 1,
+         "email": "ccole2020@email.com",
+         "firstName": "Cheryl",
+         "lastName": "Cole",
+         "imageUrl": "https://some-url",
+         "deviceNo": "P4177",
+         "totalStepCount": 1001,
+         "pets": [
+            {
+               "id": 1,
+               "name": "Scarlett",
+               "level": 5,
+               "type": "Cactus",
+               "skin": "Default",
+               "imageUrl": "https://some-url",
+               "stepCount": 500,
+               "stepsToNextLevel": 1000,
+               "active": true
+            }
+         ]
+      },
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   }
+}
+```
+
+`/getUserStepsInterval` (Get user's step updates within a specified interval)
+
+**Request**
+```
+{
+   "from": "desktop_1",
+   "to": "server",
+   "request": {
+      "header": "/getUserStepsInterval",
+      "body": {
+         "adminId": 1,
+         "userId": 1,
+         "intervalFrom": "2020-05-01 00:00:00",
+         "intervalTo": "2020-05-01 23:59:59"
+      }
+   }
+}
+```
+
+**Response**
+```
+{
+   "from": "server",
+   "to": "desktop_1",
+   "response": {
+      "header": "/getUserStepsInterval",
+      "body": {
+         "steps": [
+            {
+               "count": 10,
+               "timestamp": "2020-05-01 00:00:00"
+            },
+            {
+               "count": 50,
+               "timestamp": "2020-05-01 01:00:00"
+            }            
+         ]
+      },
+      "status": {
+         "code": 200,
+         "message": "OK"
+      }
+   }
+}
+```
 
 ## Details of the data persistence mechanisms in use
 
