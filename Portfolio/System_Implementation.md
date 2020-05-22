@@ -8,13 +8,13 @@
   - [Choice of SDLC methodology](#Choice-of-SDLC-methodology)
 - [**a. Breakdown of project into sprints**](###a.-Breakdown-of-project-into-sprints)
   - [Product Backlog](#M5-Product-Backlog)
-  - [Sprint 1: Building user interfaces and API design](#M5-Product-Backlog)
-  - [Sprint 2: First wave of implementation](#Sprint-2:-First-wave-of-implementation)
-  - [Sprint 3: Second wave of implementation](#Sprint-3:-Second-wave-of-implementation)
+  - [Sprint 1: Building user interfaces and API design](#Sprint-1-Building-user-interfaces-and-API-design)
+  - [Sprint 2: First wave of implementation](#Sprint-2-First-wave-of-implementation)
+  - [Sprint 3: Second wave of implementation](#Sprint-3s-Second-wave-of-implementation)
 - [**b. Details of evaluation for designs**](###b.-Details-of-evaluation-for-designs)
   - [Functional Testing](#Functional-testing)
   - [User Interface Design](#Evaluation-of-user-interface-design)
-  - [Heuristic Evaluation](#Choice-of-evaluation-technique:-Heuristic-Evaluation)
+  - [Heuristic Evaluation](#Choice-of-evaluation-technique--Heuristic-Evaluation)
 - [**c. Discussion of Social and Ethical implications of the work**](###c.-Discussion-of-Social-and-Ethical-implications-of-the-work)
   - [Society Implications](#Society-Implications)
   - [Informed Consent](#Informed-Consent)
@@ -216,7 +216,7 @@ As mentioned above in our system implementation we decided on the agile approach
 |17|Register device (MQTT)|M5stack|3|5|
 |18|Authenticate admin (MQTT)|Desktop|4|5|
 
-### Sprint 1: Building user interfaces and API design
+### Sprint 1-Building user interfaces and API design
 
 In this sprint, we will not be building the full features but rather just the user interfaces. This is a little unconventional since a sprint cycle usually takes a feature through design to implementation. However, the team felt that it will be more beneficial if we started with the building of the user interfaces to make clear of the data requirements and allow a more coherent flow of the applications. This will also allow for a better API design as the API designer will have an overview of the data required by the different clients and be able to build more general-purpose APIs that can be shared by clients. This contrasts with building APIs with each feature implementation, which can result in APIs with narrow scopes and increase data redundancy in APIs. In addition, making any API changes will result in previous implemented features having to be modified to keep with the changes. Thus, to reduce API changes and have a better application design flow, the team decided to take an unconventional approach in the first sprint. 
 
@@ -320,7 +320,7 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 |16|<b>Register device (MQTT) API Design|M5Stack|4|1
 |17|<b>Authenticate admin (MQTT) API Design|Desktop|1|1
 
-### Sprint 2: First wave of implementation
+### Sprint 2-First wave of implementation
 
 In this sprint, we start off the first wave of feature implementations. The server is added with the APIs required by the different sub-systems, developing in the sequence shown in the user sequence diagram. The different sub-systems build on from the user interfaces and establish communication with the server via API calls to retrieve the required data. In particular, for the desktop application, the time required to build the user interfaces exceed the initial expectations in the previous sprint and thus a portion of this sprint will be to continue building the user interfaces alongside implementing features.
 
@@ -457,7 +457,7 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 ||Build API|||2
 ||Test API|||2
 
-### Sprint 3: Second wave of implementation
+### Sprint 3-Second wave of implementation
 
 Coming to the second wave of implementation and the final sprint, the first part of this sprint will be to make improvements on the features implemented in Sprint 2 as discussed in the previous end of sprint meeting. Then it is to continue to work on the new features that are decided upon. Throughout the sprints, system testing is carried out with the implementation of each new feature to ensure the previous features are still working as intended with the addition of the new feature. The last part of the sprint, although not specified in the sprint backlog, is a full system testing where the 3 sub-systems are integrated and combined. Each group will test their sub-system and well as the other sub-systems to ensure functionalities of the system work as intended. Each group provides a checklist of use cases to the other groups to facilitate the testing. An end of sprint meeting is held to conclude on the development of the system, and to highlights any bugs that still exist. Bug fixes will be carried out and resolved before requesting for other groups to test the system again.
 
@@ -599,7 +599,7 @@ The following are commonly used user testing techniques:
 * Structured and Unstructured Interview - Structured and unstructured interviews are common methods of gathering data in research. While structured interviews are mostly used in quantitative observation, an unstructured interview is usually used in qualitative data collection. - The cognitive walkthrough method is a usability inspection method used to identify usability issues in interactive systems, focusing on how easy it is for new users to accomplish tasks with the system.
 * GOMS (Goals, Operators, Methods and Selection Rules) - A GOMS model is composed of methods that are used to achieve specific goals. These methods are then composed of operators at the lowest level. The operators are specific steps that a user performs and are assigned a specific execution time. 
 
-### Choice of evaluation technique: Heuristic Evaluation
+### Choice of evaluation technique--Heuristic Evaluation
 
 Beside the realistic factors, Heuristic Evaluation itself is a very useful method which has been proved to be efficient and strong enough for software UI design. It is a detailed, technically sound process that assesses the product against a clear set of criteria. In addition, due to current situation of the COVID-19, it’s rather impractical for us to conduct off-line user research. Thus, the team decided that Heuristic Evaluation would be the most practical UI evaluation method for us. 
 
