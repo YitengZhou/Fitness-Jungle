@@ -69,21 +69,23 @@ The current state of the desktop application although useable, the user-interfac
 We also wish to add in login support to allow the desktop application to differentiate between admin user and a normal user assigning them with the correct privileges. This allow us to expand the platform to not only the developer as mentioned above. With this feature users can also customise their own pets to be checked and optimised by the developer before uploading it to the system to be used by another user. The option of designing a pet from scratch would definitely encourage the end-user to be more pro-active to show the pet to friends and family by climbing the leader board.
  
 ### Web Application
-This web application has shown the potential as an account management terminal of M5Stack for users, it shows the ability to display users’ data collected by M5Stack in multi terminals including PC and mobile device due to the support of the modern web design. In the future, several features could be further developed:
+The web application serves as an account management platform for the product,  where information of the users and their virtual pets are detailed and the users will be able to view and modify their pets across multiple platforms such as PC and mobile devices. Some of the features that we can improve on the the future are as follows:
 
 <b>Optimized UI</b>
 
-The current UI of web application is too simple and have a great potential to be improved. Adding some animation effect and transition effect in the GUI will make it more attractive for users.
-Pet System Improvement: More entertainment functions relating to the pet system could be added, such as pet animation effect and interaction with pet. 
+The current UI of web application is too simple and have a great potential to be improved. The addition of animation and transition effect in the GUI can greatly improve the physical appeal to the user.
+
+<b>Pet System Improvement</b>
+
+More interactive feature relating to the pet system could be added, such as pet animation effect and interaction with pet such as playing games using the pet as the character.
 
 <b>Multi M5Stack Support</b>
 
-Currently an account can only management data collected from one M5Stack. It will be more convenient for users with more than one M5Stack if we can extend this application to making it can maintain multi M5Stacks in one account. 
+Currently an account can only management data collected from one M5Stack. It will be more convenient for users with more than one M5Stack if we can extend this application to making it can maintain multi M5Stacks in one account.
 
 <b>AR Support with Map function</b>
 
-AR (Augmented reality) games such as Ingress and Pokémon Go are one of the next generation electronic entertainment. We can implement the support to M5Stacks with AR functions in the future.
-s
+AR (Augmented reality) games such as Ingress and Pokémon Go are a form of next generation electronic entertainment. We can implement the support to M5Stacks with AR functions in the future.
 
 ## c. Reflect on the working practices of your group
 
