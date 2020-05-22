@@ -285,15 +285,8 @@ At this stage, meetings are held daily as the pace of implementation has picked 
 
 ### M5Stack Sprint 2 Backlog
 <b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
-Priority|Product Backlog Item|User Story ID|Estimated time (hours)
-|:-:|:-:|:-:|:-:|:-:|
-|1|<b>MQTT connectivity</b>|-|8|
-
-
-
-<b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 |1|<b>MQTT connectivity</b>|-|8|
 | |Setup MQTT environment||1|
 | |Setup WiFi class on M5stack| |3|
@@ -324,10 +317,11 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
 | |Receive response JSON| |1|
 | |Display login workflow| |6|
 
+
 ### Desktop Sprint2 Backlog
 <b><p align= "center">Table 13: Desktop Sprint2 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 1|<b>Application setup|-|1
 | |Create a local database to store data required locally| |1
 2|<b>MQTT connectivity|-|3.5
@@ -346,7 +340,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 <b><p align= "center">Table 14: Web Sprint 2 Backlog</p></b>
 
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 1|<b>Application setup|-|3
 | |Router component registration| |1
 | |Router anchors registration| |2
@@ -426,7 +420,7 @@ Coming to the second wave of implementation and the final sprint, the first part
 ### M5Stack Sprint 3 Backlog
 <b><p align= "center">Table 16: M5Stack Sprint 3 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 1|<b>View user details |5|3
 | |Renovate and improve the user view interface| |3
 2|<b>View pet details |3|6
@@ -453,7 +447,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 <b><p align= "center">Table 17: M5Stack Sprint 3 Backlog</p></b>
 
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 1|<b>View user Information|2|1.5
 | |Adjusting the position of text box, font size to ensure user information is displayed correctly| |0.5
 | |Adjusting the position of text box, font size to ensure user information is displayed correctly| |0.5
@@ -473,7 +467,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 <b><p align= "center">Table 18: Web Sprint 3 Backlog</p></b>
 
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 1|<b>Step count report|2|10
 | |Import EChart plugin| |2
 | |Render EChart using data from server| |8
