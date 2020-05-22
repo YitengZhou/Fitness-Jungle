@@ -28,7 +28,7 @@ With our system design on hand, we are mindful of the importance of a clear soft
 
 ## Waterfall Model
 
- The idea of a waterfall model was one of the first process model proposed by Winston W. Royce in his paper regarding managing the development of large software system in 1970 [[1]](System_Implementation.md#references). In Royce’s article the term “waterfall” was not used and it was an example for a flawed model, which we will discuss later. 
+ The idea of a waterfall model was one of the first process model proposed by Winston W. Royce in his paper regarding managing the development of large software system in 1970 [[1]](System_Implementation.md#References). In Royce’s article the term “waterfall” was not used and it was an example for a flawed model, which we will discuss later. 
 
 The waterfall model emphasises the logical progression of phases taken throughout the software development life cycle. It is termed the waterfall due to the nature of the model progression, which is like the cascading steps down an incremental waterfall. This means that the next phase of development only begins only if the previous phase is completed, and do not overlap. The waterfall model gained its popularity due to its simplicity. The sequential phases in waterfall are:
 
@@ -50,10 +50,6 @@ The waterfall model emphasises the logical progression of phases taken throughou
 |Easy to arrange task|Adjusting scope during life cycle can end a project|
 |Process and result well documented|Delayed testing period|
 
-### References
-[[1] W. W. Royce. 1987. Managing the development of large software systems: concepts and techniques](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
-
-
 ## Spiral Model
 
 Spiral model is another important SDLC model, which provides support for risk handling. The model was first introduced by Barry Boehm in his 1986 paper, “A Spiral Model of Software Development and Enhancement”, where he used the term “process model” to refer to the spiral model as well as to incremental, waterfall, prototyping, and other approaches, which indicates that it is actually a combination of iterative development process model and sequential linear development model at early stage, but is quite outstanding for its risk-driven feature.
@@ -64,9 +60,6 @@ In its diagrammatic representation, spiral model looks like a spiral with many l
 <img src="Images/implementation/Sprial_Model.png" alt="https://www.pngkey.com/png/detail/33-331839_spiral-model.png" width=75%>
 </p>
 <b><p align= "center">Figure 1: The Spiral model graphical representation </p></b>
-
-### Reference
-[Spiral Model](https://pdfs.semanticscholar.org/3d71/0cdac84dce7387177da471b9822e03029d1c.pdf?_ga=2.68442905.987963553.1590128111-1603561370.1589100842)
 
 The Radius of the spiral at any point shows the cost of the project so far, and the angular dimension suggests the progress made so far in the current phase. Each phase begins with a goal for the design, ends when the developer or client reviews the progress and is divided into four quadrants as shown in the diagram. The details of these four quadrants are:
 
@@ -94,9 +87,6 @@ Agile model is also a type of Incremental model. Software is developed in increm
 </p>
 <b><p align= "center">Figure 2: Graphical representation of sprints </p></b>
 
-### References
-[Sprint](http://www.seherfranz.com/story.html)
-
 Unlike the Waterfall model, the development team ultimately decides at the beginning of a sprint (or iteration) what can be accomplished in the timeframe and sets out to build a series of features, delivering working software that can be installed in a production environment at the end of the sprint, which meets the demand for faster software development.
 
 There are various approaches adhering to Agile, including, but not limited to:
@@ -111,9 +101,6 @@ There are various approaches adhering to Agile, including, but not limited to:
 <img src="Images/implementation/Agile_model_1.png" alt="https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_auto/w_2000/https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/a68c2cc3-d3f2-40a6-8bf5-e29bfa3cbc00/4-collaborative-coding-ultimate-career-hack.png" width=75%>
 </p>
 <b><p align= "center">Figure 3: The Agile model graphical representation </p></b>
-
-### References
-[Agile model](https://www.smashingmagazine.com/2020/04/collaborative-coding-ultimate-career-hack/)
 
 Importantly, the Agile software development lifecycle is dominated by the iterative process. Each iteration results in the next piece of the software development puzzle. There are different expressions regarding the stages in an iteration process, but most are similar in general. A typical example is as follows:
 * Requirements - Define the requirements for the iteration based on the product backlog, sprint backlog, customer and stakeholder feedback.
@@ -137,9 +124,6 @@ Importantly, the Agile software development lifecycle is dominated by the iterat
 ## Choice of SDLC methodology
 
 By contrasting the different models for software development, we decide to go for the Agile approach for the following few reasons. Firstly, the Agile approach has a few immediate advantages over traditional method such as the waterfall model due to its nature of being flexible. Although the rigidity of the waterfall model does prove to be very efficient in completing task phase by phase, and also the methodology can be explained with ease to ammeter coder there are inherent risk in this approach one of the most obvious being the lack to unit testing. Secondly, due to our idea and features for the project constantly evolving as we are implementing new features, so the Agile model fits our requirement as it features frequent check-ins which allow for changes to be made constantly. Whereas in the waterfall model, due to the linear progression does not encourage phases to be revisited.  Thirdly, the Agile methodology is way faster overall compared to the other methodology because far less re-work or major changes are made when progressing as most issues and changes are identified in the early stages.
-
-### References
-[[1] MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
 ## a. Breakdown of project into sprints
 As mentioned above in our system implementation we decided on the agile approach which features breaking down of project into sprints. Sprint planning is part of the scrum framework where we will determine what to work on in each of the sprint and discuss the initial plan for completing these backlog items. The figure below is a graphical representation of our sprint cycle and the detailed backlogs items derived from our user stories can be seen at (reference start of backlog) here.
@@ -560,14 +544,14 @@ The system design will be evaluated based on the ability to meet system requirem
 
 ### Functional testing
 
-The approach to software testing will be the “box” approach, specifically black-box testing or functional testing [[1]](System_Implementation.md#references-3). This method is chosen since the focus of the testing will be to make sure that the functionalities of the system, as specified in the system requirements, work as intended. In addition, the functional testing technique used is use case testing where the system is tested against a list of test cases [[1]](System_Implementation.md#references-3). The list of test cases is drafted based on the system requirements. The other techniques such as boundary value analysis and error guessing [[1]](System_Implementation.md#references-3) are not employed, since at the proof-of-concept stage we are most concerned with usability of the system and less emphasis is put on edge case testing.
+The approach to software testing will be the “box” approach, specifically black-box testing or functional testing [[1]](System_Implementation.md#References). This method is chosen since the focus of the testing will be to make sure that the functionalities of the system, as specified in the system requirements, work as intended. In addition, the functional testing technique used is use case testing where the system is tested against a list of test cases [[1]](System_Implementation.md#References). The list of test cases is drafted based on the system requirements. The other techniques such as boundary value analysis and error guessing [[1]](System_Implementation.md#References) are not employed, since at the proof-of-concept stage we are most concerned with usability of the system and less emphasis is put on edge case testing.
 
 Thus, for each of the sub-systems, the first step will be to draft the list of use cases for each feature. Once that is completed, development will take place and the testing of each feature will be checking each of the use cases. If any of the use cases are not satisfied, the development continues until each of use cases are checked. When the entire list is checked, the feature will be ready for system testing where the feature will be tested with the rest of the system.
 
  As for the server, the APIs provided are tested according to the requirement specifications given by the three sub-system clients. To ensure that the data returned to the various clients is as intended, the first step to the development workflow will be to gather the data requirements from the various clients. After gathering the requirements, the API request and response objects will be designed and communicated to the sub-system clients for approval. This forms the first level of evaluation. After confirmation of the API design, the development of APIs will begin. HTTP APIs will be tested using a testing software called “Postman”. Postman allows sending of RESTful HTTP requests easily, therefore the APIs can be tested and verified with different requests and responses. As for MQTT APIs, the testing of these APIs will require an initial setup on the MQTT broker and examining the results on the broker.
 
 ### System Testing
-Succeeding the functional testing will be system testing, where each feature of the sub-system will be integrated with the rest of the sub-system and tested [[1]](System_Implementation.md#references-3). This is one of the techniques in white-box testing, alongside unit testing and integration testing [[1]](System_Implementation.md#references-3). The other techniques are once again not employed due to the focus on producing functionalities for the system for proof-of-concept. In terms of code management, each sub-system has a branch manager that manages the merging of feature branches. After a member completes a feature and posts on a feature branch, the member will do a pull request to the main branch (more details of code and branch management in section 3c). The branch manager then conducts system testing to ensure that the feature branch works with the rest of the sub-system. Following that, the feature will be merged and posted on the main branch of the sub-system and members from other sub-systems will perform system testing.
+Succeeding the functional testing will be system testing, where each feature of the sub-system will be integrated with the rest of the sub-system and tested [[1]](System_Implementation.md#References). This is one of the techniques in white-box testing, alongside unit testing and integration testing [[1]](System_Implementation.m#References). The other techniques are once again not employed due to the focus on producing functionalities for the system for proof-of-concept. In terms of code management, each sub-system has a branch manager that manages the merging of feature branches. After a member completes a feature and posts on a feature branch, the member will do a pull request to the main branch (more details of code and branch management in section 3c). The branch manager then conducts system testing to ensure that the feature branch works with the rest of the sub-system. Following that, the feature will be merged and posted on the main branch of the sub-system and members from other sub-systems will perform system testing.
 
 ### Limitations of testing techniques
 
@@ -630,7 +614,7 @@ The evaluation is only as good as the people we get to do it. This means we have
 
 
 ## c. Discussion of Social and Ethical implications of the work
-From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. To adhere with all the possible guidelines, we follow the BCS Code of Conduct, and we are aware of the implications on public health, privacy, security and wellbeing of others and the environment.  We also have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise[[1]].(System_Implementation.md#Ethical-sReferences)
+From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. To adhere with all the possible guidelines, we follow the BCS Code of Conduct, and we are aware of the implications on public health, privacy, security and wellbeing of others and the environment.  We also have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise[[6](System_Implementation.md#References)].
 
 We will be focusing on addressing the social implications, consent, physical and mental wellbeing as well as privacy and security in the next few paragraphs.  
 
@@ -642,7 +626,7 @@ Our goal for Fitness Jungle is to improve encourage our user to lead a heathier 
 Any participants involved in the evaluation are required to understand the information sheet and complete the informed consent referred from the University of Bristol. In the information sheet will introduce the purpose and principle of our work, our main target audience, risks and implications, as well as access to our feedback channel. Participants will then be asked to complete the informed consent if they are still willing to take part in the evaluation and they are of required age for legal consent. The end-user also needs to read the information sheet and agree with the informed consent before registering as an official user or the first time using our product in order to gain the permission of its users.   
 
 ### Privacy  
-This IoT device will gather personal information and physical health data through the web application and M5 stack, and communicate with the other key sub-system using MQTT as mentioned in our communication protocol. Personal information are generally collected upon users registration on the web application, the steps taken along with date and time are automatically updated on a specific time period. These data collected will be store mainly on our embedded database within our web application back-end server. The other key sub system such as the desktop application has no long-term storage of these data and only request data from the server when required and destroyed upon changing screens or exiting the application. To protect user’s privacy, this work is consciously regulated under the EU General Data Protection Regulation (GDPR)[[2]](System_Implementation.md#Ethical-References), which has confirmed in the UK in 2018.  
+This IoT device will gather personal information and physical health data through the web application and M5 stack, and communicate with the other key sub-system using MQTT as mentioned in our communication protocol. Personal information are generally collected upon users registration on the web application, the steps taken along with date and time are automatically updated on a specific time period. These data collected will be store mainly on our embedded database within our web application back-end server. The other key sub system such as the desktop application has no long-term storage of these data and only request data from the server when required and destroyed upon changing screens or exiting the application. To protect user’s privacy, this work is consciously regulated under the EU General Data Protection Regulation (GDPR)[[7]](System_Implementation.md#References), which has confirmed in the UK in 2018.  
 
 ### Information Security 
 We guarantee that the data collected will be used solely for this product and will not be shared with other platforms or corporation for momentary gains, however we cannot ensure effective information delivery due to unencrypted informational flow and possible security leaks by hacker. For example, during the testing of communication with the different subsystems, messages in the form of JSON object will be exposed with access to the topic subscription title.. In addition, the originally planned map system may cause greater security risk in terms of location privacy, which is mainly why the map feature was not implemented. The map feature will upload geographical location of users in real time, causing serious privacy implication such as current user location to malicious attacks.  
@@ -653,7 +637,17 @@ With our planned introduction of challenges and competitions, there may be incre
 ### Addiction 
 Like with any games, there is a risk of user addiction. If the users really like the game and wants to spend long hours to achieve better results in the game, it can affect their other aspects of life. This may have an impact on their careers or their studies as they will be spending less time on them. In addition, an addiction can be detrimental for the mental health. However, the user may not realise spending too much time on the app unless it is too late. It is therefore important that we send reminders to the users to alert them about the time spent on the app to help them notice this. 
 
-### Ethical References 
-[BCS,the BCS Code of Conduct](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
+### References
+[[1] W. W. Royce. 1987. Managing the development of large software systems: concepts and techniques](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
-[The EU General Data Protection Regulation(GDPR)](https://ttps://gdpr-info.eu/)
+[[2]Spiral Model](https://pdfs.semanticscholar.org/3d71/0cdac84dce7387177da471b9822e03029d1c.pdf?_ga=2.68442905.987963553.1590128111-1603561370.1589100842)
+
+[[3]Sprint](http://www.seherfranz.com/story.html)
+
+[[4]Agile model](https://www.smashingmagazine.com/2020/04/collaborative-coding-ultimate-career-hack/)
+
+[[5] MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
+
+[[6]BCS,the BCS Code of Conduct](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
+
+[[7]The EU General Data Protection Regulation(GDPR)](https://ttps://gdpr-info.eu/)
