@@ -33,8 +33,13 @@ Spiral model is another important SDLC model, which provides support for risk ha
 
 In its diagrammatic representation, spiral model looks like a spiral with many loops, and loop is called a Phase of the process. The accurate number of loops depends on the specific project, where the project managers can define it according to the project risk. 
 
-<p align = "center" style = "color:red">
-<b>Need picture and reference!!!</b></p>
+<p align="center">
+<img src="Images/implementation/Sprial_Model.png" alt="https://www.pngkey.com/png/detail/33-331839_spiral-model.png" width=75%>
+</p>
+<b><p align= "center">Figure 1: The Spiral model graphical representation </p></b>
+
+### Reference
+[Spiral Model](https://pdfs.semanticscholar.org/3d71/0cdac84dce7387177da471b9822e03029d1c.pdf?_ga=2.68442905.987963553.1590128111-1603561370.1589100842)
 
 The Radius of the spiral at any point shows the cost of the project so far, and the angular dimension suggests the progress made so far in the current phase. Each phase begins with a goal for the design, ends when the developer or client reviews the progress and is divided into four quadrants as shown in the diagram. The details of these four quadrants are:
 
@@ -57,8 +62,13 @@ Based on its characteristics, the spiral model is best used in large, expensive 
 <b>Agile Model</b>
 Agile model is also a type of Incremental model. Software is developed in incremental, rapid cycles. This results in small incremental releases with each release building on previous functionality. Each release is thoroughly tested.
 
-<p align = "center" style = "color:red">
-<b>Need picture and reference!!!</b></p>
+<p align="center">
+<img src="Images/implementation/Agile_model.jpg" alt="http://www.seherfranz.com/semantic/dist/img/stories/agile-basics.jpg" width=75%>
+</p>
+<b><p align= "center">Figure 2: Graphical representation of sprints </p></b>
+
+### References
+[Sprint](http://www.seherfranz.com/story.html)
 
 Unlike the Waterfall model, the development team ultimately decides at the beginning of a sprint (or iteration) what can be accomplished in the timeframe and sets out to build a series of features, delivering working software that can be installed in a production environment at the end of the sprint, which meets the demand for faster software development.
 
@@ -70,8 +80,13 @@ There are various approaches adhering to Agile, including, but not limited to:
 * Lean Software Development
 * Extreme Programming (XP)
 
-<p align = "center" style = "color:red">
-<b>Need picture and reference!!!</b></p>
+<p align="center">
+<img src="Images/implementation/Agile_model_1.png" alt="https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_auto/w_2000/https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/a68c2cc3-d3f2-40a6-8bf5-e29bfa3cbc00/4-collaborative-coding-ultimate-career-hack.png" width=75%>
+</p>
+<b><p align= "center">Figure 3: The Agile model graphical representation </p></b>
+
+### References
+[Agile model](https://www.smashingmagazine.com/2020/04/collaborative-coding-ultimate-career-hack/)
 
 Importantly, the Agile software development lifecycle is dominated by the iterative process. Each iteration results in the next piece of the software development puzzle. There are different expressions regarding the stages in an iteration process, but most are similar in general. A typical example is as follows:
 * Requirements - Define the requirements for the iteration based on the product backlog, sprint backlog, customer and stakeholder feedback.
