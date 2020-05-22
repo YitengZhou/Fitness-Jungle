@@ -365,7 +365,7 @@ MQTT is used by the M5Stack and Desktop clients to communicate with the server.
 
 * MQTT and M5Stack
 
-MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources[1]. For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP)[2]. The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
+MQTT is a lightweight messaging protocol that allows data transmission with low usage of network bandwidth and device resources[1](System_Design.md#references). For Internet of Things (IoT) devices like the M5Stack, the more commonly used communication protocols include MQTT, Advanced Message Queuing Protocol (AMQP), Constrained Application Protocol (CoAP), and Extensible Messaging and Presence Protocol (XMPP)[2](System_Design.md#references). The most widely used protocol, HTTP, is not ideal for IoT devices due to the higher bandwidth and resource requirement, slower throughput, and lower delivery guarantees. MQTT is chosen over the others in the category as the communication protocol for the M5Stack client due to the ease of setup, lower bandwidth usage and battery consumption, and better suitability for event-based implementation. 
 
 * MQTT and Desktop
 
@@ -920,7 +920,7 @@ Having a response status allows clients to manage the returned object more easil
 ```
 ### References
 [[1] MQTT FAQ](http://mqtt.org/faq)
-[[2] AZURE Overview](] https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
+[[2] AZURE Overview](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
 
 ## Details of the data persistence mechanisms in use
 
