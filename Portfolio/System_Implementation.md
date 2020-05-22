@@ -245,10 +245,11 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Map page framework| | 1
 | |Map page CSS| |1
 
-Server Sprint Backlog
+### Server Sprint 1 Backlog
+<b><p align= "center">Table 11: Server Sprint 1 Backlog</p></b>
 Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|:-:|
-|1|Database Creation (Design)|-|-|10
+|1|<b>Database Creation (Design)|-|-|10
 ||Design User table||1
 ||Design BasePetType table||1
 ||Design PetType table||1
@@ -259,28 +260,344 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 ||Design Friend table||1
 ||Design FriendStatus table||1
 ||Design Admin table||1
-|2|Register new user (HTTP) API Design|Web|1|1
-|3|Authenticate user (HTTP) API Design|Web|1|1
-|4|Get user details (HTTP) API Design|Web|2|1
-|5|Update user details (HTTP) API Design|Web|4|1
-|6|Get pet types (HTTP) API Design|Web|4|1
-|7|Create user’s pet (HTTP) API Design|Web|4|1
-|8|Get user’s pets (HTTP) API Design|Web|2|1
-|9|Update user’s pet (HTTP) API Design|Web|4|1
-|10|Set user’s active pet (HTTP) API Design|Web|4|1
-|11|Get user and active pet details (MQTT) API Design|M5Stack|5|1
-|12|Send step count update (MQTT) API Design|M5Stack|3|1
-|13|Get list of users (MQTT) API Design|Desktop|2|1
-|14|Get user details (MQTT) API Design|Desktop|2|1
-|15|Get user’s step count updates within interval (MQTT) API Design|Desktop|3|1
-|16|Register device (MQTT) API Design|M5Stack|4|1
-|17|Authenticate admin (MQTT) API Design|Desktop|1|1
+|2|<b>Register new user (HTTP) API Design|Web|1|1
+|3|<b>Authenticate user (HTTP) API Design|Web|1|1
+|4|<b>Get user details (HTTP) API Design|Web|2|1
+|5|<b>Update user details (HTTP) API Design|Web|4|1
+|6|<b>Get pet types (HTTP) API Design|Web|4|1
+|7|<b>Create user’s pet (HTTP) API Design|Web|4|1
+|8|<b>Get user’s pets (HTTP) API Design|Web|2|1
+|9|<b>Update user’s pet (HTTP) API Design|Web|4|1
+|10|<b>Set user’s active pet (HTTP) API Design|Web|4|1
+|11|<b>Get user and active pet details (MQTT) API Design|M5Stack|5|1
+|12|<b>Send step count update (MQTT) API Design|M5Stack|3|1
+|13|<b>Get list of users (MQTT) API Design|Desktop|2|1
+|14|<b>Get user details (MQTT) API Design|Desktop|2|1
+|15|<b>Get user’s step count updates within interval (MQTT) API Design|Desktop|3|1
+|16|<b>Register device (MQTT) API Design|M5Stack|4|1
+|17|<b>Authenticate admin (MQTT) API Design|Desktop|1|1
 
 <b>Sprint 2: First wave of implementation</b>
 
 In this sprint, we start off the first wave of feature implementations. The server is added with the APIs required by the different sub-systems, developing in the sequence shown in the user sequence diagram. The different sub-systems build on from the user interfaces and establish communication with the server via API calls to retrieve the required data. In particular, for the desktop application, the time required to build the user interfaces exceed the initial expectations in the previous sprint and thus a portion of this sprint will be to continue building the user interfaces alongside implementing features.
 
+At this stage, meetings are held daily as the pace of implementation has picked up and communication between server and the different sub-systems is vital to keep each other up to date. An end of sprint meeting is held to discuss on the current sprint and what could be improved for the implemented features. The improvements to make will be brought over to the next sprint alongside implementation of other features.
+
+### M5Stack Sprint 2 Backlog
+<b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
+
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>MQTT connectivity|-|8
+| |Setup MQTT environment| |1
+| |Setup WiFi class on M5stack| |3
+| |Setup publish and subscribe topics| |1
+| |Test sending messages| |1.5
+| |Test receiving messages| |1.5
+2|<b>View user details|5|6
+| |Send request JSON| |1
+| |Receive response JSON| |1
+| |Display user details| |4
+3|<b>View pet details|3|6
+| |Send request JSON| |1
+| |Receive response JSON| |1
+| |Display pet details| |4
+4|<b>Send steps updates|8|2
+| |Send request JSON| |1
+| |Receive response JSON| |1
+5|<b>View steps|2|5
+| |Send request JSON| |1
+| |Receive response JSON| |1
+| |Display steps| |3
+6|<b>View activity report|1|8
+| |Send request JSON| |1
+| |Receive response JSON| |1
+| |Display activity report| |6
+7|<b>User login|4|8
+| |Send request JSON| |1
+| |Receive response JSON| |1
+| |Display login workflow| |6
+
+### Desktop Sprint2 Backlog
+<b><p align= "center">Table 13: Desktop Sprint2 Backlog</p></b>
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>Application setup|-|1
+| |Create a local database to store data required locally| |1
+2|<b>MQTT connectivity|-|3.5
+| |Create a way to prints the connection status to the broker. E.g. connected, disconnected| |0.5
+| |Create a method that handle incoming messages from the broker. E.g. updating user's information, etc.| |3
+3|<b>View user Information|2|17
+| |Create a dropdown list to display all the different user registered in the database (revisited)| |2
+| |Create a class containing all the API for getting information on the list of users as well as performing data manipulation.| |5
+| |Create a class containing all the API for performing specific user related tasks.| |5
+| |Display the user information| |5
+4|<b>sView user statistics|3|13
+| |Create a class containing all the API to perform task related to the manipulation of data for steps.| |5
+| |Display the graphs| |8
+
+### Web Sprint2 Backlog
+<b><p align= "center">Table 14: Web Sprint 2 Backlog</p></b>
+
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>Application setup|-|3
+| |Router component registration| |1
+| |Router anchors registration| |2
+2|<b>User account|1|6
+| |Log in page state design| |2
+| |Function of update state by post request to server| |4
+3|<b>View profile| 2|4
+| |Profile page state design| |2
+| |Function of update state by post request to server| |2
+4|<b>Update profile| 4|6
+| |Update profile state design| |2
+| |Function of update state by post request to server| |4
+5|<b>Friend system|5|6
+| |Friend component state design| |1
+| |Friend list page state design| |1
+| |State delivery between friend component and friend list page| |2
+| |Function of update state by post request to server| |2
+6|<b>Map system| 6|6
+| |Map page framework| |3
+| |Function of update state by post request to server| |3
+
+### Server Sprint 2 Backlog
+<b><p align= "center">Table 15: Server Sprint 2 Backlog</p></b>
+Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours) 
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>Server setup|-|-|3
+||Create a Node.js server|||3
+2|<b>Database Creation|-|-|12
+||Create and connect to sqlite3 database|||2
+||Create User table|||1
+||Create BasePetType table|||1
+||Create PetType table|||1
+||Create PetLevel table|||1
+||Create UserPet table|||1
+||Create UserIntervalStep table|||1
+||Create UserPetIntervalStep table|||1
+||Create Friend table|||1
+||Create FriendStatus table|||1
+||Create Admin table|||1
+3|<b>Register new user (HTTP)|Web|1|4
+||Build API|||2
+||Test API|||2
+4|<b>Authenticate user (HTTP)|Web|1|4
+||Build API|||2
+||Test API|||2
+5|<b>Get user details (HTTP)|Web|2|4
+||Build API|||2
+||Test API|||2
+6|<b>Update user details (HTTP)|Web|4|4
+||Build API|||2
+||Test API|||2
+7|<b>Get pet types (HTTP)|Web|4|4
+||Build API|||2
+||Test API|||2
+8|<b>Create user’s pet (HTTP)|Web|4|4
+||Build API|||2
+||Test API|||2
+9|<b>Get user’s pets (HTTP)|Web|2|4
+||Build API|||2
+||Test API|||2
+10|<b>Update user’s pet (HTTP)|Web|4|4
+||Build API|||2
+||Test API|||2
+11|<b>Set user’s active pet (HTTP)|Web|4|4
+||Build API|||2
+||Test API|||2
+12|<b>Get user and active pet details (MQTT)|M5Stack|5|4
+||Build API|||2
+||Test API|||2
+13|<b>Send step count update (MQTT)|M5Stack|3|4
+||Build API|||2
+||Test API|||2
+
+<b>Sprint 3: Second wave of implementation</b>
+Coming to the second wave of implementation and the final sprint, the first part of this sprint will be to make improvements on the features implemented in Sprint 2 as discussed in the previous end of sprint meeting. Then it is to continue to work on the new features that are decided upon. Throughout the sprints, system testing is carried out with the implementation of each new feature to ensure the previous features are still working as intended with the addition of the new feature. The last part of the sprint, although not specified in the sprint backlog, is a full system testing where the 3 sub-systems are integrated and combined. Each group will test their sub-system and well as the other sub-systems to ensure functionalities of the system work as intended. Each group provides a checklist of use cases to the other groups to facilitate the testing. An end of sprint meeting is held to conclude on the development of the system, and to highlights any bugs that still exist. Bug fixes will be carried out and resolved before requesting for other groups to test the system again.
+
+### M5Stack Sprint 3 Backlog
+<b><p align= "center">Table 16: M5Stack Sprint 3 Backlog</p></b>
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>View user details |5|3
+| |Renovate and improve the user view interface| |3
+2|<b>View pet details |3|6
+| |Renovate and improve the pet view interface| |3
+| |Renovate and improve the pet skin view interface| |3
+3|<b>View steps|2|3
+| |Renovate and improve the steps view interface| |3
+4|<b>View activity report|1|3
+| |Renovate and improve the report view interface| |3
+5|<b>Map system|7|18
+| |Designing map details page| |6
+| |Creating map details page| |8
+| |Add location| |2
+| |Add distance| |2
+6|<b>Friend system|6|14
+| |Designing friend details page| |4
+| |Creating friend details page| |4
+| |Add friend| |2
+| |Add friend| |2
+| |Set rank| |2
+
+### Desktop Sprint 3 Backlog
+
+<b><p align= "center">Table 17: M5Stack Sprint 3 Backlog</p></b>
+
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>View user Information|2|1.5
+| |Adjusting the position of text box, font size to ensure user information is displayed correctly| |0.5
+| |Adjusting the position of text box, font size to ensure user information is displayed correctly| |0.5
+| |Adjusting the position of dropdown list| |0.5
+2|<b>View user statistics|3|1
+| |Adjusting the position of daily and weekly bar chart| |1
+3|<b>Add pets|4|15
+| |Create an interface for the adding of pets| |8
+| |Create a class containing all the API required for the management of pets.| |5
+| |Display add pet workflow| |2
+4|<b>View pets|6|15
+| |Create an interface for the viewing of pets| |10
+| |Display the pet details| |5
+
+### Web Sprint 3 Backlog
+
+<b><p align= "center">Table 18: Web Sprint 3 Backlog</p></b>
+
+Priority|Product Backlog Item|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>Step count report|2|10
+| |Import EChart plugin| |2
+| |Render EChart using data from server| |8
+2|<b>Map system|6|10
+| |Import map plugin| |2
+| |Render map using data from server| |8
+
+### Server Sprint 3 Backlog
+Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours)
+|:-:|:-:|:-:|:-:|:-:|
+1|<b>Get list of users (MQTT)|Desktop|2|4
+| |Build API| | |2
+| |Test API| | |2
+2|<b>Get user details (MQTT)|Desktop|2|4
+| |Build API| | |2
+| |Test API| | |2
+3|<b>Get user’s step count updates within interval (MQTT)|Desktop|3|4
+| |Build API| | |2
+| |Test API| | |2
+4|<b>Register device (MQTT)|M5Stack|4|4
+| |Build API| | |2
+| |Test API| | |2
+5|<b>Authenticate admin (MQTT)|Desktop|1|4
+| |Build API| | |2
+| |Test API| | |2
+
+
+<p align="center">
+<img src="Images/implementation/sprint-total.jpg">
+</p>
+<b><p align= "center">Figure 2: The Gantt chart of sprints </p></b>
+
+<p align="center">
+<img src="Images/implementation/trello.png">
+</p>
+<b><p align= "center">Figure 3: The sprints in Trello </p></b>
+
 
 ## Details of evaluation for designs
 
+The two groups of design under evaluation will be the system design, as discussed in the previous section, and the user interface design. 
+
+### Objective
+The system design will be evaluated based on the ability to meet system requirements using the design and the extensibility of the project. The team decided on this objective as it is a proof-of-concept project and the most important aspect of the project is to allow end users to try out the functionalities of the system. To determine if the system requirements are met, we start by performing software testing.
+
+### Functional testing
+
+The approach to software testing will be the “box” approach, specifically black-box testing or functional testing [1]. This method is chosen since the focus of the testing will be to make sure that the functionalities of the system, as specified in the system requirements, work as intended. In addition, the functional testing technique used is use case testing where the system is tested against a list of test cases [1]. The list of test cases is drafted based on the system requirements. The other techniques such as boundary value analysis and error guessing [1] are not employed, since at the proof-of-concept stage we are most concerned with usability of the system and less emphasis is put on edge case testing.
+
+Thus, for each of the sub-systems, the first step will be to draft the list of use cases for each feature. Once that is completed, development will take place and the testing of each feature will be checking each of the use cases. If any of the use cases are not satisfied, the development continues until each of use cases are checked. When the entire list is checked, the feature will be ready for system testing where the feature will be tested with the rest of the system.
+
+ As for the server, the APIs provided are tested according to the requirement specifications given by the three sub-system clients. To ensure that the data returned to the various clients is as intended, the first step to the development workflow will be to gather the data requirements from the various clients. After gathering the requirements, the API request and response objects will be designed and communicated to the sub-system clients for approval. This forms the first level of evaluation. After confirmation of the API design, the development of APIs will begin. HTTP APIs will be tested using a testing software called “Postman”. Postman allows sending of RESTful HTTP requests easily, therefore the APIs can be tested and verified with different requests and responses. As for MQTT APIs, the testing of these APIs will require an initial setup on the MQTT broker and examining the results on the broker.
+
+### System Testing
+Succeeding the functional testing will be system testing, where each feature of the sub-system will be integrated with the rest of the sub-system and tested [1]. This is one of the techniques in white-box testing, alongside unit testing and integration testing [1]. The other techniques are once again not employed due to the focus on producing functionalities for the system for proof-of-concept. In terms of code management, each sub-system has a branch manager that manages the merging of feature branches. After a member completes a feature and posts on a feature branch, the member will do a pull request to the main branch (more details of code and branch management in section 3c). The branch manager then conducts system testing to ensure that the feature branch works with the rest of the sub-system. Following that, the feature will be merged and posted on the main branch of the sub-system and members from other sub-systems will perform system testing.
+
+### Limitations of testing techniques
+
+After justifying the chosen techniques for testing, it is also important to state the limitations of these techniques. As mentioned earlier, there are other techniques in functional testing such as boundary value analysis and error guessing. The limitation of use case testing will be that we are not testing for edge cases with user input or action that can cause errors in the system. The system may be prone to errors with unexpected inputs or actions. These are bugs that are caused by unexpected user behaviour.
+Next, for system bugs caused by the mistakes of programmers, functional testing is not comprehensive in detecting this type of bugs. System testing also only tests if the functionalities are working after integration using the expected user workflow. These tests do not test each section of the written program to ensure each section of the code is working as intended. The tests we employed are tests on the functionalities of the system on a higher level. The testing techniques that are aimed at mitigating such bugs are the unit test and integration test of the white-box testing. These tests are written for each section of the code written to ensure each unit of the code works as intended.
+
+### Extensibility of system
+After making sure system requirements are met, we can then evaluate the system design based on the extensibility of the project after implementing the design. The way we evaluate this is by firstly going through the list of features we have yet to implement and the foreseeable future enhancements and determining whether we can easily add these features to the system. According to the list, 
+We can also easily substitute any part of the system
+
+This fulfills the principle of “Separation-of-Concerns" (SoC) as the data is stored in a separate repository and we can modify the codebase of each sub-system without affecting dependencies. The principles of least surprise and least effort are also fulfilled since we are not introducing another database server and reducing setup overhead by using an embedded database. 
+
+A standardised JSON object format is used for MQTT communication to ensure that subscribers on the same topic will be able to distinguish the sender and recipient as well as the API call. Details of the API design will be discussed under section 1e. This fulfills the “Liskov Substitution Principle” where the standardised request and response JSON objects serve as a common “contract” between the different sub-systems, which allows for substitution of the sub-systems. Lastly, the database is designed considering the foreseeable enhancements and normalised to BCNF form. This fulfills the “Open-Closed” principle where we allow for functional extensions to the various sub-systems.
+
+<p align = "center" style = "color:red">
+<b>Need insert reference!!!</b></p>
+
+## Evaluation of user interface design
+### Objective
+The main goal of the evaluation is essentially testing the usability of the UI system, including ease of operation, interaction efficiency, the frequency and severity of the error and user satisfaction. The type of testing done in this case will be user testing where the UI designs are tested with real users in real scenarios. The objective of the test is to have a better understanding of user concerns regarding the usability of the product. 
+
+### User testing techniques
+
+The following are commonly used user testing techniques: 
+* Heuristic Evaluation - This method involves evaluators examining the interface and judging its compliance with recognized usability principles (the "heuristics").
+* Cognitive Walkthrough - The cognitive walkthrough method is a usability inspection method used to identify usability issues in interactive systems, focusing on how easy it is for new users to accomplish tasks with the system.This method involves evaluators examining the interface and judging its compliance with recognized usability principles (the "heuristics").
+* Structured and Unstructured Interview - Structured and unstructured interviews are common methods of gathering data in research. While structured interviews are mostly used in quantitative observation, an unstructured interview is usually used in qualitative data collection. - The cognitive walkthrough method is a usability inspection method used to identify usability issues in interactive systems, focusing on how easy it is for new users to accomplish tasks with the system.
+* GOMS (Goals, Operators, Methods and Selection Rules) - A GOMS model is composed of methods that are used to achieve specific goals. These methods are then composed of operators at the lowest level. The operators are specific steps that a user performs and are assigned a specific execution time. 
+
+### Choice of evaluation technique: Heuristic Evaluation
+
+Beside the realistic factors, Heuristic Evaluation itself is a very useful method which has been proved to be efficient and strong enough for software UI design. It is a detailed, technically sound process that assesses the product against a clear set of criteria. In addition, due to current situation of the COVID-19, it’s rather impractical for us to conduct off-line user research. Thus, the team decided that Heuristic Evaluation would be the most practical UI evaluation method for us. 
+
+The ten principles of Heuristic Evaluation are as follow:
+1. Visibility of system status
+2. Match between system and the real world
+3. User control and freedom
+4. Consistency and standards
+5. Error prevention
+6. Recognition rather than recall
+7. Flexibility and efficiency of use
+8. Aesthetic and minimalist design
+9. Help users recognize, diagnose, and recover from errors
+10. Help and documentation 
+
+We made a questionnaire following the principles of Heuristic Evaluation for our group members who are responsible for the different sub-systems. From completing the questionnaire, it turns out that the advantages and disadvantages of our UI design are highlighted quickly and clearly.
+
+The evaluation is only as good as the people we get to do it. This means we have to spend a lot of time analysing and reviewing experts to make sure they are relevant and experienced in the issues you are concerned with.
+
+### Limitations of Heuristic Evaluation
+* The groups developing each sub-system are small, therefore the range of views is narrow
+* As the evaluation is done by the developers of the system, it may not reflect the actual needs of the users.
+* The team does not consist of an expert on user experience design, thus it may not be the most accurate evaluation of design
+
+<p align="center">
+<img src="Images/implementation/question.jpeg">
+</p>
+<b><p align= "center">Figure 4: Heuristic Evaluation of Fitness Jungle </p></b>
+
 ## Discussion of Social and Ethical implications of the work
+
+Fitness Jungle, as the product of the Internet of Things, is possibly poised to be the next step in the information revolution, portending societal change that will rival that of the internet itself. Furthermore, the size of the IoT is expected to be immense whatever in quantity or investment. It thus has the attention of companies, governments, and citizens worldwide, giving rise to research in industry and academia alike. Because of the powerful ability of sensors, informational processors and actuators in IoT, we need to discuss the social and ethical implications as follows: 
+### Society implication 
+In the target of Fitness Jungle is to improve health via the method of combination pedometer and interesting virtual pets. Traditionally, similar sports devices only basic information and sports charts. We try to add interesting elements to these boring data to motivate users to keep fitness. In this case, different cute virtual pets are selected by the user and they can change the appearance by higher level and decoration. It’s like a reality development game that can improve with pets. Users usually put in more effort in the sport and fitness when they find that these efforts can be seen intuitively. 
+### Software development 
+In this work, our members follow the BCS Code of Conduct, and insist that we have due regard for public health, privacy, security and wellbeing of others and the environment; we have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise. 
+Informed consent 
+Any participant in the evaluation need to complete the information sheet and the informed consent referred from the University of Bristol. In the information sheet will introduce the purpose and principle of our work, suitable and unsuitable people, risks and disadvantages, and question feedback channel. After understanding our project work, participants will be asked for informed consent. Besides, the end user also needs to read the information sheet and agree with the informed consent before registering as an official user or the first time using our product in order to gain the permission of its users.  
+### Privacy  
+This IoT device will gather personal information and physical health data through the web application and M5 stack, and then communicates that information to some receiver, like MQTT, desktop application, and database. Personal information is generally collected when users officially register in our web application, and the physical steps with date and time are automatically updated within a specific period. These vast amounts of user data will store in a database or desktop application just for statistics and displaying. At the same time, in order to protect user’s privacy, this work is consciously regulated under the EU General Data Protection Regulation (GDPR), which has confirmed in the UK in 2018. 
+### Information Security 
+Although this work guarantees that the data collected is only used for the service of this work, it will not be shared and leaked to other platforms or corporation, it still failures to ensure effective information security because of the unencrypted informational flow and possible security threats by the hacker. For example, during the testing of communication with the different subsystems, messages in the ‘json’ topic are revealed because multiple groups are using ‘json’ as the topic name. Similarly, the hacker can gain all information between different devices if they know the topic name. Besides, the originally planned map system may cause greater security problems, which is another reason why the map system is not performed. The map system commonly will upload the location and distance of users, which may place users at physical risk, as well as relay sensitive national security information, for instance, soldiers and site infrastructure. 
+### Physical safety 
+While all subsystems in this project, desktop, web, or M5 stack, do not harm the human body, this IoT device may cause some mental health problems. For example, there are ranking and competition mechanisms in the friend system, which may cause increased pressure on users whatever it is to compete for victory or to be frustrated by failure. Another mental health problem is that users may become addicted to lovely virtual pets, reducing expectations for other aspects of life. 
+### Trust 
+Most of the time, trust is an invisible assumption when IoT working efficiently, seamlessly, and safely. In this work, trust is not permanent because of the different situations. For example, the WiFi system in M5 stack used to apply public network (UOB-guest) to connect the MQTT hive rather than home network now. The latter means that you cannot timely upload steps for statistics, while the former is not obvious because users can usually connect to public networks. Another example is the delay and UI lags of M5 stack, this is determined by the configuration of the device itself, so we classify it as temporarily trustworthy. In other aspects, desktop and web applications are more reliable in this project.
+<p align = "center" style = "color:red">
+<b>Need reference!!!</b></p>
