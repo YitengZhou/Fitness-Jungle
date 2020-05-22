@@ -7,7 +7,9 @@
 </p>
 <b><p align= "center">Figure 1: Brainstorming during design thinking</p></b>
 
-We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects. Following that, we decided that our problem area will be to encourage people to maintain an active lifestyle by walking or running regularly. Our stakeholders will therefore be people who are interested to maintaining an active lifestyle, hereafter known as the users, and the developers or administrators of the product. We will go on to draft product requirements based on this objective and the two groups of stakeholders.
+We started the project by brainstorming some ideas for an innovative internet-enabled product that will span Desktop, Web and Internet of Things devices. Some of the initial ideas were really rough such as, academics, health, entertainment, sports and fitness as seen in the post-it notes in figure 1. We concluded that fitness aspect was what we are all interested in and would starting brainstorming on a product that will span all three aspects.
+
+Following that, we decided that our problem area will be to encourage people to maintain an active lifestyle by walking or running regularly. Our stakeholders will therefore be people who are interested to maintaining an active lifestyle, hereafter known as the users, and the developers or administrators of the product. We will go on to draft product requirements based on this objective and the two groups of stakeholders.
 
 ## a. Architecture of the system
 
@@ -110,7 +112,7 @@ The main classes for the desktop application are:
 ### Web Application
 
 <p align="center">
-<img src="Images/design/web.png">
+<img src="Images/design/webUML.png">
 </p>
 <b><p align= "center">Figure 7: UML diagram to show the relationship between components in the web application</p></b>
 
@@ -181,7 +183,7 @@ The web application is also designed as a responsive website, which means it can
 |       5       | As a user, I want to view my friends list, so that I can interact with my friends. |
 |       6       | As a user, I want to check my daily route on the map, so that I can look back at and see where I have been today. |
 
-## Evolution of UI wireframes for key sub-systems
+## d. Evolution of UI wireframes for key sub-systems
 
 ### M5Stack Application
 
@@ -327,6 +329,8 @@ The first version of UI wireframe is as shown above. The goal of the web applica
 
 <b><p>Final version of web application </p></b>
 
+The theme colour in final version of UI is changed to azure and white, which makes the UI brighter than the old one. The footer is removed as it is useless in our application. The vue-chart plugin is used to implement the display of monthly steps and yearly steps. Map function based on google map API is not implement in this version.  
+
 * Log in page
 
 <p align="center">
@@ -355,7 +359,7 @@ The first version of UI wireframe is as shown above. The goal of the web applica
 </p>
 <b><p align= "center">Figure 24: Friend page of Web application </p></b>
 
-## d. Details of the communication protocols in use
+## e. Details of the communication protocols in use
 
 The two main communication protocols used by the system are the Message Queuing Telemetry Transport (MQTT) protocol and HyperText Transfer Protocol (HTTP). 
 
@@ -923,7 +927,7 @@ Having a response status allows clients to manage the returned object more easil
 
 [[2] AZURE Overview](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
 
-## Details of the data persistence mechanisms in use
+## f. Details of the data persistence mechanisms in use
 
 The data persistence mechanism used for the system will be an embedded database system. An embedded database system is chosen over a served database system (i.e. an additional database server) due to the reduced network and resource overhead and the ease of setup. In addition, an embedded database is more than sufficient for the scale of the project. A relational database is chosen in this case, since there are relationships to be defined between the entities of the system and it will be easier to maintain consistency in the data as such. The embedded database will be integrated with the web application, and the library used for the embedded database is SQLite. It is chosen as it is lightweight, and it is the most widely used database engine.
 
@@ -943,7 +947,7 @@ The database schema has also been normalised to Boyce–Codd normal form (BCNF).
 ### References
 [[1] MariaDB 3rd Normal Form](https://mariadb.com/kb/en/database-normalization-3rd-normal-form/)
 
-## Details of web technologies in use
+## g. Details of web technologies in use
 
 ### Web client 
 
