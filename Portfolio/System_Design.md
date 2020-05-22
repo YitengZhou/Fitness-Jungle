@@ -24,7 +24,6 @@
 - [**e. Details of the communication protocols in use**](#e.-Details-of-the-communication-protocols-in-use)
   - [API Design](#API-Design)
 - [**f. Details of the data persistence mechanisms in use**](#f.-Details-of-the-data-persistence-mechanisms-in-use)
-
 - [**g. Details of web technologies in use**](#g.-Details-of-web-technologies-in-use)
   - [Web client](#Web-client)
   - [Web server ](#Web-server)

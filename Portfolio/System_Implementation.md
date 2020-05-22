@@ -1,8 +1,31 @@
 # System Implementation
 
+## Contents of System Implementation
+- [**Software Development Lifecycle (SDLC)**](#System-Implementation) 
+  - [Waterfall Model](#Waterfall-Model)
+  - [Spiral Model](#Spiral-Model)
+  - [Agile Model](#Agile-Model)
+  - [Choice of SDLC methodology](#Choice-of-SDLC-methodology)
+- [**a. Breakdown of project into sprints**](###a.-Breakdown-of-project-into-sprints)
+  - [Product Backlog](#M5-Product-Backlog)
+  - [Sprint 1: Building user interfaces and API design](#M5-Product-Backlog)
+  - [Sprint 2: First wave of implementation](#Sprint-2:-First-wave-of-implementation)
+  - [Sprint 3: Second wave of implementation](#Sprint-3:-Second-wave-of-implementation)
+- [**b. Details of evaluation for designs**](###b.-Details-of-evaluation-for-designs)
+  - [Functional Testing](#Functional-testing)
+  - [User Interface Design](#Evaluation-of-user-interface-design)
+  - [Heuristic Evaluation](#Choice-of-evaluation-technique:-Heuristic-Evaluation)
+- [**c. Discussion of Social and Ethical implications of the work**](###c.-Discussion-of-Social-and-Ethical-implications-of-the-work)
+  - [Society Implications](#Society-Implications)
+  - [Informed Consent](#Informed-Consent)
+  - [Privacy](#Privacy)
+  - [Physical Safety](#Physical-Safety)
+  - [Addiction](#Addiction)
+
+
 With our system design on hand, we are mindful of the importance of a clear software development lifecycle (SDLC) which is the methodology of creating a high-quality software using the shortest time possible. This is accomplished by splitting the project into phases. Some of the most popular SDLC models include the waterfall model, spiral model and Agile model which will be discussed in greater depths in the following sections.
 
-<b>Waterfall Model</b>
+## Waterfall Model
 
  The idea of a waterfall model was one of the first process model proposed by Winston W. Royce in his paper regarding managing the development of large software system in 1970 [[1]](System_Implementation.md#references). In Royce’s article the term “waterfall” was not used and it was an example for a flawed model, which we will discuss later. 
 
@@ -30,7 +53,7 @@ The waterfall model emphasises the logical progression of phases taken throughou
 [[1] W. W. Royce. 1987. Managing the development of large software systems: concepts and techniques](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
 
 
-<b>Spiral Model</b>
+## Spiral Model
 
 Spiral model is another important SDLC model, which provides support for risk handling. The model was first introduced by Barry Boehm in his 1986 paper, “A Spiral Model of Software Development and Enhancement”, where he used the term “process model” to refer to the spiral model as well as to incremental, waterfall, prototyping, and other approaches, which indicates that it is actually a combination of iterative development process model and sequential linear development model at early stage, but is quite outstanding for its risk-driven feature.
 
@@ -43,6 +66,8 @@ In its diagrammatic representation, spiral model looks like a spiral with many l
 
 ### Reference
 [Spiral Model](https://pdfs.semanticscholar.org/3d71/0cdac84dce7387177da471b9822e03029d1c.pdf?_ga=2.68442905.987963553.1590128111-1603561370.1589100842)
+[BCS](https://www.bcs.org/membership/become-a-member/bcs-code-of-conduct/)
+[GDPR](https://ttps://gdpr-info.eu/)
 
 The Radius of the spiral at any point shows the cost of the project so far, and the angular dimension suggests the progress made so far in the current phase. Each phase begins with a goal for the design, ends when the developer or client reviews the progress and is divided into four quadrants as shown in the diagram. The details of these four quadrants are:
 
@@ -62,7 +87,7 @@ Based on its characteristics, the spiral model is best used in large, expensive 
 |Customer satisfaction - The spiral model facilitates customer feedback|Difficulty in time management - The number of phases is unknown at the start of the project, so time estimation is very difficult.|
 |Easy to estimate cost of the whole project| Expensive, not suitable for small projects|
 
-<b>Agile Model</b>
+## Agile Model
 Agile model is also a type of Incremental model. Software is developed in incremental, rapid cycles. This results in small incremental releases with each release building on previous functionality. Each release is thoroughly tested.
 
 <p align="center">
@@ -110,7 +135,7 @@ Importantly, the Agile software development lifecycle is dominated by the iterat
 |Reduce total development time| |
 |Continuous attention to technical excellence and good design| |
 
-<b>Choice of SDLC methodology</b>
+## Choice of SDLC methodology
 
 By contrasting the different models for software development, we decide to go for the Agile approach for the following few reasons. Firstly, the Agile approach has a few immediate advantages over traditional method such as the waterfall model due to its nature of being flexible. Although the rigidity of the waterfall model does prove to be very efficient in completing task phase by phase, and also the methodology can be explained with ease to ammeter coder there are inherent risk in this approach one of the most obvious being the lack to unit testing. Secondly, due to our idea and features for the project constantly evolving as we are implementing new features, so the Agile model fits our requirement as it features frequent check-ins which allow for changes to be made constantly. Whereas in the waterfall model, due to the linear progression does not encourage phases to be revisited.  Thirdly, the Agile methodology is way faster overall compared to the other methodology because far less re-work or major changes are made when progressing as most issues and changes are identified in the early stages.
 
@@ -191,13 +216,13 @@ As mentioned above in our system implementation we decided on the agile approach
 |17|Register device (MQTT)|M5stack|3|5|
 |18|Authenticate admin (MQTT)|Desktop|4|5|
 
-<b>Sprint 1: Building user interfaces and API design</b>
+### Sprint 1: Building user interfaces and API design
 
 In this sprint, we will not be building the full features but rather just the user interfaces. This is a little unconventional since a sprint cycle usually takes a feature through design to implementation. However, the team felt that it will be more beneficial if we started with the building of the user interfaces to make clear of the data requirements and allow a more coherent flow of the applications. This will also allow for a better API design as the API designer will have an overview of the data required by the different clients and be able to build more general-purpose APIs that can be shared by clients. This contrasts with building APIs with each feature implementation, which can result in APIs with narrow scopes and increase data redundancy in APIs. In addition, making any API changes will result in previous implemented features having to be modified to keep with the changes. Thus, to reduce API changes and have a better application design flow, the team decided to take an unconventional approach in the first sprint. 
 
 At this stage, the meetings are held every 2 days instead of daily as advocated in Scrum. This is due to the reason that more time is required for coming up with designs before holding meetings. An end of sprint meeting is held to discuss about the sprint that just happened, and to identify the areas we did well and the areas to improve. In particular, the team felt that the meetings held every other day are great in keeping everyone on the same page. However, we felt that the communication of requirements is not as active as we will like and will work on it for subsequent sprints. We also reviewed and confirmed on the design details and decided on details for the next sprint.
 
-### M5Stack Sprint 1 Backlog
+#### M5Stack Sprint 1 Backlog
 <b><p align= "center">Table 8: M5Stack Sprint 1 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|
@@ -223,7 +248,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Designing keyboard plug-in unit| |1.5
 | |Creating keyboard plug-in unit| |1.5
 
-### Desktop Sprint 1 Backlog
+#### Desktop Sprint 1 Backlog
 <b><p align= "center">Table 9: Desktop Sprint 1 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|
@@ -239,7 +264,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Create an element that display user basic statistic such as daily steps, weekly steps and average daily steps (Static information)| |0.5
 | |Create an element that plot bar chart for daily steps by hourly basis and weekly steps daily basis (Static information)| |3
 
-### Web Sprint 1 Backlog
+#### Web Sprint 1 Backlog
 <b><p align= "center">Table 10: Web Sprint 1 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|
@@ -263,7 +288,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Map page framework| | 1
 | |Map page CSS| |1
 
-### Server Sprint 1 Backlog
+#### Server Sprint 1 Backlog
 <b><p align= "center">Table 11: Server Sprint 1 Backlog</p></b>
 Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|:-:|
@@ -295,13 +320,13 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 |16|<b>Register device (MQTT) API Design|M5Stack|4|1
 |17|<b>Authenticate admin (MQTT) API Design|Desktop|1|1
 
-<b>Sprint 2: First wave of implementation</b>
+### Sprint 2: First wave of implementation
 
 In this sprint, we start off the first wave of feature implementations. The server is added with the APIs required by the different sub-systems, developing in the sequence shown in the user sequence diagram. The different sub-systems build on from the user interfaces and establish communication with the server via API calls to retrieve the required data. In particular, for the desktop application, the time required to build the user interfaces exceed the initial expectations in the previous sprint and thus a portion of this sprint will be to continue building the user interfaces alongside implementing features.
 
 At this stage, meetings are held daily as the pace of implementation has picked up and communication between server and the different sub-systems is vital to keep each other up to date. An end of sprint meeting is held to discuss on the current sprint and what could be improved for the implemented features. The improvements to make will be brought over to the next sprint alongside implementation of other features.
 
-### M5Stack Sprint 2 Backlog
+#### M5Stack Sprint 2 Backlog
 <b><p align= "center">Table 12: M5Stack Sprint 2 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
 |:-:|:-:|:-:|:-:|
@@ -336,7 +361,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)|
 | |Display login workflow| |6|
 
 
-### Desktop Sprint2 Backlog
+#### Desktop Sprint2 Backlog
 <b><p align= "center">Table 13: Desktop Sprint2 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|
@@ -354,7 +379,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Create a class containing all the API to perform task related to the manipulation of data for steps.| |5
 | |Display the graphs| |8
 
-### Web Sprint2 Backlog
+#### Web Sprint2 Backlog
 <b><p align= "center">Table 14: Web Sprint 2 Backlog</p></b>
 
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
@@ -380,7 +405,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Map page framework| |3
 | |Function of update state by post request to server| |3
 
-### Server Sprint 2 Backlog
+#### Server Sprint 2 Backlog
 <b><p align= "center">Table 15: Server Sprint 2 Backlog</p></b>
 Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours) 
 |:-:|:-:|:-:|:-:|:-:|
@@ -432,11 +457,11 @@ Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours
 ||Build API|||2
 ||Test API|||2
 
-<b>Sprint 3: Second wave of implementation</b>
+### Sprint 3: Second wave of implementation
 
 Coming to the second wave of implementation and the final sprint, the first part of this sprint will be to make improvements on the features implemented in Sprint 2 as discussed in the previous end of sprint meeting. Then it is to continue to work on the new features that are decided upon. Throughout the sprints, system testing is carried out with the implementation of each new feature to ensure the previous features are still working as intended with the addition of the new feature. The last part of the sprint, although not specified in the sprint backlog, is a full system testing where the 3 sub-systems are integrated and combined. Each group will test their sub-system and well as the other sub-systems to ensure functionalities of the system work as intended. Each group provides a checklist of use cases to the other groups to facilitate the testing. An end of sprint meeting is held to conclude on the development of the system, and to highlights any bugs that still exist. Bug fixes will be carried out and resolved before requesting for other groups to test the system again.
 
-### M5Stack Sprint 3 Backlog
+#### M5Stack Sprint 3 Backlog
 <b><p align= "center">Table 16: M5Stack Sprint 3 Backlog</p></b>
 Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|
@@ -461,7 +486,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Add friend| |2
 | |Set rank| |2
 
-### Desktop Sprint 3 Backlog
+#### Desktop Sprint 3 Backlog
 
 <b><p align= "center">Table 17: M5Stack Sprint 3 Backlog</p></b>
 
@@ -481,7 +506,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Create an interface for the viewing of pets| |10
 | |Display the pet details| |5
 
-### Web Sprint 3 Backlog
+#### Web Sprint 3 Backlog
 
 <b><p align= "center">Table 18: Web Sprint 3 Backlog</p></b>
 
@@ -494,7 +519,7 @@ Priority|Product Backlog Item|User Story ID|Estimated time (hours)
 | |Import map plugin| |2
 | |Render map using data from server| |8
 
-### Server Sprint 3 Backlog
+#### Server Sprint 3 Backlog
 <b><p align= "center">Table 19: Server Sprint 3 Backlog</p></b>
 Priority|Product Backlog Item|For sub-system|User Story ID|Estimated time (hours)
 |:-:|:-:|:-:|:-:|:-:|
@@ -606,21 +631,25 @@ The evaluation is only as good as the people we get to do it. This means we have
 
 
 ## c. Discussion of Social and Ethical implications of the work
+From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. To adhere with all the possible guidelines, we follow the BCS Code of Conduct, and we are aware of the implications on public health, privacy, security and wellbeing of others and the environment.  We also have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise.[[2]](System_Implementation.md#references)
 
-From the planning stages of our project, fitness jungle we always had the goal of releasing this product to the public. With our product spanning multiple platform such as web application, desktop and IoT in the form of M5Stack we took all the necessary precautions when dealing with data as well as accruing appropriate consent from the users. We will be focusing on addressing the social implications, consent as well as privacy and security in the next few paragraphs. 
-### Society implication 
-In the target of Fitness Jungle is to improve health via the method of combination pedometer and interesting virtual pets. Traditionally, similar sports devices only basic information and sports charts. We try to add interesting elements to these boring data to motivate users to keep fitness. In this case, different cute virtual pets are selected by the user and they can change the appearance by higher level and decoration. It’s like a reality development game that can improve with pets. Users usually put in more effort in the sport and fitness when they find that these efforts can be seen intuitively. 
-### Software development 
-In this work, our members follow the BCS Code of Conduct, and insist that we have due regard for public health, privacy, security and wellbeing of others and the environment; we have due regard for the legitimate rights of third parties; we will conduct our professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, color, race, ethnic origin, religion, age or disability, or of any other condition or requirement; we will promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise. 
-Informed consent 
-Any participant in the evaluation need to complete the information sheet and the informed consent referred from the University of Bristol. In the information sheet will introduce the purpose and principle of our work, suitable and unsuitable people, risks and disadvantages, and question feedback channel. After understanding our project work, participants will be asked for informed consent. Besides, the end user also needs to read the information sheet and agree with the informed consent before registering as an official user or the first time using our product in order to gain the permission of its users.  
+We will be focusing on addressing the social implications, consent, physical and mental wellbeing as well as privacy and security in the next few paragraphs.  
+
+
+### Society Implications
+Our goal for Fitness Jungle is to improve encourage our user to lead a heathier lifestyle through the synergy of a built-in pedometer with interesting virtual pets. Similar sports devices on the market provides feedback on the user activity level in the form of simple statistical information and charts. In our product we made use of cute virtual pet and interesting elements such as challenges, able to progress in terms of pet level and different skin in place of the traditional dull data to motivate users to keep fit. The main social implications are providing the end user with sort of a virtual fitness instructor to keep user motivated as well as the competition between different user. 
+
+### Informed Consent 
+Any participants involved in the evaluation are required to understand the information sheet and complete the informed consent referred from the University of Bristol. In the information sheet will introduce the purpose and principle of our work, our main target audience, risks and implications, as well as access to our feedback channel. Participants will then be asked to complete the informed consent if they are still willing to take part in the evaluation and they are of required age for legal consent. The end-user also needs to read the information sheet and agree with the informed consent before registering as an official user or the first time using our product in order to gain the permission of its users.   
+
 ### Privacy  
-This IoT device will gather personal information and physical health data through the web application and M5 stack, and then communicates that information to some receiver, like MQTT, desktop application, and database. Personal information is generally collected when users officially register in our web application, and the physical steps with date and time are automatically updated within a specific period. These vast amounts of user data will store in a database or desktop application just for statistics and displaying. At the same time, in order to protect user’s privacy, this work is consciously regulated under the EU General Data Protection Regulation (GDPR), which has confirmed in the UK in 2018. 
+This IoT device will gather personal information and physical health data through the web application and M5 stack, and communicate with the other key sub-system using MQTT as mentioned in our communication protocol. Personal information are generally collected upon users registration on the web application, the steps taken along with date and time are automatically updated on a specific time period. These data collected will be store mainly on our embedded database within our web application back-end server. The other key sub system such as the desktop application has no long-term storage of these data and only request data from the server when required and destroyed upon changing screens or exiting the application. To protect user’s privacy, this work is consciously regulated under the EU General Data Protection Regulation (GDPR)[[3]](System_Implementation.md#references), which has confirmed in the UK in 2018.  
+
 ### Information Security 
-Although this work guarantees that the data collected is only used for the service of this work, it will not be shared and leaked to other platforms or corporation, it still failures to ensure effective information security because of the unencrypted informational flow and possible security threats by the hacker. For example, during the testing of communication with the different subsystems, messages in the ‘json’ topic are revealed because multiple groups are using ‘json’ as the topic name. Similarly, the hacker can gain all information between different devices if they know the topic name. Besides, the originally planned map system may cause greater security problems, which is another reason why the map system is not performed. The map system commonly will upload the location and distance of users, which may place users at physical risk, as well as relay sensitive national security information, for instance, soldiers and site infrastructure. 
-### Physical safety 
-While all subsystems in this project, desktop, web, or M5 stack, do not harm the human body, this IoT device may cause some mental health problems. For example, there are ranking and competition mechanisms in the friend system, which may cause increased pressure on users whatever it is to compete for victory or to be frustrated by failure. Another mental health problem is that users may become addicted to lovely virtual pets, reducing expectations for other aspects of life. 
-### Trust 
-Most of the time, trust is an invisible assumption when IoT working efficiently, seamlessly, and safely. In this work, trust is not permanent because of the different situations. For example, the WiFi system in M5 stack used to apply public network (UOB-guest) to connect the MQTT hive rather than home network now. The latter means that you cannot timely upload steps for statistics, while the former is not obvious because users can usually connect to public networks. Another example is the delay and UI lags of M5 stack, this is determined by the configuration of the device itself, so we classify it as temporarily trustworthy. In other aspects, desktop and web applications are more reliable in this project.
-<p align = "center" style = "color:red">
-<b>Need reference!!!</b></p>
+We guarantee that the data collected will be used solely for this product and will not be shared with other platforms or corporation for momentary gains, however we cannot ensure effective information delivery due to unencrypted informational flow and possible security leaks by hacker. For example, during the testing of communication with the different subsystems, messages in the form of JSON object will be exposed with access to the topic subscription title.. In addition, the originally planned map system may cause greater security risk in terms of location privacy, which is mainly why the map feature was not implemented. The map feature will upload geographical location of users in real time, causing serious privacy implication such as current user location to malicious attacks.  
+
+### Physical Safety 
+With our planned introduction of challenges and competitions, there may be increased pressure for users to want to do well. With the eagerness to make some steps more quickly, there can be an increased risk to falling down and hitting into obstacles. In addition, the user may pay more attention on the M5Stack device than looking at the road. We will look to mitigate this by alerting the user to look at the road if we detect that the user has been looking at the M5Stack too frequently.  
+
+### Addiction 
+Like with any games, there is a risk of user addiction. If the users really like the game and wants to spend long hours to achieve better results in the game, it can affect their other aspects of life. This may have an impact on their careers or their studies as they will be spending less time on them. In addition, an addiction can be detrimental for the mental health. However, the user may not realise spending too much time on the app unless it is too late. It is therefore important that we send reminders to the users to alert them about the time spent on the app to help them notice this. 
